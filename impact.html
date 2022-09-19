@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -214,16 +219,16 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lesson-outline" id="toc-lesson-outline" class="nav-link active" data-scroll-target="#lesson-outline"> <span class="header-section-number">3.1</span> Lesson Outline</a></li>
-  <li><a href="#goals-and-motivation" id="toc-goals-and-motivation" class="nav-link" data-scroll-target="#goals-and-motivation"> <span class="header-section-number">3.2</span> Goals and motivation</a></li>
-  <li><a href="#data-as-the-foundation-for-open-science" id="toc-data-as-the-foundation-for-open-science" class="nav-link" data-scroll-target="#data-as-the-foundation-for-open-science"> <span class="header-section-number">3.3</span> Data as the foundation for open science</a></li>
-  <li><a href="#tidy" id="toc-tidy" class="nav-link" data-scroll-target="#tidy"> <span class="header-section-number">3.4</span> Principles of tidy data</a></li>
-  <li><a href="#data-dictionaries" id="toc-data-dictionaries" class="nav-link" data-scroll-target="#data-dictionaries"> <span class="header-section-number">3.5</span> Data dictionaries</a></li>
-  <li><a href="#importance-of-metadata" id="toc-importance-of-metadata" class="nav-link" data-scroll-target="#importance-of-metadata"> <span class="header-section-number">3.6</span> Importance of metadata</a></li>
+  <li><a href="#lesson-outline" id="toc-lesson-outline" class="nav-link active" data-scroll-target="#lesson-outline"><span class="toc-section-number">3.1</span>  Lesson Outline</a></li>
+  <li><a href="#goals-and-motivation" id="toc-goals-and-motivation" class="nav-link" data-scroll-target="#goals-and-motivation"><span class="toc-section-number">3.2</span>  Goals and motivation</a></li>
+  <li><a href="#data-as-the-foundation-for-open-science" id="toc-data-as-the-foundation-for-open-science" class="nav-link" data-scroll-target="#data-as-the-foundation-for-open-science"><span class="toc-section-number">3.3</span>  Data as the foundation for open science</a></li>
+  <li><a href="#tidy" id="toc-tidy" class="nav-link" data-scroll-target="#tidy"><span class="toc-section-number">3.4</span>  Principles of tidy data</a></li>
+  <li><a href="#data-dictionaries" id="toc-data-dictionaries" class="nav-link" data-scroll-target="#data-dictionaries"><span class="toc-section-number">3.5</span>  Data dictionaries</a></li>
+  <li><a href="#importance-of-metadata" id="toc-importance-of-metadata" class="nav-link" data-scroll-target="#importance-of-metadata"><span class="toc-section-number">3.6</span>  Importance of metadata</a></li>
   </ul>
 </nav>
     </div>
@@ -275,7 +280,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/datameme.jpg" class="img-fluid figure-img" width="600"></p>
+<p><img src="img/datameme.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -337,14 +342,14 @@ div.csl-indent {
 <p>Graphically, these rules are shown below <span class="citation" data-cites="Wickham17">(from <a href="references.html#ref-Wickham17" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="img/tidy-1.png" class="img-fluid" width="960"></p>
+<p><img src="img/tidy-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>Using these principles for data storage may seem unnatural at first because of a difference between what’s easy for entering data versus what makes sense for downstream analyses. For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in each column.</p>
 <p>Using a tidy format also allows you to more easily join data between tables. This is a common task when you have information spread between different tables because: 1) it might not make sense to keep the data in the same table, and 2) the analysis depends on information from both tables. Tidy data shared between tables can be linked using a “key” as a common identifier.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="img/joins.png" class="img-fluid" width="938"></p>
+<p><img src="img/joins.png" class="img-fluid"></p>
 </div>
 </div>
 <h3 class="anchored">
@@ -368,7 +373,7 @@ div.csl-indent {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">acres/category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'acres'</span>, <span class="st">'category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 27 x 5
+<pre><code># A tibble: 27 × 5
    Location  Habitat  Year  acres category
    &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   
  1 Clear Bay Seagrass 2019  519   B       
@@ -381,7 +386,7 @@ div.csl-indent {
  8 Clear Bay Sand     2020  702   A       
  9 Clear Bay Sand     2021  505   C       
 10 Fish Bay  Seagrass 2019  930   B       
-# ... with 17 more rows</code></pre>
+# … with 17 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -469,7 +474,7 @@ div.csl-indent {
 <p>Here’s an example of a bare bones metadata file. One could easily type this up in a text file or spreadsheet.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="img/desotometa.PNG" class="img-fluid" width="926"></p>
+<p><img src="img/desotometa.PNG" class="img-fluid"></p>
 </div>
 </div>
 <h3 class="anchored">
@@ -621,7 +626,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

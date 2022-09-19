@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -151,16 +156,16 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lesson-outline" id="toc-lesson-outline" class="nav-link active" data-scroll-target="#lesson-outline"> <span class="header-section-number">4.1</span> Lesson Outline</a></li>
-  <li><a href="#goals-and-motivation" id="toc-goals-and-motivation" class="nav-link" data-scroll-target="#goals-and-motivation"> <span class="header-section-number">4.2</span> Goals and motivation</a></li>
-  <li><a href="#learning-curves" id="toc-learning-curves" class="nav-link" data-scroll-target="#learning-curves"> <span class="header-section-number">4.3</span> Learning curves</a></li>
-  <li><a href="#fear-of-exposure" id="toc-fear-of-exposure" class="nav-link" data-scroll-target="#fear-of-exposure"> <span class="header-section-number">4.4</span> Fear of exposure</a></li>
-  <li><a href="#what-does-it-mean-to-be-open" id="toc-what-does-it-mean-to-be-open" class="nav-link" data-scroll-target="#what-does-it-mean-to-be-open"> <span class="header-section-number">4.5</span> What does it mean to be open?</a></li>
-  <li><a href="#something-is-better-than-nothing" id="toc-something-is-better-than-nothing" class="nav-link" data-scroll-target="#something-is-better-than-nothing"> <span class="header-section-number">4.6</span> Something is better than nothing</a></li>
+  <li><a href="#lesson-outline" id="toc-lesson-outline" class="nav-link active" data-scroll-target="#lesson-outline"><span class="toc-section-number">4.1</span>  Lesson Outline</a></li>
+  <li><a href="#goals-and-motivation" id="toc-goals-and-motivation" class="nav-link" data-scroll-target="#goals-and-motivation"><span class="toc-section-number">4.2</span>  Goals and motivation</a></li>
+  <li><a href="#learning-curves" id="toc-learning-curves" class="nav-link" data-scroll-target="#learning-curves"><span class="toc-section-number">4.3</span>  Learning curves</a></li>
+  <li><a href="#fear-of-exposure" id="toc-fear-of-exposure" class="nav-link" data-scroll-target="#fear-of-exposure"><span class="toc-section-number">4.4</span>  Fear of exposure</a></li>
+  <li><a href="#what-does-it-mean-to-be-open" id="toc-what-does-it-mean-to-be-open" class="nav-link" data-scroll-target="#what-does-it-mean-to-be-open"><span class="toc-section-number">4.5</span>  What does it mean to be open?</a></li>
+  <li><a href="#something-is-better-than-nothing" id="toc-something-is-better-than-nothing" class="nav-link" data-scroll-target="#something-is-better-than-nothing"><span class="toc-section-number">4.6</span>  Something is better than nothing</a></li>
   </ul>
 </nav>
     </div>
@@ -443,7 +448,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
