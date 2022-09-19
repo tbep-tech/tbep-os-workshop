@@ -114,7 +114,7 @@ Making an [untidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data
 
 <div class="fold s o">
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
 library(readxl)
 library(dplyr)

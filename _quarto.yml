@@ -1,8 +1,10 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "Tampa Bay Open Science Workshop"
+  repo-url: https://github.com/tbep-tech/tbep-os-workshop
   author: "Dr. Chris Anastasiou and Dr. Marcus Beck"
   date: last-modified
   chapters:
@@ -19,7 +21,7 @@ bibliography: refs.bib
 format:
   html:
     theme: cosmo
-    css: style.css
+    css: styles.css
     code-tools: 
       source: repo
   pdf:
