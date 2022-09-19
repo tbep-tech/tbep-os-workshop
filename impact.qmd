@@ -106,11 +106,11 @@ knitr::include_graphics('img/joins.png')
 
 <h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx) using Excel. 
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using Excel. 
 
 <h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx) using R.
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using R.
 
 <div class="fold s o">
 ```{r}
@@ -131,7 +131,7 @@ dat
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Now try it on your own. Download the [untidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx) dataset and make it tidy using your preferred software. 
+Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset and make it tidy using your preferred software. 
 
 ## Data dictionaries
 
@@ -166,7 +166,7 @@ Here we provide some general guidelines for developing your own data dictionary.
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a data dictionary for the [tidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. 
+Create a data dictionary for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. 
 
 ## Importance of metadata
 
@@ -216,4 +216,4 @@ knitr::include_graphics('img/desotometa.PNG')
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a metadata file for the [tidy](https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 
+Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 

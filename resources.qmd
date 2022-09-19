@@ -4,7 +4,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 
 ### Open Science Websites
 
-* [NCEAS Open Science for Synthesis 2017 workshop](https://nceas.github.io/oss-2017/lessons.html){target="_blank"}
+* [NCEAS Open Science for Synthesis workshop](https://nceas.github.io/oss-2017/lessons.html){target="_blank"}
 * [NCEAS Reproducible Research Techniques](https://learning.nceas.ucsb.edu/2020-02-RRCourse/){target="_blank"}
 * [Open Science Foundation open science workshop](https://osf.io/k75r9/){target="_blank"}
 * [Openscapes](https://www.openscapes.org/){target="_blank"}
@@ -25,8 +25,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 ### TBEP R Trainings
 
 * [Peconic Estuary Program R training](https://tbep-tech.github.io/pep-r-training){target="_blank"}, [recording](https://drive.google.com/file/d/1ZjVHFrVpw2uTKZw-BmD29umdbl6viutM/view?usp=sharing){target="_blank"}
-* [NERRS ecosystem metabolism R training ](https://tbep-tech.github.io/ecometab-r-training){target="_blank"}
- [TBEP June 2020 R training](https://tbep-tech.github.io/tbep-r-training/){target="_blank"}, [recordings](https://www.youtube.com/watch?v=_RI4XMRWeV0&list=PLfJ6-D-exF9RM5TPtT4T0nxieqpr_R4pJ){target="_blank"}
+* [TBEP June 2020 R training](https://tbep-tech.github.io/tbep-r-training/){target="_blank"}, [recordings](https://www.youtube.com/watch?v=_RI4XMRWeV0&list=PLfJ6-D-exF9RM5TPtT4T0nxieqpr_R4pJ){target="_blank"}
 * [Writing functions in R](https://tbep-tech.github.io/tbep-r-training/functions.html){target="_blank"}
 * [R package development workflow](https://tbep-tech.github.io/tbep-r-training/packages.html){target="_blank"}
 * [A soft introduction to Shiny](https://tbep-tech.github.io/tbep-r-training/shiny.html){target="_blank"}
