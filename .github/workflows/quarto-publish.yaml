@@ -11,6 +11,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2 
         
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+        
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -20,10 +23,13 @@ jobs:
           # version: 0.9.600
       
       # add software dependencies here
-
+      
+      - name: Install R dependencies
+        run: Rscript -e 'install.packages(c("jsonlite", "fontawesome"))'
+      
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
