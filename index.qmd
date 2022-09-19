@@ -1,0 +1,51 @@
+---
+execute: 
+  echo: false
+  warning: false
+---
+
+# Course synopsis {.unnumbered}
+
+```{r}
+library(fontawesome)
+```
+
+![](img/2023 Open Science Workshop.png)
+
+Welcome to the Tampa Bay open science workshop: core concepts for impactful research and resource management. Open science (OS) has been advocated as an effective approach to create reproducible, transparent, and actionable research products. However, widespread adoption among the coastal and estuarine research community has not occurred despite its perceived benefits. In the face of major challenges like global warming and sea level rise, the collaborative framework provided by OS is needed now more than ever. This workshop will cover a half-day of material introducing participants to core concepts of OS. The target audience includes anyone interested in applying OS in their own workflows as part of a larger research and resource management team.
+
+By the end of this workshop, you should have a solid understanding of fundamental concepts in open science and how they can be applied to help bridge the research-management divide.  You will also have the skills to understand how collaborative open science tools can be used to increase efficiency and transparency, understand fundamental best practices for working with data to facilitate openness, and be able to apply these lessons within your own teams by effectively addressing barriers to adoption. 
+
+## Agenda
+
+1. [The basics of open science](#basics) (__30 min__)
+1. [Open science for collaboration](#collaborate) (__90 min__)
+1. [Open science for impactful products](#impact) (__90 min__)
+1. [Lowering barriers to inclusion and addressing key critiques](#implement) (__30 min__)
+
+Each module uses a set of common icons to orient you to specific tasks or experiences during this workshop.  These include the following:
+
+<h4>`r fa('hat-wizard')` Exercise and discussion</h4>
+
+<h4>`r fa('chalkboard-teacher')` Watch and learn</h4>
+
+<h4>`r fa('question')` Description of a collaborative tool</h4>
+
+<h4>`r fa('thumbs-up')` Pros of a collaborative tool or solution to an open science challenge</h4>
+
+<h4>`r fa('thumbs-down')` Cons of a collaborative tool</h4>
+
+<h4>`r fa('exclamation-circle')` Challenge to overcome for open science</h4> 
+
+## Instructors
+
+[Dr. Chris Anastasiou](mailto:chris.anastasiou@swfwmd.state.fl.us) is a Chief Water Quality Scientist and the Seagrass Mapping Program Lead for the Southwest Florida Water Management District. He holds a PhD in Marine Science from the University of South Florida and has been working in and around the springs of Florida for more than 25 years.
+
+[Dr. Marcus Beck](mailto:mbeck@tbep.org) is the Program Scientist for the Tampa Bay Estuary Program and is developing data analysis and visualization methods for Bay health indicators. He received his PhD in Conservation Biology from the University of Minnesota in 2013. Marcus has experience researching environmental indicators and developing open science products to support environmental decision-making. Marcus is also an open source software and dashboard developer to facilitate science application.
+
+----------
+
+<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by/4.0/88x31.png' /></a>&nbsp;&nbsp;This book is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
+
+<!-- <a href="https://github.com/tbep-tech/cerf-os-workshop/actions"><img src="https://github.com/tbep-tech/cerf-os-workshop/workflows/build/badge.svg" alt="build"></a> This version of the book was built automatically with [GitHub Actions](https://github.com/tbep-tech/cerf-os-workshop/actions) on `r Sys.Date()`. -->
+

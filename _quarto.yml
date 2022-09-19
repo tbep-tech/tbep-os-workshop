@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  title: "Tampa Bay Open Science Workshop"
+  author: "Dr. Chris Anastasiou and Dr. Marcus Beck"
+  date: last-modified
+  chapters:
+    - index.qmd
+    - basics.qmd
+    - collaborate.qmd
+    - impact.qmd
+    - implement.qmd
+    - resources.qmd
+    - references.qmd
+
+bibliography: refs.bib
+
+format:
+  html:
+    theme: cosmo
+    css: style.css
+    code-tools: 
+      source: repo
+  pdf:
+    documentclass: scrreprt
+
+execute: 
+  echo: false
+  warning: false
+
+
