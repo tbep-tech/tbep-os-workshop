@@ -114,7 +114,7 @@ Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data
 
 <div class="fold s o">
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: true
 library(readxl)
 library(dplyr)
