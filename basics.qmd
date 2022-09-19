@@ -92,7 +92,7 @@ From these key words, we can breakdown this definition into key principles.
      * Reusability and transparent workflows
      * Data provenance and metadata
   
-1. `r fa('cogs')` __Open process__
+1. `r fa('gears')` __Open process__
 
      * Iterative methods using reproducible workflows
      * Collaboration with colleagues using web-based tools

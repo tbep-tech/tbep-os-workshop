@@ -2,7 +2,7 @@
 
 The following is a non-exhaustive list of additional resources you can use for continued learning on your open science journey. 
 
-### Open Science Websites
+## Open Science Websites
 
 * [NCEAS Open Science for Synthesis workshop](https://nceas.github.io/oss-2017/lessons.html){target="_blank"}
 * [NCEAS Reproducible Research Techniques](https://learning.nceas.ucsb.edu/2020-02-RRCourse/){target="_blank"}
@@ -14,7 +14,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 * [NOAA Reproducible Reporting with R](https://noaa-iea.github.io/r3-train/index.html){target="_blank"}
 * [PeerJ collection on practical data science](https://peerj.com/collections/50-practicaldatascistats){target="_blank"}
 
-### Data Management Tools
+## Data Management Tools
 
 * [Environmental Data Initiative Data Management Resources](https://environmentaldatainitiative.org/dm-resources/){target="_blank"}
 * [University of California DMPTool](https://dmptool.org/){target="_blank"}
@@ -22,7 +22,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 * [ELIXIR and others Data Stewardship Wizard](https://ds-wizard.org/){target="_blank"}
 * [TBEP Data Management SOP](https://tbep-tech.github.io/data-management-sop){target="_blank"}
 
-### TBEP R Trainings
+## TBEP R Trainings
 
 * [Peconic Estuary Program R training](https://tbep-tech.github.io/pep-r-training){target="_blank"}, [recording](https://drive.google.com/file/d/1ZjVHFrVpw2uTKZw-BmD29umdbl6viutM/view?usp=sharing){target="_blank"}
 * [TBEP June 2020 R training](https://tbep-tech.github.io/tbep-r-training/){target="_blank"}, [recordings](https://www.youtube.com/watch?v=_RI4XMRWeV0&list=PLfJ6-D-exF9RM5TPtT4T0nxieqpr_R4pJ){target="_blank"}
@@ -30,7 +30,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 * [R package development workflow](https://tbep-tech.github.io/tbep-r-training/packages.html){target="_blank"}
 * [A soft introduction to Shiny](https://tbep-tech.github.io/tbep-r-training/shiny.html){target="_blank"}
 
-### R Lessons & Tutorials
+## R Lessons & Tutorials
 
 * [Software Carpentry: R for Reproducible Scientific Analysis](http://data-lessons.github.io/gapminder-R/){target="_blank"}
 * [Data Carpentry: Geospatial Workshop](https://datacarpentry.org/geospatial-workshop/){target="_blank"}
@@ -44,7 +44,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 * [Totally awesome R-related artwork by Allison Horst](https://github.com/allisonhorst/stats-illustrations){target="_blank"}
 * [Color reference PDF with text names](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"}, [Color cheatsheet PDF from NCEAS](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf){target="_blank"}
 
-### R eBooks/Courses
+## R eBooks/Courses
 
 * [Jenny Bryan's Stat545.com](http://stat545.com/){target="_blank"}
 * [Garrett Grolemund and Hadley Wickham's R For Data Science](http://r4ds.had.co.nz/){target="_blank"}
@@ -58,7 +58,7 @@ The following is a non-exhaustive list of additional resources you can use for c
 * [Lovelace et al. Geocomputation with R](https://geocompr.robinlovelace.net/){target="_blank"}
 * [Edszer Pebesma and Roger Bivand Spatial Data Science](https://keen-swartz-3146c4.netlify.app/index.html){target="_blank"}
 
-### Git/Github
+## Git/Github
 
 * [Jenny Bryan's Happy Git and Github for the useR](http://happygitwithr.com/){target="_blank"}
 * [Coding Club Intro to Github](https://ourcodingclub.github.io/2017/02/27/git.html){target="_blank"}
