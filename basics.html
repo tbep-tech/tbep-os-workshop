@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tampa Bay Open Science Workshop - 1&nbsp; Basics of open science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./collaborate.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics of open science</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Tampa Bay Open Science Workshop</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/tbep-tech/tbep-os-workshop" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Course synopsis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics of open science</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collaborate.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Open science for collaboration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./impact.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Open science for impactful products</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implement.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lowering barriers to inclusion and addressing key critiques</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">Resources for continued learning</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lesson-outline" id="toc-lesson-outline" class="nav-link active" data-scroll-target="#lesson-outline"> <span class="header-section-number">1.1</span> Lesson Outline</a></li>
+  <li><a href="#goals-and-motivation" id="toc-goals-and-motivation" class="nav-link" data-scroll-target="#goals-and-motivation"> <span class="header-section-number">1.2</span> Goals and motivation</a></li>
+  <li><a href="#why-open-science" id="toc-why-open-science" class="nav-link" data-scroll-target="#why-open-science"> <span class="header-section-number">1.3</span> Why open science?</a></li>
+  <li><a href="#learning-and-speaking-the-language-of-open-science" id="toc-learning-and-speaking-the-language-of-open-science" class="nav-link" data-scroll-target="#learning-and-speaking-the-language-of-open-science"> <span class="header-section-number">1.4</span> Learning and speaking the language of open science</a></li>
+  <li><a href="#fair" id="toc-fair" class="nav-link" data-scroll-target="#fair"> <span class="header-section-number">1.5</span> The FAIR principles</a></li>
+  <li><a href="#schools" id="toc-schools" class="nav-link" data-scroll-target="#schools"> <span class="header-section-number">1.6</span> Schools of thought</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="basics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics of open science</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/tbep-tech/tbep-os-workshop/blob/main/basics.qmd"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="lesson-outline" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="lesson-outline"><span class="header-section-number">1.1</span> Lesson Outline</h2>
+<ul>
+<li><a href="#goals-and-motivation">Goals and motivation</a></li>
+<li><a href="#why-open-science">Why open science?</a></li>
+<li><a href="#learning-and-speaking-the-language-of-open-science">Learning and speaking the language of open science</a></li>
+<li><a href="#fair">The FAIR principles</a></li>
+<li><a href="#schools">Schools of thought</a></li>
+</ul>
+</section>
+<section id="goals-and-motivation" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="goals-and-motivation"><span class="header-section-number">1.2</span> Goals and motivation</h2>
+<p>This is the first module in our four hour workshop on open science. This module describes the need for open science, how it can improve research applications, and exposes you to common ideas and terminology that we’ll be using throughout the day. Consider this your 30,000 foot view of open science. Our later modules will provide more detail on specific topics in open science that you can use for continued learning.</p>
+<ul>
+<li><strong>Goal</strong>: get comfortable with key ideas and concepts for understanding open science</li>
+<li><strong>Motivation</strong>: This is the first step in your open science journey!</li>
+</ul>
+</section>
+<section id="why-open-science" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-open-science"><span class="header-section-number">1.3</span> Why open science?</h2>
+<p>Let’s start with revisiting the scientific process. I’m sure this looks familiar to all of you. This is geared towards an applied research question.</p>
+<p><img src="img/scipro.png" class="img-fluid"></p>
+<p>Our basic scientific approach to discovery is motivated by a question or research goal, developing a hypothesis for the question, collecting data based on the hypothesis, developing a tool that can be used for decision-making, and summarizing the results in a conventional format.</p>
+<p>In a little more detail, your workflow may look something like this.</p>
+<p><img src="img/appscipro.png" class="img-fluid"></p>
+<p>Many scientists, especially early career researchers (my past self included), may assume that this is sufficient to affect change. We write the report, send it out into the world, and move on to the next project. This is a common mentality:</p>
+<blockquote class="blockquote">
+<p>“This 500-page report will answer all of their questions!”</p>
+</blockquote>
+<p>From the other side, such as the manager or policy-maker, the report may be received like this:</p>
+<blockquote class="blockquote">
+<p>“This 500-page report answers none of my questions!”</p>
+</blockquote>
+<p>It’s dense, inaccessible, and there are probably questions about the underlying data and methods used to achieve the results. More importantly, it doesn’t present the information in an easily digestible format to quickly make the right decision. Sometimes, if you think you’re doing applied science, it may just be <em>implied</em> science that falls short of application.</p>
+<p><strong>Why is this conventional approach to science ineffective at seeding change?</strong></p>
+<p>As I’m sure we’re aware, the environmental management community is often siloed with each branch doing their own thing and speaking their own language. Between the research (typically academic) and management community, we call this the research-management divide.</p>
+<p><img src="img/divide2.png" class="img-fluid"></p>
+<p>A distinct gap exists between how scientific products are developed and how they can be used to meet management needs. This is often the result of communication barriers, irreproducible results, information loss with poor documentation, inaccessible data, and opaque workflows known only to the analyst.</p>
+<p>These barriers can occur at any stage of the research process. This compelling graphic from <span class="citation" data-cites="Michener97">Michener et al. (<a href="#ref-Michener97" role="doc-biblioref">1997</a>)</span> describes the atrophy of information in a closed approach to creating science.</p>
+<p><img src="img/michener.png" class="img-fluid"></p>
+<p>The last part is especially morbid. Sometimes, this is called the “bus factor”. What would happen to your important work and life achievements if you were hit by a bus? Would others be able to pick it up? Research products with a high bus factor are at risk of being lost if critical team members are no longer available. This is a very real problem for continuity of science.</p>
+<p><img src="img/overlyhonest.png" class="img-fluid"></p>
+<p>So how do we make changes to our workflows to ensure we can achieve truly applied science using open tools and philosophies?</p>
+</section>
+<section id="learning-and-speaking-the-language-of-open-science" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="learning-and-speaking-the-language-of-open-science"><span class="header-section-number">1.4</span> Learning and speaking the language of open science</h2>
+<p>The tools and broader philosophy behind open science can help us bridge the research-management divide. It involves a fundamental shift in how we approach the scientific process, both for your own internal workflows and how you can engage others in the process. By others, we mean not just researchers, but specifically those that need the information to make informed decisions.</p>
+<p>Before we present a formal definition, let’s describe a modification of the conventional workflow that includes an open process to discovery and implementation <span class="citation" data-cites="Beck20 Hampton15">(<a href="#ref-Beck20" role="doc-biblioref">Beck et al. 2020</a>; modified from <a href="#ref-Hampton15" role="doc-biblioref">Hampton et al. 2015</a>)</span>.</p>
+<p><img src="img/open.png" class="img-fluid"></p>
+<p>This workflow is similar to the original scientific method, but the technical components are open to managers and stakeholders, we’re treating data differently by using metadata and archiving, we’re creating summary documents that include source code with text, and we’re producing decision-support tools to meet the needs outside of the research community. More importantly, the process is <em>iterative</em> and not static.</p>
+<p>Throughout this workshop, we’ll learn about some open science tools that can be used in this generalized workflow to achieve better science in less time <span class="citation" data-cites="Lowndes17">(<a href="#ref-Lowndes17" role="doc-biblioref">Lowndes et al. 2017</a>)</span>.</p>
+<p>Now let’s settle on a definition for open science (from Open Knowledge International, <a href="http://opendefinition.org/" target="_blank">http://opendefinition.org/</a>, <a href="https://creativecommons.org/" target="_blank">https://creativecommons.org/</a>):</p>
+<blockquote class="blockquote">
+<p>“The practice of science in such a way that others can <strong>collaborate</strong> and <strong>contribute</strong>, where research data, lab notes and other research processes are <strong>freely available</strong>, under terms that enable <strong>reuse</strong>, <strong>redistribution</strong> and <strong>reproduction</strong> of the research and its underlying data and methods.”</p>
+</blockquote>
+<p>Key words from this definition are highlighted in bold. There are very specific tools in the open science toolbox that speak to each of these key words. We’ll cover some of these later.</p>
+<p>From these key words, we can breakdown this definition into key principles.</p>
+<ol type="1">
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg> <strong>Open data</strong></p>
+<ul>
+<li>Public availability of data</li>
+<li>Reusability and transparent workflows</li>
+<li>Data provenance and metadata</li>
+</ul></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"></path></svg> <strong>Open process</strong></p>
+<ul>
+<li>Iterative methods using reproducible workflows</li>
+<li>Collaboration with colleagues using web-based tools</li>
+<li>Leveraging external, open-source applications</li>
+</ul></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg> <strong>Open products</strong></p>
+<ul>
+<li>Interactive web products for communication</li>
+<li>Dynamic documents with source code</li>
+<li>Integration with external networks for discoverability</li>
+</ul></li>
+</ol>
+<p>You’ll notice that web-based tools and open science are often discussed at the same time. Science existed before the internet and open science often focuses on how the two can leverage and support one another despite the latter being a relatively new addition to society. People often describe web-based tools as synonymous with open science.</p>
+</section>
+<section id="fair" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="fair"><span class="header-section-number">1.5</span> The FAIR principles</h2>
+<p>Advocates of open science also describe the use of the FAIR principles <span class="citation" data-cites="Wilkinson16">(<a href="#ref-Wilkinson16" role="doc-biblioref">Wilkinson et al. 2016</a>)</span> as a vehicle for achieving the former. It’s important to understand what they mean so that you can be fluent in both. The FAIR acronym is described as follows:</p>
+<ul>
+<li><strong>F</strong>indable: The data have a globally unique and persistent identifier, including use of “rich” metadata.</li>
+<li><strong>A</strong>ccessible: Once found, the data can be retrieved using standardized communications protocols that are open, free, and universally implementable.</li>
+<li><strong>I</strong>nteroperable: The ability of data or tools from non-cooperating resources to integrate or work together with minimal effort.</li>
+<li><strong>R</strong>eusable: If the above are achieved, the data and metadata are described in a way that they can be replicated and/or combined in different settings.</li>
+</ul>
+<p>Simply, what this means is: 1) each dataset has a name that doesn’t change and can be found with minimal effort using that name, 2) once it’s found, you can actually get your hands on it (e.g., not behind a paywall), 3) once you have it, you can use readily available tools to work with the data (e.g., not using proprietary software), and 4) you can actually apply the data for your own needs because it has sufficient context, including its reproduction, given that the first three principles are met.</p>
+<p>For our purposes, think of these ideas as general guidelines you can ask yourself when doing science. If you find that your work does not achieve FAIR status, then you’re probably not being as open as you could be. We’ll of course provide some tools to help you be FAIR and open.</p>
+</section>
+<section id="schools" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="schools"><span class="header-section-number">1.6</span> Schools of thought</h2>
+<p>Finally, it’s useful to make a distinction of how different people may talk about open science. This can help you better navigate conversations and become an advocate for open science in your own right.</p>
+<p>A useful paradigm is provided by <span class="citation" data-cites="Fecher14">Fecher and Friesike (<a href="#ref-Fecher14" role="doc-biblioref">2014</a>)</span> to describe open science as five distinct schools of thought:</p>
+<p><img src="img/fiveschools.PNG" class="img-fluid"></p>
+<p>These are of course only conceptual boxes and there’s considerable overlap across all schools when open science is used in practice. For our purposes, we’ll be talking about ideas and tools from the pragmatic, infrastructure, and democratic schools of the thought. The end goal is to provide you with the means to create more efficient and impactful science that can more readily be used by others in a collaborative setting.</p>
+<h3 class="anchored">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M496 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h480c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zm-304-64l-64-32 64-32 32-64 32 64 64 32-64 32-16 32h208l-86.41-201.63a63.955 63.955 0 0 1-1.89-45.45L416 0 228.42 107.19a127.989 127.989 0 0 0-53.46 59.15L64 416h144l-16-32zm64-224l16-32 16 32 32 16-32 16-16 32-16-32-32-16 32-16z"></path></svg> Exercise and discussion
+</h3>
+<p>How do you currently define open science? Has any of the above changed your understanding of what open science means for research and/or resource management?</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Beck20" class="csl-entry" role="doc-biblioentry">
+Beck, M. W., C. O’Hara nad J. S. S. Lowndes, R. D. Mazor, S. Theroux, D. J. Gillett, B. Lane, and G. Gearheart. 2020. <span>“The Importance of Open Science for Biological Assessment of Aquatic Environments.”</span> <em>PeerJ</em> 8: e9539. https://doi.org/<a href="https://doi.org/10.7717/peerj.9539">https://doi.org/10.7717/peerj.9539</a>.
+</div>
+<div id="ref-Fecher14" class="csl-entry" role="doc-biblioentry">
+Fecher, B., and S. Friesike. 2014. <span>“Open Science: One Term, Five Schools of Thought.”</span> In <em>Opening Science</em>, 17–47. Springer, Cham.
+</div>
+<div id="ref-Hampton15" class="csl-entry" role="doc-biblioentry">
+Hampton, S. E., S. S. Anderson, S. C. Bagby, C. Gries, X. Han, E. M. Hart, M. B. Jones, et al. 2015. <span>“The Tao of Open Science for Ecology.”</span> <em>Ecosphere</em> 6 (7): 1–13. <a href="https://doi.org/10.1890/ES14-00402.1">https://doi.org/10.1890/ES14-00402.1</a>.
+</div>
+<div id="ref-Lowndes17" class="csl-entry" role="doc-biblioentry">
+Lowndes, J. S. S., B. D. Best, C. Scarborough, J. C. Afflerbach, M. R. Frazier, C. C. O’Hara, N. Jiang, and B. S. Halpern. 2017. <span>“Our Path to Better Science in Less Time Using Open Data Science Tools.”</span> <em>Nature Ecology &amp; Evolution</em> 1 (0160): 1–7. <a href="https://doi.org/10.1038/s41559-017-0160">https://doi.org/10.1038/s41559-017-0160</a>.
+</div>
+<div id="ref-Michener97" class="csl-entry" role="doc-biblioentry">
+Michener, W. K., J. W. Brunt, J. J. Helly, T. B. Kirchner, and S. G. Stafford. 1997. <span>“Nongeospatial Metadata for the Ecological Sciences.”</span> <em>Ecological Applications</em> 7 (1): 330–42. https://doi.org/<a href="https://doi.org/10.1890/1051-0761(1997)007[0330:NMFTES]2.0.CO;2">https://doi.org/10.1890/1051-0761(1997)007[0330:NMFTES]2.0.CO;2</a>.
+</div>
+<div id="ref-Wilkinson16" class="csl-entry" role="doc-biblioentry">
+Wilkinson, M. D., M. Dumontier, I. J. Aalbersberg, G. Appleton, M. Axton, A. Baak, N. Blomberg, et al. 2016. <span>“The FAIR Guiding Principles for Scientific Data Management and Stewardship.”</span> <em>Scientific Data</em> 3 (160018). <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course synopsis</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./collaborate.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Open science for collaboration</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

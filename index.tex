@@ -1,0 +1,2093 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Tampa Bay Open Science Workshop},
+  pdfauthor={Dr.~Chris Anastasiou and Dr.~Marcus Beck},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Tampa Bay Open Science Workshop}
+\author{Dr.~Chris Anastasiou and Dr.~Marcus Beck}
+\date{2022-09-19T10:13:45-04:00}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, interior hidden, sharp corners]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{course-synopsis}{%
+\chapter*{Course synopsis}\label{course-synopsis}}
+\addcontentsline{toc}{chapter}{Course synopsis}
+
+\includegraphics{./img/2023 Open Science Workshop.png}
+
+Welcome to the Tampa Bay open science workshop: core concepts for
+impactful research and resource management. Open science (OS) has been
+advocated as an effective approach to create reproducible, transparent,
+and actionable research products. However, widespread adoption among the
+coastal and estuarine research community has not occurred despite its
+perceived benefits. In the face of major challenges like global warming
+and sea level rise, the collaborative framework provided by OS is needed
+now more than ever. This workshop will cover a half-day of material
+introducing participants to core concepts of OS. The target audience
+includes anyone interested in applying OS in their own workflows as part
+of a larger research and resource management team.
+
+By the end of this workshop, you should have a solid understanding of
+fundamental concepts in open science and how they can be applied to help
+bridge the research-management divide. You will also have the skills to
+understand how collaborative open science tools can be used to increase
+efficiency and transparency, understand fundamental best practices for
+working with data to facilitate openness, and be able to apply these
+lessons within your own teams by effectively addressing barriers to
+adoption.
+
+\hypertarget{agenda}{%
+\section*{Agenda}\label{agenda}}
+\addcontentsline{toc}{section}{Agenda}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \protect\hyperlink{basics}{The basics of open science} (\textbf{30
+  min})
+\item
+  \protect\hyperlink{collaborate}{Open science for collaboration}
+  (\textbf{90 min})
+\item
+  \protect\hyperlink{impact}{Open science for impactful products}
+  (\textbf{90 min})
+\item
+  \protect\hyperlink{implement}{Lowering barriers to inclusion and
+  addressing key critiques} (\textbf{30 min})
+\end{enumerate}
+
+Each module uses a set of common icons to orient you to specific tasks
+or experiences during this workshop. These include the following:
+
+\includegraphics[width=1em,height=1em]{./index_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+\includegraphics[width=1.25em,height=1em]{./index_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+\includegraphics[width=0.75em,height=1em]{./index_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+Description of a collaborative tool
+
+\includegraphics[width=1em,height=1em]{./index_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros of a collaborative tool or solution to an open science challenge
+
+\includegraphics[width=1em,height=1em]{./index_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons of a collaborative tool
+
+\includegraphics[width=1em,height=1em]{./index_files/figure-pdf/fa-icon-e38cc40f3c6469ef5f44a7764a5c5910.pdf}
+Challenge to overcome for open science
+
+\hypertarget{instructors}{%
+\section*{Instructors}\label{instructors}}
+\addcontentsline{toc}{section}{Instructors}
+
+\href{mailto:chris.anastasiou@swfwmd.state.fl.us}{Dr.~Chris Anastasiou}
+is a Chief Water Quality Scientist and the Seagrass Mapping Program Lead
+for the Southwest Florida Water Management District. He holds a PhD in
+Marine Science from the University of South Florida and has been working
+in and around the springs of Florida for more than 25 years.
+
+\href{mailto:mbeck@tbep.org}{Dr.~Marcus Beck} is the Program Scientist
+for the Tampa Bay Estuary Program and is developing data analysis and
+visualization methods for Bay health indicators. He received his PhD in
+Conservation Biology from the University of Minnesota in 2013. Marcus
+has experience researching environmental indicators and developing open
+science products to support environmental decision-making. Marcus is
+also an open source software and dashboard developer to facilitate
+science application.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+~~This book is licensed under a Creative Commons Attribution 4.0
+International License.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{basics}{%
+\chapter{Basics of open science}\label{basics}}
+
+\hypertarget{lesson-outline}{%
+\section{Lesson Outline}\label{lesson-outline}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{goals-and-motivation-3}{Goals and motivation}
+\item
+  \protect\hyperlink{why-open-science}{Why open science?}
+\item
+  \protect\hyperlink{learning-and-speaking-the-language-of-open-science}{Learning
+  and speaking the language of open science}
+\item
+  \protect\hyperlink{fair}{The FAIR principles}
+\item
+  \protect\hyperlink{schools}{Schools of thought}
+\end{itemize}
+
+\hypertarget{goals-and-motivation}{%
+\section{Goals and motivation}\label{goals-and-motivation}}
+
+This is the first module in our four hour workshop on open science. This
+module describes the need for open science, how it can improve research
+applications, and exposes you to common ideas and terminology that we'll
+be using throughout the day. Consider this your 30,000 foot view of open
+science. Our later modules will provide more detail on specific topics
+in open science that you can use for continued learning.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Goal}: get comfortable with key ideas and concepts for
+  understanding open science
+\item
+  \textbf{Motivation}: This is the first step in your open science
+  journey!
+\end{itemize}
+
+\hypertarget{why-open-science}{%
+\section{Why open science?}\label{why-open-science}}
+
+Let's start with revisiting the scientific process. I'm sure this looks
+familiar to all of you. This is geared towards an applied research
+question.
+
+\includegraphics{./img/scipro.png}
+
+Our basic scientific approach to discovery is motivated by a question or
+research goal, developing a hypothesis for the question, collecting data
+based on the hypothesis, developing a tool that can be used for
+decision-making, and summarizing the results in a conventional format.
+
+In a little more detail, your workflow may look something like this.
+
+\includegraphics{./img/appscipro.png}
+
+Many scientists, especially early career researchers (my past self
+included), may assume that this is sufficient to affect change. We write
+the report, send it out into the world, and move on to the next project.
+This is a common mentality:
+
+\begin{quote}
+``This 500-page report will answer all of their questions!''
+\end{quote}
+
+From the other side, such as the manager or policy-maker, the report may
+be received like this:
+
+\begin{quote}
+``This 500-page report answers none of my questions!''
+\end{quote}
+
+It's dense, inaccessible, and there are probably questions about the
+underlying data and methods used to achieve the results. More
+importantly, it doesn't present the information in an easily digestible
+format to quickly make the right decision. Sometimes, if you think
+you're doing applied science, it may just be \emph{implied} science that
+falls short of application.
+
+\textbf{Why is this conventional approach to science ineffective at
+seeding change?}
+
+As I'm sure we're aware, the environmental management community is often
+siloed with each branch doing their own thing and speaking their own
+language. Between the research (typically academic) and management
+community, we call this the research-management divide.
+
+\includegraphics{./img/divide2.png}
+
+A distinct gap exists between how scientific products are developed and
+how they can be used to meet management needs. This is often the result
+of communication barriers, irreproducible results, information loss with
+poor documentation, inaccessible data, and opaque workflows known only
+to the analyst.
+
+These barriers can occur at any stage of the research process. This
+compelling graphic from Michener et al. (1997) describes the atrophy of
+information in a closed approach to creating science.
+
+\includegraphics{./img/michener.png}
+
+The last part is especially morbid. Sometimes, this is called the ``bus
+factor''. What would happen to your important work and life achievements
+if you were hit by a bus? Would others be able to pick it up? Research
+products with a high bus factor are at risk of being lost if critical
+team members are no longer available. This is a very real problem for
+continuity of science.
+
+\includegraphics{./img/overlyhonest.png}
+
+So how do we make changes to our workflows to ensure we can achieve
+truly applied science using open tools and philosophies?
+
+\hypertarget{learning-and-speaking-the-language-of-open-science}{%
+\section{Learning and speaking the language of open
+science}\label{learning-and-speaking-the-language-of-open-science}}
+
+The tools and broader philosophy behind open science can help us bridge
+the research-management divide. It involves a fundamental shift in how
+we approach the scientific process, both for your own internal workflows
+and how you can engage others in the process. By others, we mean not
+just researchers, but specifically those that need the information to
+make informed decisions.
+
+Before we present a formal definition, let's describe a modification of
+the conventional workflow that includes an open process to discovery and
+implementation (Beck et al. 2020; modified from Hampton et al. 2015).
+
+\includegraphics{./img/open.png}
+
+This workflow is similar to the original scientific method, but the
+technical components are open to managers and stakeholders, we're
+treating data differently by using metadata and archiving, we're
+creating summary documents that include source code with text, and we're
+producing decision-support tools to meet the needs outside of the
+research community. More importantly, the process is \emph{iterative}
+and not static.
+
+Throughout this workshop, we'll learn about some open science tools that
+can be used in this generalized workflow to achieve better science in
+less time (Lowndes et al. 2017).
+
+Now let's settle on a definition for open science (from Open Knowledge
+International, \url{http://opendefinition.org/},
+\url{https://creativecommons.org/}):
+
+\begin{quote}
+``The practice of science in such a way that others can
+\textbf{collaborate} and \textbf{contribute}, where research data, lab
+notes and other research processes are \textbf{freely available}, under
+terms that enable \textbf{reuse}, \textbf{redistribution} and
+\textbf{reproduction} of the research and its underlying data and
+methods.''
+\end{quote}
+
+Key words from this definition are highlighted in bold. There are very
+specific tools in the open science toolbox that speak to each of these
+key words. We'll cover some of these later.
+
+From these key words, we can breakdown this definition into key
+principles.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \includegraphics[width=1em,height=1em]{./basics_files/figure-pdf/fa-icon-027224388e66831157840c588dc43741.pdf}
+  \textbf{Open data}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Public availability of data
+  \item
+    Reusability and transparent workflows
+  \item
+    Data provenance and metadata
+  \end{itemize}
+\item
+  \includegraphics[width=1.25em,height=1em]{./basics_files/figure-pdf/fa-icon-f702081e1a96180027748dfa6dd275a1.pdf}
+  \textbf{Open process}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Iterative methods using reproducible workflows
+  \item
+    Collaboration with colleagues using web-based tools
+  \item
+    Leveraging external, open-source applications
+  \end{itemize}
+\item
+  \includegraphics[width=0.88em,height=1em]{./basics_files/figure-pdf/fa-icon-ba6f5f2818a1e4c57b85400a286bb74c.pdf}
+  \textbf{Open products}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Interactive web products for communication
+  \item
+    Dynamic documents with source code
+  \item
+    Integration with external networks for discoverability
+  \end{itemize}
+\end{enumerate}
+
+You'll notice that web-based tools and open science are often discussed
+at the same time. Science existed before the internet and open science
+often focuses on how the two can leverage and support one another
+despite the latter being a relatively new addition to society. People
+often describe web-based tools as synonymous with open science.
+
+\hypertarget{fair}{%
+\section{The FAIR principles}\label{fair}}
+
+Advocates of open science also describe the use of the FAIR principles
+(Wilkinson et al. 2016) as a vehicle for achieving the former. It's
+important to understand what they mean so that you can be fluent in
+both. The FAIR acronym is described as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{F}indable: The data have a globally unique and persistent
+  identifier, including use of ``rich'' metadata.
+\item
+  \textbf{A}ccessible: Once found, the data can be retrieved using
+  standardized communications protocols that are open, free, and
+  universally implementable.
+\item
+  \textbf{I}nteroperable: The ability of data or tools from
+  non-cooperating resources to integrate or work together with minimal
+  effort.
+\item
+  \textbf{R}eusable: If the above are achieved, the data and metadata
+  are described in a way that they can be replicated and/or combined in
+  different settings.
+\end{itemize}
+
+Simply, what this means is: 1) each dataset has a name that doesn't
+change and can be found with minimal effort using that name, 2) once
+it's found, you can actually get your hands on it (e.g., not behind a
+paywall), 3) once you have it, you can use readily available tools to
+work with the data (e.g., not using proprietary software), and 4) you
+can actually apply the data for your own needs because it has sufficient
+context, including its reproduction, given that the first three
+principles are met.
+
+For our purposes, think of these ideas as general guidelines you can ask
+yourself when doing science. If you find that your work does not achieve
+FAIR status, then you're probably not being as open as you could be.
+We'll of course provide some tools to help you be FAIR and open.
+
+\hypertarget{schools}{%
+\section{Schools of thought}\label{schools}}
+
+Finally, it's useful to make a distinction of how different people may
+talk about open science. This can help you better navigate conversations
+and become an advocate for open science in your own right.
+
+A useful paradigm is provided by Fecher and Friesike (2014) to describe
+open science as five distinct schools of thought:
+
+\includegraphics{./img/fiveschools.PNG}
+
+These are of course only conceptual boxes and there's considerable
+overlap across all schools when open science is used in practice. For
+our purposes, we'll be talking about ideas and tools from the pragmatic,
+infrastructure, and democratic schools of the thought. The end goal is
+to provide you with the means to create more efficient and impactful
+science that can more readily be used by others in a collaborative
+setting.
+
+\includegraphics[width=1em,height=1em]{./basics_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+How do you currently define open science? Has any of the above changed
+your understanding of what open science means for research and/or
+resource management?
+
+\bookmarksetup{startatroot}
+
+\hypertarget{collaborate}{%
+\chapter{Open science for collaboration}\label{collaborate}}
+
+\hypertarget{lesson-outline-1}{%
+\section{Lesson Outline}\label{lesson-outline-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{goals-and-motivation-3}{Goals and motivation}
+\item
+  \protect\hyperlink{essential-elements-of-collaboration}{Essential
+  elements of collaboration}
+\item
+  \protect\hyperlink{tools-for-collaboration}{Tools for collaboration}
+\item
+  \protect\hyperlink{balancing-and-managing-expectations}{Balancing and
+  managing expectations}
+\end{itemize}
+
+\hypertarget{goals-and-motivation-1}{%
+\section{Goals and motivation}\label{goals-and-motivation-1}}
+
+This is the second module in our four hour workshop on open science.
+This module will explore some open science tools to help you and your
+team become better collaborators and to better engage your science with
+external partners. We'll introduce some essential elements of
+collaboration and discuss some readily available tools for doing so.
+We'll close with a discussion on balancing and managing expectations for
+collaboration in the rapidly evolving online arena.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Goal}: understand methods of collaboration and the pros/cons
+  of various tools
+\item
+  \textbf{Motivation}: start building the tools for your open science
+  toolbox
+\end{itemize}
+
+\hypertarget{essential-elements-of-collaboration}{%
+\section{Essential elements of
+collaboration}\label{essential-elements-of-collaboration}}
+
+We start our deep dive into open science by focusing on collaboration as
+the single most important activity that can be enhanced through
+transparent, efficient, and reproducible tools. Having effective tools
+to work together is a critical theme of many open science practices.
+There are many tools in the toolbox and we need to introduce some core
+concepts before we demonstrate how to implement them in practice.
+
+\hypertarget{workflow-management}{%
+\subsection{Workflow management}\label{workflow-management}}
+
+How do you organize your work each day? How do you make sure pressing
+deadlines are met on schedule? How do you plan for short-term and
+long-term goals? Do you have a five-year, ten-year, or longer career
+plan?
+
+Work to achieve goals cannot be accomplished without a systematic
+approach to organizing tasks. Chances are, we each have our own system
+that works for us that was developed through trial and error. Although
+everyone has familiar workflows, they are often idiosyncratic and deeply
+entrenched by habit. That can be in direct conflict with collaboration
+when we try to mesh internal workflows with those of others.
+
+Does this look familiar?
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{./img/old_files.png}
+
+}
+
+\end{figure}
+
+Although the above comic from \href{https://xkcd.com/}{xkcd} speaks
+directly to file management, it hints at a broader problem of personal
+information management that can seriously complicate working with
+others. I'm sure we've all struggled to find that one file for that one
+project from a vague recollection of seeing it a few months ago.
+
+Collaborative work can be facilitated through workflow management that
+helps you break out of old habits. We'll introduce some specific
+internet-based tools below to facilitate workflows either for yourself
+or, better yet, working with others. These can help propel you towards
+open science.
+
+Here, we introduce the
+\href{https://en.wikipedia.org/wiki/Kanban_(development)}{Kanban}
+approach to workflow management. The idea is simple. Create a
+task-oriented workflow using a card management system organized by
+progress. It looks something like this:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{./img/kanban.jpg}
+
+}
+
+\end{figure}
+
+As shown, this approach can work as a literal, physical board or as one
+used digitally through a web browser or other software. Every Kanban
+board has the following elements that allow you to work in a more
+informed manner:
+
+\begin{itemize}
+\tightlist
+\item
+  Provides a ``big picture'' of progress
+\item
+  Organizes progress by discrete steps
+\item
+  Establishes cards as specific tasks
+\end{itemize}
+
+Many of the open science tools we describe below use this system. It is
+a generalizable format that works in different settings, whether it be
+general project management or something more formal like software
+development.
+
+\includegraphics[width=1.25em,height=1em]{./collaborate_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+Workflow management in the real world - using GitHub to collaborate.
+
+\hypertarget{version-control}{%
+\subsection{Version control}\label{version-control}}
+
+A specific problem for workflow management that can be solved by open
+science tools is file management. Workflows can greatly be enhanced by
+tools that use strict guidelines for tracking changes and allowing a
+complete view of the evolution of a project. This is where version
+control comes in.
+
+I'm sure many of you have fallen into this trap:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{./img/filehell.png}
+
+}
+
+\end{figure}
+
+Version control is a way to track the development history of a project.
+It serves the joint purposes of:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Formally documenting the changes that have been made to code or
+  software
+\item
+  Making sure that the development history is permanent
+\item
+  Providing a system for collaborating across platforms (with friends!)
+\end{enumerate}
+
+It's more than saving files. Documenting changes with a set of commands
+that follow strict rules provides a transparent record for yourself and
+others, and establishing permanency ensures that any of the changes that
+are made can be vetted and accessed as needed. Think of it as an
+insurance plan for your project.
+
+By far, the most widely use software for version control is
+\href{https://git-scm.com/}{Git}. Although we do not cover the specifics
+of this software, it's useful to understand the purpose and what it can
+do in making your work more open and impactful. Git is integrated with
+many popular open source development platforms, such as
+\href{https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN}{RStudio}.
+
+Many people often confuse Git with
+\href{https://www.github.com}{GitHub}. GitHub is an online platform for
+working collaboratively through Git AND it allows you to be open with
+your work. We'll provide some examples below of how this can be done.
+Importantly, you do not need to be an expert in Git to be able to use
+GitHub. This speaks volumes for how team efficiency can be improved
+through better collaboration.
+
+\includegraphics[width=1.25em,height=1em]{./collaborate_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+Now we'll demonstrate how to setup a version control project with
+RStudio, Git, and GitHub.
+
+\hypertarget{data-repositories}{%
+\subsection{Data repositories}\label{data-repositories}}
+
+How data are treated as living, dynamic pieces of information is
+critical to the whole ethos of open science. This is especially true
+when the \protect\hyperlink{fair}{FAIR} principles are invoked. Data
+should not live on your hard drive as something only known to yourself.
+
+Although we will not cover data repositories in depth, it's important to
+recognize the critical role that data archiving and metadata have in
+open science. How many times have you thought ``wow, it would be great
+if I could have the data from this paper!'' Making data open is a great
+way to propel science through better collaboration.
+
+The ease of getting a dataset online depends on where you want to put
+the data. In all cases, your dataset should be tidy and accompanied by
+metadata. For simple solutions, such as FTP hosting or putting a dataset
+on Google Drive, all you need to do is upload the data by hand. However,
+this doesn't necessarily make it findable and the permanency is
+uncertain.
+
+The absolute best standard for hosting data online is through a
+\textbf{Federated Data Repository}:
+
+\begin{quote}
+An online network of connected repositories that use similar standards
+to collectively store data for discovery and access. Uploading a dataset
+to one node of a repository will make it available through all other
+nodes.
+\end{quote}
+
+Such repositories follow strict but necessary guidelines to ensure your
+data live forever so long as the internet exists. The data are
+definitely findable (e.g., through a web search), accessible (free to
+download), and interoperable (accepted standards are ensured). The
+``reproducible'' aspect can be debatable, but that can be solved through
+other means (e.g., code sharing).
+
+Some examples of data repositories, most are domain-specific:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://knb.ecoinformatics.org/}{KNB}: Knowledge Network for
+  Biocomplexity, a general purpose repository for ecological data
+\item
+  \href{https://www.hydroshare.org/}{HydroShare}: Data and models used
+  in hydrology
+\item
+  \href{https://opc.dataone.org/data}{OPC}: California Ocean Protection
+  Council, marine and coastal datasets
+\end{itemize}
+
+\hypertarget{code-of-conduct}{%
+\subsection{Code of Conduct}\label{code-of-conduct}}
+
+Every great collaborative team does not begin work before a Code of
+Conduct is created. This documents a set of community and social
+standards within which the work can be completed. It ensures all
+viewpoints are heard and respected and establishes a means by which
+conflicts can be resolved.
+
+Here's a great example from our friends at
+\href{https://www.openscapes.org/code-of-conduct/}{openscapes} and one
+from the \href{https://ropensci.org/code-of-conduct/}{ROpenSci}
+community. Some guidance for creating a code of conduct is also provided
+in this
+\href{https://ropensci.org/blog/2016/12/21/commcallv12-review-coc/}{blog
+post} from ROpenSci.
+
+The goal of every code of conduct is to ensure an agreed upon set of
+norms are used by all team members to help create a safe and positive
+experience.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+Develop a code of conduct for your group in a shared workspace. Items to
+consider:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What are reasonable expectations for the group members?
+\item
+  How is inclusion defined and encouraged?
+\item
+  How are similarities and differences recognized?
+\item
+  How will conflicts be managed?
+\end{enumerate}
+
+\hypertarget{tools-for-collaboration}{%
+\section{Tools for collaboration}\label{tools-for-collaboration}}
+
+Now we introduce some specific web-based tools that you can use to
+improve collaboration and openness. We present them as a suite of
+options to consider based on the pros and cons associated with each
+tool. This is by no means a comprehensive list, but it should get you
+started towards better collaboration to leverage open science.
+
+\hypertarget{slack}{%
+\subsection{Slack}\label{slack}}
+
+\includegraphics[width=0.15\textwidth,height=\textheight]{./img/slack-logo-icon.png}
+
+\url{https://slack.com/}
+
+\includegraphics[width=0.75em,height=1em]{./collaborate_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+What
+
+An online messaging platform for internal communication. Conversations
+can be organized by topic (via channels) or you can send direct messages
+to one or more team members. You can have multiple workspaces for
+different groups.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros
+
+Alleviate email overload through quick, informal messaging. Offers a
+fresh approach to online communication.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons
+
+Yet another thing to monitor. Free subscription limits archive of
+messages. Communication is limited to only those individuals in a
+workspace.
+
+\hypertarget{trello}{%
+\subsection{Trello}\label{trello}}
+
+\includegraphics[width=0.15\textwidth,height=\textheight]{./img/trello.png}
+
+\url{https://trello.com/}
+
+\includegraphics[width=0.75em,height=1em]{./collaborate_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+What
+
+A Kanban style workflow organization platform. Can be used for personal
+organization or in teams. Card management allows you to assign due
+dates, add attachments, make checklists, assign tasks to yourself or
+team members, and label by themes.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros
+
+Easy to use and can upgrade with ``power-ups'' for integration with
+other services (e.g., Google). Use across locations (e.g., from home or
+in the office) is easy because it's based in a web browser.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons
+
+Not entirely open because it's only visible to yourself or those you
+explicitly invite. Free version is limited to only a handful of
+``power-ups''.
+
+\hypertarget{google-drive}{%
+\subsection{Google Drive}\label{google-drive}}
+
+\includegraphics[width=0.15\textwidth,height=\textheight]{./img/Google_Drive_logo.png}
+
+\url{https://google.com/drive}
+
+\includegraphics[width=0.75em,height=1em]{./collaborate_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+What
+
+Cloud-based platform for sharing documents, worksheets, slides, etc.
+Follows a familiar file-based GUI structure that is common to most
+operating systems.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros
+
+Easy to use and can be a very open space for collaboration. Fairly
+interoperable with different file formats. Some functionality with
+version control (i.e., ability to ``revert'' to previous versions and to
+view changes).
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons
+
+Requires a Google account and access can be tricky depending on
+institution. Even though some versioning is provided, the format can
+encourage poor file management. Who knows what Google is doing with your
+data.
+
+\hypertarget{office-365}{%
+\subsection{Office 365}\label{office-365}}
+
+\includegraphics[width=0.25\textwidth,height=\textheight]{./img/office365.png}
+
+\url{https://www.microsoft.com/en-us/microsoft-365}
+
+\includegraphics[width=0.75em,height=1em]{./collaborate_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+What
+
+Cloud-based platform for secure sharing of Microsoft documents,
+worksheets, slides, etc.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros
+
+Easy to use and fully supports Microsoft products. Low barrier of
+inclusion to others that are already using Microsoft products (should be
+most folks).
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons
+
+Requires a Microsoft account and access can be tricky depending on
+institution. Maintains dependency on expensive Microsoft products that
+don't facilitate reproducibility. Very often used in closed workflows.
+
+\hypertarget{github}{%
+\subsection{GitHub}\label{github}}
+
+\includegraphics[width=0.25\textwidth,height=\textheight]{./img/Octocat.png}
+
+\url{https://github.com}
+
+\includegraphics[width=0.75em,height=1em]{./collaborate_files/figure-pdf/fa-icon-8447cf12acba1bc263badfefa79f6dd7.pdf}
+What
+
+Cloud-based platform for sharing code with Git version control. Supports
+sharing of most file types, although code and text-based files are the
+primary use.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Pros
+
+Collaborative and fully transparent work environment for files under
+version control. Supports workflow management through issue tracking and
+Kanban style project boards. Links to third-party platforms for
+archiving and DOI generation (e.g., \href{https://zenodo.org/}{Zenodo}).
+Octocat mascot is super cute.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-c9ddf618df48250f2c0ed0cb59d4f20d.pdf}
+Cons
+
+Learning curve is steep if you want to fully leverage version control.
+Not a formal data archival service by itself and file sizes are limited.
+
+\includegraphics[width=1.25em,height=1em]{./collaborate_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+Setting up a project management system with GitHub.
+
+\includegraphics[width=1em,height=1em]{./collaborate_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+In small groups, setup a shared workspace using GitHub and create a
+project management board.
+
+\hypertarget{balancing-and-managing-expectations}{%
+\section{Balancing and managing
+expectations}\label{balancing-and-managing-expectations}}
+
+Adopting new workflows and tools to facilitate collaboration are steps
+in the right direction for open science. Clearly, change from
+established norms and practices is not easy. It's important to develop a
+realistic expectation of how this change may play out in the wild.
+
+First, realize that these changes are not going to happen overnight.
+Breaking free of entrenched workflows is like quitting bad habits. It's
+not easy because they're comfortable, familiar, and often habitual.
+Start small and work gradually towards adopting new ideas. Incremental
+progress is the name of the game.
+
+Getting others on board is another serious challenge. The sources of
+frustration you might have at the personal level apply to anyone else
+working in your team. Even more so, institutional roadblocks may exist.
+New software can raise red flags for IT support staff. It's important to
+work with them to develop trust for the software and an accepted process
+for installation.
+
+Finally, the tools above are temporary. The single constant in open
+science is change. Use the tools with full realization that they may be
+appropriate for now, but something (hopefully) better will replace it in
+the future.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{impact}{%
+\chapter{Open science for impactful products}\label{impact}}
+
+\hypertarget{lesson-outline-2}{%
+\section{Lesson Outline}\label{lesson-outline-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{goals-and-motivation-3}{Goals and motivation}
+\item
+  \protect\hyperlink{data-as-the-foundation-for-open-science}{Data as
+  the foundation for open science}
+\item
+  \protect\hyperlink{tidy}{Principles of tidy data}
+\item
+  \protect\hyperlink{data-dictionaries}{Data dictionaries}
+\item
+  \protect\hyperlink{importance-of-metadata}{Importance of metadata}
+\end{itemize}
+
+\hypertarget{goals-and-motivation-2}{%
+\section{Goals and motivation}\label{goals-and-motivation-2}}
+
+This is the third module in our four hour workshop on open science. Now
+we focus on core principles for data management as the foundation for
+open science. We discuss the role of data management to support
+decisions using open science. Then, we introduce the concepts of tidy
+data as a unified format for storing information. We close with a
+discussion of metadata concepts and tools to make sure your data have a
+life beyond the project.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Goal}: understand best practices for data management as a key
+  concept for open science
+\item
+  \textbf{Motivation}: cultivate data as a living, shared resource
+\end{itemize}
+
+\hypertarget{data-as-the-foundation-for-open-science}{%
+\section{Data as the foundation for open
+science}\label{data-as-the-foundation-for-open-science}}
+
+In the last module, we talked about collaboration as the single most
+important activity of open science. So, why are we now talking about
+data management? Understanding the tools of collaboration allows you to
+better engage with your colleagues and partners, but open engagement
+will mean nothing if your data look like garbage.
+
+\begin{figure}
+
+{\centering \includegraphics[width=4in,height=\textheight]{./img/datameme.jpg}
+
+}
+
+\end{figure}
+
+You can probably recall several past instances when poor data management
+has been a challenge for open collaboration. Here are a few real-world
+examples:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A collaborator calls you on the phone asking about a historical
+  dataset from an old report. You spend several hours tracking down this
+  information because you don't know where it is. The data you
+  eventually find and provide to your collaborator has no documentation
+  and they don't know how to use it or use it inappropriately.
+\item
+  You receive a deliverable from a project partner that was stipulated
+  in a scope of work. This deliverable comes in multiple formats with no
+  reproducible workflow to recreate the datasets. You are unable to
+  verify the information, eroding your faith in the final product and
+  making it impossible to update the results in the future.
+\item
+  An annual reporting product requires using new data each year. The
+  staff member in charge of this report spends several days gathering
+  the new data and combining it with the historical data. Other projects
+  are on hold until this report is updated. Stakeholders that use this
+  report to make decisions do not trust or misunderstand the product
+  because the steps for its creation are opaque.
+\end{enumerate}
+
+Anybody who has ever worked with data knows that it comes in many shapes
+and sizes, most more like the right side of the above picture. Poor data
+management occurs for many reasons, but here's a few of the common
+reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  What's easy for recording data doesn't usually translate to easy
+  analysis
+\item
+  Egregious use of Excel as data management software
+\item
+  Metadata is a chore that is often an afterthought
+\end{itemize}
+
+It's often said that 90\% of working with data is cleaning (or
+``wrangling''), whereas the actual analysis and interpretation part is a
+small fraction of your total effort. Using better data management
+practices will not only help you save time, it's also a service for your
+colleagues and future collaborators. Therefore, better data management
+leads to more open science.
+
+The \protect\hyperlink{fair}{FAIR} principles outlined in the first
+module are especially useful when working with data for open science
+applications. Many of the collaborative tools in the second module can
+help you work towards putting FAIR data into practice. In this module,
+we'll go a step further to discuss how data structure, including
+metadata, can produce a FAIR dataset.
+
+\hypertarget{tidy}{%
+\section{Principles of tidy data}\label{tidy}}
+
+At their core, tabular data allow you to store information as
+observations in rows and variables in columns, yet it's very common to
+try to make a data table more than it should be. Unless you spend a lot
+of time working with data, it can be difficult to recognize common
+mistakes that lead to \emph{table abuse}.
+
+Before we get into tidy data, we need to discuss some of the downfalls
+of Excel as a data management system. There are
+\href{http://www.eusprig.org/horror-stories.htm}{many examples} that
+demonstrate how Excel has contributed to costly mistakes through the
+abuse of tables, often to the detriment of science (Ziemann, Eren, and
+El-Osta 2016).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{./img/excel_dates.JPG}
+
+}
+
+\end{figure}
+
+Excel allows you to abuse your data in many ways, such as adding color
+to cells, embedding formulas, and automatically formatting cell types.
+The problem occurs when this organization becomes ambiguous and only has
+meaning inside the head of the person who created the spreadsheet.
+Embedding formulas that reference specific locations in or across
+spreadsheets is also a nightmare scenario for reproducibility.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\textwidth,height=\textheight]{./img/excel_bad.png}
+
+}
+
+\end{figure}
+
+If you absolutely must use Excel to store data, the only acceptable
+format is a rectangular, flat file. What do we mean by this?
+
+A \textbf{rectangular} file:
+
+\begin{quote}
+Store data only in rows and columns in matrix format (e.g., 10 rows x 5
+columns), with no ``dangling'' cells that have values outside of the
+grid or more than one table in a spreadsheet.
+\end{quote}
+
+A \textbf{flat} file:
+
+\begin{quote}
+No cell formatting, no embedded formulas, no multiple spreadsheets in
+the same file, and data entered only as alphanumeric characters.
+\end{quote}
+
+Broman and Woo (2018) provide an excellent guide that expands on these
+ideas. Essentially, these best practices force you to isolate the
+analysis from the data - many people use Excel to mix the two, leading
+to problems.
+
+Now we can talk about tidy data. The ``tidy'' data principles developed
+by Hadley Wickham (Wickham 2014) are a set of simple rules for storing
+tabular data that have motivated the development of the wildly popular
+\href{https://www.tidyverse.org/}{tidyverse} suite of R packages
+(Wickham et al. 2019). The rules are simple:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Each variable must have its own column;
+\item
+  Each observation must have its own row; and,
+\item
+  Each value must have its own cell.
+\end{enumerate}
+
+Graphically, these rules are shown below (from Wickham and Grolemund
+2017):
+
+\includegraphics[width=6.4in,height=\textheight]{./img/tidy-1.png}
+
+Using these principles for data storage may seem unnatural at first
+because of a difference between what's easy for entering data versus
+what makes sense for downstream analyses. For example, dates are often
+spread across multiple columns, such as having one column for each year
+of data where the header indicates the year that applies to data in each
+column.
+
+Using a tidy format also allows you to more easily join data between
+tables. This is a common task when you have information spread between
+different tables because: 1) it might not make sense to keep the data in
+the same table, and 2) the analysis depends on information from both
+tables. Tidy data shared between tables can be linked using a ``key'' as
+a common identifier.
+
+\includegraphics[width=6.26in,height=\textheight]{./img/joins.png}
+
+\includegraphics[width=1.25em,height=1em]{./impact_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+Making an
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx}{untidy}
+dataset
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx}{tidy}
+using Excel.
+
+\includegraphics[width=1.25em,height=1em]{./impact_files/figure-pdf/fa-icon-5a0e5cd7bfbf585f8546c1ff4cebae73.pdf}
+Watch and learn
+
+Making an
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx}{untidy}
+dataset
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx}{tidy}
+using R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tidyr)}
+
+\CommentTok{\# import and wrangle}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{\textquotesingle{}data/untidy.xlsx\textquotesingle{}}\NormalTok{, }\AttributeTok{skip =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fill}\NormalTok{(Location) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \StringTok{\textasciigrave{}}\AttributeTok{2019}\StringTok{\textasciigrave{}}\SpecialCharTok{:}\StringTok{\textasciigrave{}}\AttributeTok{2021}\StringTok{\textasciigrave{}}\NormalTok{, }\AttributeTok{names\_to =} \StringTok{\textquotesingle{}Year\textquotesingle{}}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{\textquotesingle{}acres/category\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{separate}\NormalTok{(}\AttributeTok{col =} \StringTok{\textasciigrave{}}\AttributeTok{acres/category}\StringTok{\textasciigrave{}}\NormalTok{, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}acres\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}category\textquotesingle{}}\NormalTok{), }\AttributeTok{sep =} \StringTok{\textquotesingle{}/\textquotesingle{}}\NormalTok{)}
+\NormalTok{dat}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1em,height=1em]{./impact_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+Now try it on your own. Download the
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/untidy.xlsx}{untidy}
+dataset and make it tidy using your preferred software.
+
+\hypertarget{data-dictionaries}{%
+\section{Data dictionaries}\label{data-dictionaries}}
+
+Once you understand the tidy principles, you'll find that analysis is
+much, much easier. More importantly, this also facilitates documentation
+for the explicit purpose of more open sharing. As responsible data
+stewards, we need to think of data as a living resource for open
+collaboration that is not just a means for more conventional scientific
+products (e.g., a publication). Data are increasingly being documented
+and cited as unique entities and we need proper documentation to help
+support the FAIR principles.
+
+A good first step in documentation is to create a data dictionary. This
+will help us when we start creating
+\protect\hyperlink{importance-of-metadata}{metadata}. Think of this as
+the specific description of the contents of a tabular data file.
+Developing a data dictionary not only helps with metadata, but also
+helps you think more clearly about your data.
+
+A data dictionary describes column names and the type of data in each
+column. Simple things like how you name a data column can have larger
+implications for downstream analysis pipelines or interpretability of a
+dataset.
+
+Here's an example of a data dictionary for a made up dataset. Without
+seeing the actua data, you get a good sense of what's included and
+acceptable values for adding new data.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\textwidth,height=\textheight]{./img/datadict.png}
+
+}
+
+\end{figure}
+
+Here we provide some general guidelines for developing your own data
+dictionary.
+
+\begin{itemize}
+\item
+  Column names
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Be as descriptive as possible while trying to keep the name as short
+    as possible. Really long names with lots of detail can be just as
+    frustrating as very short names with very little detail. The column
+    name should be intuitive to point the analyst in the right
+    direction.\\
+  \item
+    Try to avoid spaces or commas in column names since some software
+    may interpret that as the start of a new column.\\
+  \item
+    It may also be useful to identify a ``plot name'' for each column
+    name that uses proper spelling, punctuation, and units (if
+    applicable). Using a column name directly in a graphic is generally
+    a bad idea since their meaning outside of the dataset may not be
+    obvious.
+  \end{itemize}
+\item
+  Data types
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Describe the type of data in each column, e.g., numerical
+    measurements, categorical descriptors, or counts of observations.
+    Never, ever mix data types in the same column.\\
+  \item
+    If your data are continuous numeric values, try to identify an
+    acceptable range for the values, e.g., are there minimum or maximum
+    values that would indicate the data are out of range? Also make note
+    of the units that were used.\\
+  \item
+    For categorical descriptors, identify all possible categories that
+    are acceptable values for the column, e.g., small, medium, or large
+    for a qualitative descriptor of size.\\
+  \item
+    For dates, make note of the format, e.g., YYYY-MM-DD. For time,
+    identify the timezone.
+  \end{itemize}
+\end{itemize}
+
+\includegraphics[width=1em,height=1em]{./impact_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+Create a data dictionary for the
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx}{tidy}
+dataset from the previous example.
+
+\hypertarget{importance-of-metadata}{%
+\section{Importance of metadata}\label{importance-of-metadata}}
+
+How many times have you been sent a dataset without any idea what it
+contains or why it was created? How are you sure the information is
+valid and that your analysis takes into account the limitations of the
+data? How many times have you willfully sent someone a dataset without
+fully providing this information?
+
+Without metadata it's impossible to know critical details about a
+dataset that can inform its analysis, and more importantly, its use to
+inform decision-making. Curating data should be synonymous with metadata
+generation and is an important part of open science. We cannot provide
+open data in good faith without also providing metadata.
+
+Metadata is literally defined as ``data about data''. It varies from
+simple text descriptions of a dataset, such as ``who'', ``what'',
+``when'', ``where'', ``why'', and ``how'', to more formalized standards
+with the intent of preparing your data for archival in a long-term
+repository. A useful definition is provided by Gilliland (2016):
+
+\begin{quote}
+A suite of industry or disciplinary standards as well as additional
+internal and external documentation and other data necessary for the
+identification, representation, interoperability, technical management,
+performance, and use of data contained in an information system.
+\end{quote}
+
+Why don't we see more metadata in the wild? Short answer is that it's
+often an afterthought, if considered at all. Creating metadata is
+usually tedious and the return on investment is not apparent at onset of
+a project. However, the collective growth of sciences and its
+application to real world problems is dependent on metadata.
+
+The US Geological Survey provides a useful document on creating
+\href{https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/Metadata\%20in\%20Plain\%20Language_508compliant.pdf}{Metadata
+in ``plain language''} to distill the basic information contained in a
+metadata file. It provides a workflow for answering the ``who'',
+``what'', ``when'', ``where'', ``why'', and ``how'' questions for
+metadata. Below is a brief synopsis:
+
+\begin{quote}
+What does the dataset describe?
+\end{quote}
+
+Information here would include very basic details about the dataset
+including a \textbf{title}, \textbf{geographic extent}, and
+\textbf{period of time} covered by the data. For geographic extent, this
+may often include explicit coordinates covering the study area. Location
+is useful for indexing your dataset relative to others, if for example,
+a researcher wanted to find data for all studies in the geographic
+extent of Tampa Bay.
+
+\begin{quote}
+Who produced the dataset?
+\end{quote}
+
+This would be yourself and anyone else who has made a significant
+contribution to the development of a dataset. Data are increasingly
+being used as citable resources and including individuals that were
+important in its generation ensures proper attribution. If someone has
+spent hours toiling in the field to collect the data or hours visually
+scanning a spreadsheet for quality control, include them!
+
+\begin{quote}
+Why was the dataset created?
+\end{quote}
+
+Describing why a dataset was created is critically important for
+understanding context. If others want to use your data, they need to
+know if it's appropriate for their needs. Here you would describe the
+goal or objectives of the research for which the data were collected. It
+should be clear if there are limitations in your data defined by your
+goals.
+
+\begin{quote}
+How was the dataset created?
+\end{quote}
+
+Here you would describe the methods used to generate the data, e.g.,
+field sampling techniques, laboratory methods, etc. This information is
+important so others can know if you've used proper and accepted methods
+for generating the data. Citing existing SOPs or methods that are
+recognized standards in your field would be appropriate.
+
+\begin{quote}
+How reliable are the data?
+\end{quote}
+
+It's also important to explicitly note instances when the data could be
+questionable or inappropriate to use. Here you could describe any
+quality assurance or quality control (QAQC) checks that were used on the
+data. There are often formalized ways to do so, such as codes or
+descriptors in tabular data defining QAQC values (e.g., data in range,
+below detection limits, sensor out of service, etc.).
+
+\begin{quote}
+How can someone get a copy of the dataset?
+\end{quote}
+
+Good metadata has information on who contact for getting the data. This
+contact may not be the same as who created the dataset (e.g., IT staff).
+For archived or publicly available data, this information is more
+important for who to contact should someone have questions. Information
+on obtaining a copy of the data should also describe any special
+software or licensing issues related to accessing the data.
+
+Once you've gathered this information, how do you turn it into literal
+metadata? It depends on how deep you want to go. At it's simplest, your
+metadata could be a simple text file with answers to the questions. Or
+it could be a specific file format used by modern data archive
+repositories (e.g., \href{https://docs.ropensci.org/EML/}{EML} format).
+
+Here's an example of a bare bones metadata file. One could easily type
+this up in a text file or spreadsheet.
+
+\includegraphics[width=6.17in,height=\textheight]{./img/desotometa.PNG}
+
+\includegraphics[width=1em,height=1em]{./impact_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+Create a metadata file for the
+\href{https://github.com/tbep-tech/cerf-os-workshop/raw/master/data/tidy.xlsx}{tidy}
+dataset from the previous example. Just start by using your data
+dictionary and develop narrative answers for ``who'', ``what'',
+``when'', ``where'', ``why'', and ``how'' to describe your dataset. Get
+creative with your descriptions since this is a made up dataset.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{implement}{%
+\chapter{Lowering barriers to inclusion and addressing key
+critiques}\label{implement}}
+
+\hypertarget{lesson-outline-3}{%
+\section{Lesson Outline}\label{lesson-outline-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{goals-and-motivation-3}{Goals and motivation}
+\item
+  \protect\hyperlink{learning-curves}{Learning curves}
+\item
+  \protect\hyperlink{fear-of-exposure}{Fear of exposure}
+\item
+  \protect\hyperlink{what-does-it-mean-to-be-open}{What does it mean to
+  be open?}
+\item
+  \protect\hyperlink{something-is-better-than-nothing}{Something is
+  better than nothing}
+\end{itemize}
+
+\hypertarget{goals-and-motivation-3}{%
+\section{Goals and motivation}\label{goals-and-motivation-3}}
+
+We finish our workshop with a discussion of what it means to use open
+science in the real world. It's great to talk about the value of open
+science and the tools you can use, but it's a completely different ball
+game when it comes to putting these ideas into practice. Our goal is
+that you leave this workshop an advocate and early adopter for the ideas
+we discussed today - spread these ideas to your peers and colleagues! To
+realistically achieve this goal, we will talk about some of the
+challenges you will face so you can develop a realistic expectation of
+what's to come.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Goal}: Understand common hurdles in adopting open science and
+  how to overcome them\\
+\item
+  \textbf{Motivation}: Become the ``open science'' expert at your
+  institution!
+\end{itemize}
+
+\hypertarget{learning-curves}{%
+\section{Learning curves}\label{learning-curves}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{./img/challenge.png}
+
+}
+
+\end{figure}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e38cc40f3c6469ef5f44a7764a5c5910.pdf}
+Challenge
+
+\emph{It's hard to learn new tools!}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Solution
+
+\emph{It's an investment, look to the community!}
+
+You've probably seen a graphic like this if you've ever taken a course
+in R or Python. The hope is that you're able to quickly reach the land
+of sunshine and bunnies, but the path is treacherous and even
+insurmountable for some.
+
+A huge obstacle in using open science is that the toolsets can have
+steep learning curves. More popular platforms, such as Excel, are used
+by many because they're simple and intuitive. However,
+\protect\hyperlink{tidy}{as noted earlier}, FAIR workflows and tools are
+sacrificed for ease of use.
+
+Although it's true that adopting new tools will slow forward progress,
+this is only temporary. Consider your path towards learning new
+platforms an investment in your future. The immediate benefit may not be
+apparent, but you'll soon wonder how you ever got by before.
+
+It's also helpful to think about the broader community that can support
+you along this journey. Learning alone can be discouraging and we
+strongly recommend that you tap into the diverse community of educators,
+mentors, bloggers, and friends that can help. Even you can create a
+community of practice!
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\textwidth,height=\textheight]{./img/code_hero.jpg}
+
+}
+
+\end{figure}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+How can you engage your peers to develop a shared workspace to learn new
+tools? What tools will you learn?
+
+\hypertarget{fear-of-exposure}{%
+\section{Fear of exposure}\label{fear-of-exposure}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{./img/fishbowl.png}
+
+}
+
+\end{figure}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e38cc40f3c6469ef5f44a7764a5c5910.pdf}
+Challenge
+
+\emph{Being open makes me nervous!}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Solution
+
+\emph{Being open helps you collaborate, increases competitiveness, and
+creates a better scientific product!}
+
+Practicing open science can feel like science in a fish bowl. Although
+this is kind of the goal, many view this transparency as a liability.
+Many fear having their ideas ``scooped'' or losing credibility because
+of greater exposure of mistakes. These are real concerns that require
+consideration when working towards more open workflows.
+
+In conventional academic settings, competition for resources (e.g., via
+grant funding) is a real issue and being open can be seen as a risk to
+the competitive edge. We cannot dismiss this fact, but rather we can
+think about a lack of openness as a hindrance to forward progress and
+stifled creativity.
+
+Think about being open as a means to finding your next collaborator.
+Creating \protect\hyperlink{fair}{FAIR} data opens the door for others
+to engage with your science. In fact, being open can increase the
+competitiveness of research proposals by building a stronger team that
+collaborates and shares data through better workflows.
+
+First time practitioners of open science also worry about the risk of
+``airing their dirty laundry''. By exposing the process and potential
+mistakes, many worry that their integrity as scientists may be
+questioned.
+
+These fears are unfounded as the scientific process by definition is
+iterative. Hypotheses are supported or refuted through trial and error -
+if you're getting your answer after one pass, you're probably not doing
+it right. Making the process more transparent can help build trust as
+your collaborators can better appreciate how decisions and conclusions
+were made.
+
+Mistakes in research are also very common, much more so than many people
+realize. By being open, it is true that mistakes are more visible, but
+this also provides a mechanism for fixing. Being open can lead to a
+better product by simply having more eyes on the process. It also helps
+normalize mistakes as part of the process - perfection is an unrealistic
+expectation.
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+What are your personal concerns about adopting open science?
+
+\hypertarget{what-does-it-mean-to-be-open}{%
+\section{What does it mean to be
+open?}\label{what-does-it-mean-to-be-open}}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e38cc40f3c6469ef5f44a7764a5c5910.pdf}
+Challenge
+
+\emph{People and institutions define open differently!}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Solution
+
+\emph{Understand the context and demonstrate the value!}
+
+Also realize that open science can mean different things to different
+people. By extension, this also applies to institutions. We presented
+the \protect\hyperlink{schools}{five schools} of open science to help
+conceptualize ideas and tools when we discuss what it means to different
+groups.
+
+Think about your employer and what they might care about if you advocate
+for adoption of open science. Do you need to convince them that there is
+value in being open? What is their value proposition? What are the
+hurdles to achieving openness at your institution?
+
+For many institutions, being open may come with IT hurdles as you push
+for alternative software platforms. Working with IT staff to develop
+trust and comfort for new software may be your burden, but as always,
+it's an investment in the future.
+
+Maybe there are legal contexts to being open. For example, Florida has
+\href{https://myfloridalegal.com/pages.nsf/Main/DC0B20B7DC22B7418525791B006A54E4}{the
+``Sunshine'' law} that makes all government communications public
+record. What does this mean for using new workflows in open science? Is
+this is an improvement or a liability (see
+\protect\hyperlink{fear-of-exposure}{previous section})?
+
+If you're an administrator or manager, maybe you're the one that makes
+the call about being open. It's important for you to create a culture
+that promotes and supports open science. Allow space and time for your
+staff to learn new skills. Realize that investing time in open science
+is an investment in the future.
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+What does being open mean to you? What do you think being open means to
+your employer?
+
+\hypertarget{something-is-better-than-nothing}{%
+\section{Something is better than
+nothing}\label{something-is-better-than-nothing}}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e38cc40f3c6469ef5f44a7764a5c5910.pdf}
+Challenge
+
+\emph{Doing all the things is impossible!}
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-e4ee65476be467d7be8a1ae9cb02ffda.pdf}
+Solution
+
+\emph{Start small, incremental progress is the name of the game!}
+
+First time open science enthusiasts can be overwhelmed by the apparent
+need to check all the boxes on the open science list. There's often a
+prevailing sentiment that you're not doing open science unless you do
+all the things. This is simply not true. Just remember that doing
+something is a huge improvement over doing nothing.
+
+Openness in science exists on a spectrum. Your goal should be
+incremental movement away from the completely closed end of the
+spectrum. Perhaps you set a goal of only accomplishing one open science
+task for a particular project. Maybe you start by developing a simple
+metadata text file or developing a data dictionary. Or maybe you make a
+commitment to try a new communication platform for collaborative
+engagement.
+
+Channeling this concept, Wilson et al. (2017) discuss ``good enough
+practices'' in scientific computing, acknowledging that very few of us
+are professionally trained in these disciplines and sometimes ``good
+enough'' is all we can ask for. Lowenberg et al. (2021) also advocate
+for simple adoption, rather than perfection, when it comes to data
+citation practices.
+
+So, be kind to yourself when learning new skills and realize that the
+first step will likely be frustration, but through frustration comes
+experience. The more comfortable you become with a new task, the more
+likely you'll be able to attempt additional tasks in the future.
+
+\includegraphics[width=1em,height=1em]{./implement_files/figure-pdf/fa-icon-20d474448f872ee43905e611a2502347.pdf}
+Exercise and discussion
+
+What are some simple things you can do to begin adopting open science?
+
+\bookmarksetup{startatroot}
+
+\hypertarget{resources-for-continued-learning}{%
+\chapter*{Resources for continued
+learning}\label{resources-for-continued-learning}}
+\addcontentsline{toc}{chapter}{Resources for continued learning}
+
+The following is a non-exhaustive list of additional resources you can
+use for continued learning on your open science journey.
+
+\hypertarget{open-science-websites}{%
+\subsection*{Open Science Websites}\label{open-science-websites}}
+\addcontentsline{toc}{subsection}{Open Science Websites}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://nceas.github.io/oss-2017/lessons.html}{NCEAS Open
+  Science for Synthesis 2017 workshop}
+\item
+  \href{https://learning.nceas.ucsb.edu/2020-02-RRCourse/}{NCEAS
+  Reproducible Research Techniques}
+\item
+  \href{https://osf.io/k75r9/}{Open Science Foundation open science
+  workshop}
+\item
+  \href{https://www.openscapes.org/}{Openscapes}
+\item
+  \href{https://openscapes.github.io/series/}{Openscapes Champions
+  Lesson Series}
+\item
+  \href{https://www.nature.com/articles/d41586-019-03335-4}{Supercharge
+  your research: A 10 week plan for open data science}
+\item
+  \href{https://ropensci.org/blog/2016/12/21/commcallv12-review-coc/}{ROpenSci
+  guidance on creating a Code of Conduct}
+\item
+  \href{https://noaa-iea.github.io/r3-train/index.html}{NOAA
+  Reproducible Reporting with R}
+\item
+  \href{https://peerj.com/collections/50-practicaldatascistats}{PeerJ
+  collection on practical data science}
+\end{itemize}
+
+\hypertarget{data-management-tools}{%
+\subsection*{Data Management Tools}\label{data-management-tools}}
+\addcontentsline{toc}{subsection}{Data Management Tools}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://environmentaldatainitiative.org/dm-resources/}{Environmental
+  Data Initiative Data Management Resources}
+\item
+  \href{https://dmptool.org/}{University of California DMPTool}
+\item
+  \href{https://www.usgs.gov/products/data-and-tools/data-management/metadata-creation}{US
+  Geological Survey resources for Metadata Creation}
+\item
+  \href{https://ds-wizard.org/}{ELIXIR and others Data Stewardship
+  Wizard}
+\item
+  \href{https://tbep-tech.github.io/data-management-sop}{TBEP Data
+  Management SOP}
+\end{itemize}
+
+\hypertarget{tbep-r-trainings}{%
+\subsection*{TBEP R Trainings}\label{tbep-r-trainings}}
+\addcontentsline{toc}{subsection}{TBEP R Trainings}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://tbep-tech.github.io/pep-r-training}{Peconic Estuary
+  Program R training},
+  \href{https://drive.google.com/file/d/1ZjVHFrVpw2uTKZw-BmD29umdbl6viutM/view?usp=sharing}{recording}
+\item
+  \href{https://tbep-tech.github.io/ecometab-r-training}{NERRS ecosystem
+  metabolism R training}
+  \href{https://tbep-tech.github.io/tbep-r-training/}{TBEP June 2020 R
+  training},
+  \href{https://www.youtube.com/watch?v=_RI4XMRWeV0\&list=PLfJ6-D-exF9RM5TPtT4T0nxieqpr_R4pJ}{recordings}
+\item
+  \href{https://tbep-tech.github.io/tbep-r-training/functions.html}{Writing
+  functions in R}
+\item
+  \href{https://tbep-tech.github.io/tbep-r-training/packages.html}{R
+  package development workflow}
+\item
+  \href{https://tbep-tech.github.io/tbep-r-training/shiny.html}{A soft
+  introduction to Shiny}
+\end{itemize}
+
+\hypertarget{r-lessons-tutorials}{%
+\subsection*{R Lessons \& Tutorials}\label{r-lessons-tutorials}}
+\addcontentsline{toc}{subsection}{R Lessons \& Tutorials}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://data-lessons.github.io/gapminder-R/}{Software Carpentry:
+  R for Reproducible Scientific Analysis}
+\item
+  \href{https://datacarpentry.org/geospatial-workshop/}{Data Carpentry:
+  Geospatial Workshop}
+\item
+  \href{http://www.datacarpentry.org/R-ecology-lesson/}{Data Carpentry:
+  R for Data Analysis and Visualization of Ecological Data}
+\item
+  \href{http://www.datacarpentry.org/spreadsheet-ecology-lesson/}{Data
+  Carpentry: Data Organization in Spreadsheets}
+\item
+  \href{https://www.r4wrds.com/}{R for Water Resources Data Science}
+\item
+  \href{https://www.rstudio.com/resources/webinars/}{RStudio Webinars,
+  many topics}
+\item
+  \href{http://rforcats.net/}{R For Cats: Basic introduction site, with
+  cats!}
+\item
+  \href{http://www.rstudio.com/resources/cheatsheets/}{Topical
+  cheatsheets from RStudio, also viewed from the help menu}
+\item
+  \href{http://cran.r-project.org/doc/contrib/Short-refcard.pdf}{Cheatsheet
+  from CRAN of base R functions}
+\item
+  \href{https://github.com/allisonhorst/stats-illustrations}{Totally
+  awesome R-related artwork by Allison Horst}
+\item
+  \href{http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf}{Color
+  reference PDF with text names},
+  \href{https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf}{Color
+  cheatsheet PDF from NCEAS}
+\end{itemize}
+
+\hypertarget{r-ebookscourses}{%
+\subsection*{R eBooks/Courses}\label{r-ebookscourses}}
+\addcontentsline{toc}{subsection}{R eBooks/Courses}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://stat545.com/}{Jenny Bryan's Stat545.com}
+\item
+  \href{http://r4ds.had.co.nz/}{Garrett Grolemund and Hadley Wickham's R
+  For Data Science}
+\item
+  \href{https://ismayc.github.io/moderndiver-book/}{Chester Ismay and
+  Albert Y. Kim's Modern DiveR}
+\item
+  \href{http://tidytextmining.com/}{Julia Silge and David Robinson Text
+  Mining with R}
+\item
+  \href{http://adv-r.had.co.nz/}{Hadley Wickham's Advanced R}
+\item
+  \href{https://r4ds.had.co.nz}{Hadley Wickham's R for Data Science}
+\item
+  \href{https://bookdown.org/yihui/rmarkdown/}{Yihui Xie R Markdown: The
+  Definitive Guide}
+\item
+  \href{http://www.cookbook-r.com/}{Winston Chang R Graphics Cookbook}
+\item
+  \href{http://book.ecosens.org/RSEbook/}{Wegman et al.~Remote Sensing
+  and GIS for Ecologists: Using Open Source Software}
+\item
+  \href{https://geocompr.robinlovelace.net/}{Lovelace et
+  al.~Geocomputation with R}
+\item
+  \href{https://keen-swartz-3146c4.netlify.app/index.html}{Edszer
+  Pebesma and Roger Bivand Spatial Data Science}
+\end{itemize}
+
+\hypertarget{gitgithub}{%
+\subsection*{Git/Github}\label{gitgithub}}
+\addcontentsline{toc}{subsection}{Git/Github}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://happygitwithr.com/}{Jenny Bryan's Happy Git and Github
+  for the useR}
+\item
+  \href{https://ourcodingclub.github.io/2017/02/27/git.html}{Coding Club
+  Intro to Github}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-Beck20}{}}%
+Beck, M. W., C. O'Hara nad J. S. S. Lowndes, R. D. Mazor, S. Theroux, D.
+J. Gillett, B. Lane, and G. Gearheart. 2020. {``The Importance of Open
+Science for Biological Assessment of Aquatic Environments.''}
+\emph{PeerJ} 8: e9539.
+https://doi.org/\url{https://doi.org/10.7717/peerj.9539}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Broman18}{}}%
+Broman, K. W., and K. H. Woo. 2018. {``Data Organization in
+Spreadsheets.''} \emph{The American Statistician} 72 (1): 2--10.
+\url{https://doi.org/10.1080/00031305.2017.1375989}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Fecher14}{}}%
+Fecher, B., and S. Friesike. 2014. {``Open Science: One Term, Five
+Schools of Thought.''} In \emph{Opening Science}, 17--47. Springer,
+Cham.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Gilliland16}{}}%
+Gilliland, A. J. 2016. {``Setting the Stage.''} In \emph{Introduction to
+Metadata}, 3rd ed. Los Angeles, California: Getty Publications.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Hampton15}{}}%
+Hampton, S. E., S. S. Anderson, S. C. Bagby, C. Gries, X. Han, E. M.
+Hart, M. B. Jones, et al. 2015. {``The Tao of Open Science for
+Ecology.''} \emph{Ecosphere} 6 (7): 1--13.
+\url{https://doi.org/10.1890/ES14-00402.1}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Lowenberg21}{}}%
+Lowenberg, Daniella, Rachael Lammey, Matthew B Jones, John Chodacki, and
+Martin Fenner. 2021. {``Data Citation: Let's Choose Adoption over
+Perfection.''} Zenodo. \url{https://doi.org/10.5281/zenodo.4701079}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Lowndes17}{}}%
+Lowndes, J. S. S., B. D. Best, C. Scarborough, J. C. Afflerbach, M. R.
+Frazier, C. C. O'Hara, N. Jiang, and B. S. Halpern. 2017. {``Our Path to
+Better Science in Less Time Using Open Data Science Tools.''}
+\emph{Nature Ecology \& Evolution} 1 (0160): 1--7.
+\url{https://doi.org/10.1038/s41559-017-0160}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Michener97}{}}%
+Michener, W. K., J. W. Brunt, J. J. Helly, T. B. Kirchner, and S. G.
+Stafford. 1997. {``Nongeospatial Metadata for the Ecological
+Sciences.''} \emph{Ecological Applications} 7 (1): 330--42.
+https://doi.org/\url{https://doi.org/10.1890/1051-0761(1997)007\%5B0330:NMFTES\%5D2.0.CO;2}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wickham14c}{}}%
+Wickham, H. 2014. {``Tidy Data.''} \emph{Journal of Statistical
+Software} 59 (10): 1--23. \url{https://doi.org/10.18637/jss.v059.i10}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wickham19}{}}%
+Wickham, H., M. Averick, J. Bryan, W. Chang, L. D'Agostino McGowan, R.
+François, G. Grolemund, et al. 2019. {``Welcome to the {tidyverse}.''}
+\emph{Journal of Open Source Software} 4 (43): 1686.
+\url{https://doi.org/10.21105/joss.01686}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wickham17}{}}%
+Wickham, H., and G. Grolemund. 2017. \emph{R for Data Science}.
+Sebastopol, California: O'Reilly.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wilkinson16}{}}%
+Wilkinson, M. D., M. Dumontier, I. J. Aalbersberg, G. Appleton, M.
+Axton, A. Baak, N. Blomberg, et al. 2016. {``The FAIR Guiding Principles
+for Scientific Data Management and Stewardship.''} \emph{Scientific
+Data} 3 (160018). \url{https://doi.org/10.1038/sdata.2016.18}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wilson17}{}}%
+Wilson, G., J. Bryan, K. Cranston, J. Kitzes, L. Nederbragt, and T. K.
+Teal. 2017. {``Good Enough Practices in Scientific Computing.''}
+\emph{PLoS Computational Biology} 13 (6): e1005510.
+\url{https://doi.org/10.1371/journal.pcbi.1005510}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Ziemann16}{}}%
+Ziemann, M., Y. Eren, and A. El-Osta. 2016. {``Gene Name Errors Are
+Widespread in the Scientific Literature.''} \emph{Genome Biology} 17
+(1): 1--3. \url{https://doi.org/10.1186/s13059-016-1044-7}.
+
+\end{CSLReferences}
+
+
+
+\end{document}
