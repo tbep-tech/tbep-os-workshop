@@ -33,7 +33,7 @@ We finish our workshop with a discussion of what it means to use open science in
 knitr::include_graphics('img/challenge.png')
 ```
 
-<h4>`r fa('exclamation-circle')` Challenge</h4> 
+<h4>`r fa('circle-exclamation')` Challenge</h4> 
 
 *It's hard to learn new tools!*
 
@@ -67,7 +67,7 @@ How can you engage your peers to develop a shared workspace to learn new tools? 
 knitr::include_graphics('img/fishbowl.png')
 ```
 
-<h4>`r fa('exclamation-circle')` Challenge</h4> 
+<h4>`r fa('circle-exclamation')` Challenge</h4> 
 
 *Being open makes me nervous!*
 
@@ -93,7 +93,7 @@ What are your personal concerns about adopting open science?
 
 ## What does it mean to be open?
 
-<h4>`r fa('exclamation-circle')` Challenge</h4> 
+<h4>`r fa('circle-exclamation')` Challenge</h4> 
 
 *People and institutions define open differently!*
 
@@ -117,7 +117,7 @@ What does being open mean to you? What do you think being open means to your emp
 
 ## Something is better than nothing
 
-<h4>`r fa('exclamation-circle')` Challenge</h4> 
+<h4>`r fa('circle-exclamation')` Challenge</h4> 
 
 *Doing all the things is impossible!*
 

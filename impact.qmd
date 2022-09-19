@@ -104,11 +104,11 @@ Using a tidy format also allows you to more easily join data between tables.  Th
 knitr::include_graphics('img/joins.png')
 ```
 
-<h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using Excel. 
 
-<h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using R.
 

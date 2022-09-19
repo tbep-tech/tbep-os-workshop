@@ -61,7 +61,7 @@ As shown, this approach can work as a literal, physical board or as one used dig
 
 Many of the open science tools we describe below use this system. It is a generalizable format that works in different settings, whether it be general project management or something more formal like software development. 
 
-<h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Workflow management in the real world - using GitHub to collaborate.
 
@@ -89,7 +89,7 @@ By far, the most widely use software for version control is [Git](https://git-sc
 
 Many people often confuse Git with [GitHub](https://www.github.com){target="_blank"}. GitHub is an online platform for working collaboratively through Git AND it allows you to be open with your work. We'll provide some examples below of how this can be done.  Importantly, you do not need to be an expert in Git to be able to use GitHub.  This speaks volumes for how team efficiency can be improved through better collaboration. 
 
-<h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Now we'll demonstrate how to setup a version control project with RStudio, Git, and GitHub.
 
@@ -234,7 +234,7 @@ Collaborative and fully transparent work environment for files under version con
 
 Learning curve is steep if you want to fully leverage version control. Not a formal data archival service by itself and file sizes are limited.
 
-<h3>`r fa('chalkboard-teacher')` Watch and learn</h3>
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Setting up a project management system with GitHub.
 

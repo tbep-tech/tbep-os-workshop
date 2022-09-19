@@ -18,16 +18,16 @@ By the end of this workshop, you should have a solid understanding of fundamenta
 
 ## Agenda
 
-1. [The basics of open science](#basics) (__30 min__)
-1. [Open science for collaboration](#collaborate) (__90 min__)
-1. [Open science for impactful products](#impact) (__90 min__)
-1. [Lowering barriers to inclusion and addressing key critiques](#implement) (__30 min__)
+1. [The basics of open science](#basics) 
+1. [Open science for collaboration](#collaborate)
+1. [Open science for impactful products](#impact) 
+1. [Lowering barriers to inclusion and addressing key critiques](#implement)
 
 Each module uses a set of common icons to orient you to specific tasks or experiences during this workshop.  These include the following:
 
 <h4>`r fa('hat-wizard')` Exercise and discussion</h4>
 
-<h4>`r fa('chalkboard-teacher')` Watch and learn</h4>
+<h4>`r fa('chalkboard-user')` Watch and learn</h4>
 
 <h4>`r fa('question')` Description of a collaborative tool</h4>
 
@@ -35,7 +35,7 @@ Each module uses a set of common icons to orient you to specific tasks or experi
 
 <h4>`r fa('thumbs-down')` Cons of a collaborative tool</h4>
 
-<h4>`r fa('exclamation-circle')` Challenge to overcome for open science</h4> 
+<h4>`r fa('circle-exclamation')` Challenge to overcome for open science</h4> 
 
 ## Instructors
 
