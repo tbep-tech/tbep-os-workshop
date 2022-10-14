@@ -10,17 +10,9 @@ execute:
 library(fontawesome)
 ```
 
-## Lesson Outline
-
-* [Goals and motivation]
-* [Why open science?]
-* [Learning and speaking the language of open science]
-* [The FAIR principles]
-* [Schools of thought]
-
 ## Goals and motivation
 
-This is the first module in our four hour workshop on open science.  This module describes the need for open science, how it can improve research applications, and exposes you to common ideas and terminology that we'll be using throughout the day.  Consider this your 30,000 foot view of open science.  Our later modules will provide more detail on specific topics in open science that you can use for continued learning.  
+This is the first module in our workshop on open science.  This module describes the need for open science, how it can improve research applications, and exposes you to common ideas and terminology that we'll be using throughout the day.  Consider this your 30,000 foot view of open science.  Our later modules will provide more detail on specific topics in open science that you can use for continued learning.  
 
 * __Goal__: get comfortable with key ideas and concepts for understanding open science
 * __Motivation__: This is the first step in your open science journey! 
@@ -50,7 +42,7 @@ It's dense, inaccessible, and there are probably questions about the underlying 
 
 __Why is this conventional approach to science ineffective at seeding change?__
 
-As I'm sure we're aware, the environmental management community is often siloed with each branch doing their own thing and speaking their own language.  Between the research (typically academic) and management community, we call this the research-management divide. 
+The environmental management community is often siloed with each branch doing their own thing and speaking their own language.  Between the research (typically academic) and management community, we call this the research-management divide. 
 
 ![](img/divide2.png)
 
@@ -104,7 +96,7 @@ From these key words, we can breakdown this definition into key principles.
      * Dynamic documents with source code 
      * Integration with external networks for discoverability
 
-You'll notice that web-based tools and open science are often discussed at the same time.  Science existed before the internet and open science often focuses on how the two can leverage and support one another despite the latter being a relatively new addition to society.  People often describe web-based tools as synonymous with open science.
+You'll notice that web-based tools and open science are often discussed at the same time.  Science existed before the internet. Open science often focuses on how the two can leverage and support one another despite the latter being a relatively new addition to society.  People often describe web-based tools as synonymous with open science.
 
 ## The FAIR principles {#fair}
 
@@ -131,4 +123,8 @@ These are of course only conceptual boxes and there's considerable overlap acros
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-How do you currently define open science? Has any of the above changed your understanding of what open science means for research and/or resource management?
+Take a few minutes to jot down your individual answers to the following questions.  When you're done, share amongst your peers at your table. 
+
+1. How do you currently define open science, if at all?
+1. What tools do you use in your job that facilitate collaboration or openness? 
+1. Has any of the above changed your understanding of what open science means for research and/or resource management?

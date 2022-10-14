@@ -10,17 +10,9 @@ execute:
 library(fontawesome)
 ```
 
-## Lesson Outline
-
-* [Goals and motivation]
-* [Data as the foundation for open science]
-* [Principles of tidy data]
-* [Data dictionaries]
-* [Importance of metadata]
-
 ## Goals and motivation
 
-This is the third module in our four hour workshop on open science. Now we focus on core principles for data management as the foundation for open science.  We discuss the role of data management to support decisions using open science.  Then, we introduce the concepts of tidy data as a unified format for storing information.  We close with a discussion of metadata concepts and tools to make sure your data have a life beyond the project.   
+This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science.  We discuss the role of data management to support decisions using open science.  Then, we introduce the concepts of tidy data as a unified format for storing information.  We close with a discussion of metadata concepts and tools to make sure your data have a life beyond the project.   
 
 * __Goal__: understand best practices for data management as a key concept for open science
 * __Motivation__: cultivate data as a living, shared resource
@@ -215,3 +207,23 @@ knitr::include_graphics('img/desotometa.PNG')
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
 Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 
+
+## Data repositories
+
+How data are treated as living, dynamic pieces of information is critical to the whole ethos of open science. This is especially true when the [FAIR](#fair) principles are invoked. Data should not live on your hard drive as something only known to yourself.
+
+Although we will not cover data repositories in depth, it's important to recognize the critical role that data archiving and metadata have in open science. How many times have you thought "wow, it would be great if I could have the data from this paper!" Making data open is a great way to propel science through better collaboration.
+
+The ease of getting a dataset online depends on where you want to put the data. In all cases, your dataset should be tidy and accompanied by metadata. For simple solutions, such as FTP hosting or putting a dataset on Google Drive, all you need to do is upload the data by hand. However, this doesn't necessarily make it findable and the permanency is uncertain.
+
+The absolute best standard for hosting data online is through a **Federated Data Repository**:
+
+> An online network of connected repositories that use similar standards to collectively store data for discovery and access. Uploading a dataset to one node of a repository will make it available through all other nodes.
+
+Such repositories follow strict but necessary guidelines to ensure your data live forever so long as the internet exists. The data are definitely findable (e.g., through a web search), accessible (free to download), and interoperable (accepted standards are ensured). The "reproducible" aspect can be debatable, but that can be solved through other means (e.g., code sharing).
+
+Some examples of data repositories, most are domain-specific:
+
+-   [KNB](https://knb.ecoinformatics.org/){target="_blank"}: Knowledge Network for Biocomplexity, a general purpose repository for ecological data
+-   [HydroShare](https://www.hydroshare.org/){target="_blank"}: Data and models used in hydrology
+-   [OPC](https://opc.dataone.org/data){target="_blank"}: California Ocean Protection Council, marine and coastal datasets

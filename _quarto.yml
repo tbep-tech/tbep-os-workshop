@@ -14,6 +14,7 @@ book:
     - implement.qmd
     - resources.qmd
     - references.qmd
+    - codeofconduct.qmd
 
 bibliography: refs.bib
 
