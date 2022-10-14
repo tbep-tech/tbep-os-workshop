@@ -16,6 +16,13 @@ Welcome to the Tampa Bay open science workshop. Open science (OS) has been advoc
 
 By the end of this workshop, you should have a solid understanding of fundamental concepts in open science and how they can be applied to help bridge the research-management divide. You will also have the skills to understand how collaborative open science tools can be used to increase efficiency and transparency, understand fundamental best practices for working with data to facilitate openness, and be able to apply these lessons within your own teams by effectively addressing barriers to adoption.
 
+## Prepare
+
+Please attend the workshop with a personal laptop and power supply. Make sure your laptop can access publicly avialable WiFi.  In addition, create an account for yourself on GitHub and ORCID:
+
+1. GitHub create account: [link](https://github.com)
+1. ORCID create account: [link](https://orcid.org/) 
+
 ## Agenda
 
 1.  [The basics of open science](#basics)

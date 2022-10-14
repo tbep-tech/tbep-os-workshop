@@ -12,7 +12,7 @@ library(fontawesome)
 
 ## Goals and motivation
 
-This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science.  We discuss the role of data management to support decisions using open science.  Then, we introduce the concepts of tidy data as a unified format for storing information.  We close with a discussion of metadata concepts and tools to make sure your data have a life beyond the project.   
+This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science.  We discuss the role of data management to support decisions using open science.  Then, we introduce the concepts of tidy data as a unified format for storing information.  We close with a discussion of metadata tools and data repositories to make sure your data have a life beyond the project.   
 
 * __Goal__: understand best practices for data management as a key concept for open science
 * __Motivation__: cultivate data as a living, shared resource
@@ -96,11 +96,11 @@ knitr::include_graphics('img/joins.png')
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using Excel. 
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using Excel. 
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using R.
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using R.
 
 ```{r}
 #| eval: true
@@ -115,13 +115,17 @@ library(tidyr)
 dat <- read_excel('data/untidy.xlsx', skip = 1) %>% 
   fill(Location) %>% 
   pivot_longer(cols = `2019`:`2021`, names_to = 'Year', values_to = 'acres/category') %>% 
-  separate(col = `acres/category`, into = c('acres', 'category'), sep = '/')
+  separate(col = `acres/category`, into = c('acres', 'category'), sep = '/') %>% 
+  mutate(
+    Year = as.numeric(Year), 
+    acres = as.numeric(acres)
+  )
 dat
 ```
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset and make it tidy using your preferred software. 
+Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset and make it tidy using your preferred software. Compare your tidied dataset with [this one](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) to see if you've done it right. 
 
 ## Data dictionaries
 
@@ -156,7 +160,7 @@ Here we provide some general guidelines for developing your own data dictionary.
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a data dictionary for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. 
+Create a data dictionary for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Use a spreadsheet to create a table to describe the column names, data type, acceptable values, and a description. 
 
 ## Importance of metadata
 
@@ -206,7 +210,7 @@ knitr::include_graphics('img/desotometa.PNG')
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 
+Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 
 
 ## Data repositories
 
@@ -227,3 +231,12 @@ Some examples of data repositories, most are domain-specific:
 -   [KNB](https://knb.ecoinformatics.org/){target="_blank"}: Knowledge Network for Biocomplexity, a general purpose repository for ecological data
 -   [HydroShare](https://www.hydroshare.org/){target="_blank"}: Data and models used in hydrology
 -   [OPC](https://opc.dataone.org/data){target="_blank"}: California Ocean Protection Council, marine and coastal datasets
+
+<h3>`r fa('hat-wizard')` Exercise and discussion</h3>
+
+Using the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset and your metadata description from the previous exercise, we'll archive the data on the test node of KNB.  This workflow is exactly the same for the actual repository and is designed to get our comforable adding data to an archive.
+
+1. Log in to the test archive using your ORCID information: https://dev.nceas.ucsb.edu/
+1. Click the submit button at the top to start the process of entering your data
+1. Add the relevant metadata information in the forms (because this is a test archive, not all will be entered)
+1. Save the dataset when you're done and marvel at your work
