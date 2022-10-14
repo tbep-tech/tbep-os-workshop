@@ -5,7 +5,6 @@ project:
 book:
   title: "Tampa Bay Open Science Workshop"
   repo-url: https://github.com/tbep-tech/tbep-os-workshop
-  author: "Dr. Chris Anastasiou and Dr. Marcus Beck"
   date: last-modified
   chapters:
     - index.qmd
@@ -30,8 +29,3 @@ format:
 execute: 
   echo: false
   warning: false
-
-filters:
-    - lightbox
-    
-lightbox: auto

@@ -10,8 +10,6 @@ execute:
 library(fontawesome)
 ```
 
-<script src="hideoutput.js"></script>
-
 ## Lesson Outline
 
 * [Goals and motivation]
@@ -112,10 +110,11 @@ Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data
 
 Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx) using R.
 
-<div class="fold s o">
 ```{r}
 #| eval: true
 #| echo: true
+#| code-fold: true
+#| code-summary: "Show the code"
 library(readxl)
 library(dplyr)
 library(tidyr)
@@ -127,7 +126,6 @@ dat <- read_excel('data/untidy.xlsx', skip = 1) %>%
   separate(col = `acres/category`, into = c('acres', 'category'), sep = '/')
 dat
 ```
-</div>
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
