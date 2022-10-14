@@ -31,4 +31,7 @@ execute:
   echo: false
   warning: false
 
-
+filters:
+    - lightbox
+    
+lightbox: auto
