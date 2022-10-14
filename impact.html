@@ -261,7 +261,7 @@ div.csl-indent {
 </div>
 <section id="goals-and-motivation" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="goals-and-motivation"><span class="header-section-number">3.1</span> Goals and motivation</h2>
-<p>This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata concepts and tools to make sure your data have a life beyond the project.</p>
+<p>This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata tools and data repositories to make sure your data have a life beyond the project.</p>
 <ul>
 <li><strong>Goal</strong>: understand best practices for data management as a key concept for open science</li>
 <li><strong>Motivation</strong>: cultivate data as a living, shared resource</li>
@@ -349,11 +349,11 @@ div.csl-indent {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M592 0h-384C181.5 0 160 22.25 160 49.63V96c23.42 0 45.1 6.781 63.1 17.81V64h352v288h-64V304c0-8.838-7.164-16-16-16h-96c-8.836 0-16 7.162-16 16V352H287.3c22.07 16.48 39.54 38.5 50.76 64h253.9C618.5 416 640 393.8 640 366.4V49.63C640 22.25 618.5 0 592 0zM160 320c53.02 0 96-42.98 96-96c0-53.02-42.98-96-96-96C106.1 128 64 170.1 64 224C64 277 106.1 320 160 320zM192 352H128c-70.69 0-128 57.31-128 128c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32C320 409.3 262.7 352 192 352z"></path></svg> Watch and learn
 </h3>
-<p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx">tidy</a> using Excel.</p>
+<p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> using Excel.</p>
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M592 0h-384C181.5 0 160 22.25 160 49.63V96c23.42 0 45.1 6.781 63.1 17.81V64h352v288h-64V304c0-8.838-7.164-16-16-16h-96c-8.836 0-16 7.162-16 16V352H287.3c22.07 16.48 39.54 38.5 50.76 64h253.9C618.5 416 640 393.8 640 366.4V49.63C640 22.25 618.5 0 592 0zM160 320c53.02 0 96-42.98 96-96c0-53.02-42.98-96-96-96C106.1 128 64 170.1 64 224C64 277 106.1 320 160 320zM192 352H128c-70.69 0-128 57.31-128 128c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32C320 409.3 262.7 352 192 352z"></path></svg> Watch and learn
 </h3>
-<p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx">tidy</a> using R.</p>
+<p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> using R.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -365,30 +365,34 @@ div.csl-indent {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">'data/untidy.xlsx'</span>, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(Location) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">2019</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">'Year'</span>, <span class="at">values_to =</span> <span class="st">'acres/category'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">acres/category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'acres'</span>, <span class="st">'category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">acres/category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'acres'</span>, <span class="st">'category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">as.numeric</span>(Year), </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">acres =</span> <span class="fu">as.numeric</span>(acres)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 27 × 5
-   Location  Habitat  Year  acres category
-   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   
- 1 Clear Bay Seagrass 2019  519   B       
- 2 Clear Bay Seagrass 2020  438   C       
- 3 Clear Bay Seagrass 2021  375   A       
- 4 Clear Bay Oysters  2019  390   B       
- 5 Clear Bay Oysters  2020  875   B       
- 6 Clear Bay Oysters  2021  724   A       
- 7 Clear Bay Sand     2019  742   C       
- 8 Clear Bay Sand     2020  702   A       
- 9 Clear Bay Sand     2021  505   C       
-10 Fish Bay  Seagrass 2019  930   B       
+   Location  Habitat   Year acres category
+   &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   
+ 1 Clear Bay Seagrass  2019   519 B       
+ 2 Clear Bay Seagrass  2020   438 C       
+ 3 Clear Bay Seagrass  2021   375 A       
+ 4 Clear Bay Oysters   2019   390 B       
+ 5 Clear Bay Oysters   2020   875 B       
+ 6 Clear Bay Oysters   2021   724 A       
+ 7 Clear Bay Sand      2019   742 C       
+ 8 Clear Bay Sand      2020   702 A       
+ 9 Clear Bay Sand      2021   505 C       
+10 Fish Bay  Seagrass  2019   930 B       
 # … with 17 more rows</code></pre>
 </div>
 </div>
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
-<p>Now try it on your own. Download the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/untidy.xlsx">untidy</a> dataset and make it tidy using your preferred software.</p>
+<p>Now try it on your own. Download the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset and make it tidy using your preferred software. Compare your tidied dataset with <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">this one</a> to see if you’ve done it right.</p>
 </section>
 <section id="data-dictionaries" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="data-dictionaries"><span class="header-section-number">3.4</span> Data dictionaries</h2>
@@ -429,7 +433,7 @@ div.csl-indent {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
-<p>Create a data dictionary for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx">tidy</a> dataset from the previous example.</p>
+<p>Create a data dictionary for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Use a spreadsheet to create a table to describe the column names, data type, acceptable values, and a description.</p>
 </section>
 <section id="importance-of-metadata" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="importance-of-metadata"><span class="header-section-number">3.5</span> Importance of metadata</h2>
@@ -475,7 +479,7 @@ div.csl-indent {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
-<p>Create a metadata file for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/master/data/tidy.xlsx">tidy</a> dataset from the previous example. Just start by using your data dictionary and develop narrative answers for “who”, “what”, “when”, “where”, “why”, and “how” to describe your dataset. Get creative with your descriptions since this is a made up dataset.</p>
+<p>Create a metadata file for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Just start by using your data dictionary and develop narrative answers for “who”, “what”, “when”, “where”, “why”, and “how” to describe your dataset. Get creative with your descriptions since this is a made up dataset.</p>
 </section>
 <section id="data-repositories" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="data-repositories"><span class="header-section-number">3.6</span> Data repositories</h2>
@@ -493,6 +497,16 @@ div.csl-indent {
 <li><a href="https://www.hydroshare.org/" target="_blank">HydroShare</a>: Data and models used in hydrology</li>
 <li><a href="https://opc.dataone.org/data" target="_blank">OPC</a>: California Ocean Protection Council, marine and coastal datasets</li>
 </ul>
+<h3 class="anchored">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
+</h3>
+<p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset and your metadata description from the previous exercise, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get our comforable adding data to an archive.</p>
+<ol type="1">
+<li>Log in to the test archive using your ORCID information: https://dev.nceas.ucsb.edu/</li>
+<li>Click the submit button at the top to start the process of entering your data</li>
+<li>Add the relevant metadata information in the forms (because this is a test archive, not all will be entered)</li>
+<li>Save the dataset when you’re done and marvel at your work</li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
