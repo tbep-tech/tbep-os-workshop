@@ -121,7 +121,7 @@ knitr::include_graphics('img/Octocat.png')
 ```{r}
 #| out.width: "60%"
 #| fig-align: "center"
-knitr::include_graphics('img/whatisocto.jfif')
+knitr::include_graphics('img/whatisocto.png')
 ```
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
