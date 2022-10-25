@@ -26,7 +26,7 @@ In the last module, we talked about collaboration as the single most important a
 knitr::include_graphics('img/datameme.jpg')
 ```
 
-You can probably recall several past instances when poor data management has been a challenge for open collaboration.  Here are a few real-world examples: 
+You can probably recall past instances when poor data management has been a challenge for open collaboration.  Here are a few real-world examples: 
 
 1. A collaborator calls you on the phone asking about a historical dataset from an old report.  You spend several hours tracking down this information because you don't know where it is. The data you eventually find and provide to your collaborator has no documentation and they don't know how to use it or use it inappropriately. 
 1. You receive a deliverable from a project partner that was stipulated in a scope of work.  This deliverable comes in multiple formats with no reproducible workflow to recreate the datasets.  You are unable to verify the information, eroding your faith in the final product and making it impossible to update the results in the future.
@@ -38,13 +38,13 @@ Anybody who has ever worked with data knows that it comes in many shapes and siz
 * Egregious use of Excel as data management software
 * Metadata is a chore that is often an afterthought
 
-It's often said that 90% of working with data is cleaning (or "wrangling"), whereas the actual analysis and interpretation part is a small fraction of your total effort.  Using better data management practices will not only help you save time, it's also a service for your colleagues and future collaborators.  Therefore, better data management leads to more open science.  
+It's often said that 90% of working with data is cleaning (or "wrangling"), whereas actual analysis and interpretation is a small fraction of your total effort.  Using better data management practices will not only help you save time, it's also a service for your colleagues and future collaborators.  Therefore, better data management leads to more open science.  
 
 The [FAIR](#fair) principles outlined in the first module are especially useful when working with data for open science applications.  Many of the collaborative tools in the second module can help you work towards putting FAIR data into practice.  In this module, we'll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset. 
 
 ## Principles of tidy data {#tidy}
 
-At their core, tabular data allow you to store information as observations in rows and variables in columns, yet it's very common to try to make a data table more than it should be.  Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
+Tabular data allow you to store information as observations in rows and variables in columns, yet it's very common to try to make a data table more than it should be.  Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
 
 Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](http://www.eusprig.org/horror-stories.htm){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science [@Ziemann16]. 
 
@@ -54,7 +54,7 @@ Before we get into tidy data, we need to discuss some of the downfalls of Excel 
 knitr::include_graphics('img/excel_dates.JPG')
 ```
 
-Excel allows you to abuse your data in many ways, such as adding color to cells, embedding formulas, and automatically formatting cell types.  The problem occurs when this organization becomes ambiguous and only has meaning inside the head of the person who created the spreadsheet.  Embedding formulas that reference specific locations in or across spreadsheets is also a nightmare scenario for reproducibility.
+Excel allows you to abuse your data in many ways, such as adding color to cells, embedding formulas, and automatically formatting cell types.  This creates problems when the organization is ambiguous and only has meaning inside the head of the person who created the spreadsheet.  Embedding formulas that reference specific locations in or across spreadsheets is also a nightmare scenario for reproducibility.
 
 ```{r}
 #| out-width: "80%"
@@ -74,7 +74,7 @@ A __flat__ file:
 
 @Broman18 provide an excellent guide that expands on these ideas. Essentially, these best practices force you to isolate the analysis from the data - many people use Excel to mix the two, leading to problems. 
 
-Now we can talk about tidy data. The "tidy" data principles developed by Hadley Wickham [@Wickham14c] are a set of simple rules for storing tabular data that have motivated the development of the wildly popular [tidyverse](https://www.tidyverse.org/){target="_blank"} suite of R packages [@Wickham19]. The rules are simple: 
+Now we can talk about tidy data. The tidy data principles developed by Hadley Wickham [@Wickham14c] are a set of simple rules for storing tabular data that have motivated the development of the wildly popular [tidyverse](https://www.tidyverse.org/){target="_blank"} suite of R packages [@Wickham19]. The rules are simple: 
 
 1. Each variable must have its own column;
 1. Each observation must have its own row; and,
@@ -86,7 +86,7 @@ Graphically, these rules are shown below [from @Wickham17]:
 knitr::include_graphics('img/tidy-1.png')
 ```
 
-Using these principles for data storage may seem unnatural at first because of a difference between what's easy for entering data versus what makes sense for downstream analyses.  For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in each column.
+Using these principles for data storage may seem unnatural at first because of a difference between what's easy for entering data versus what makes sense for downstream analyses.  For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.
 
 Using a tidy format also allows you to more easily join data between tables.  This is a common task when you have information spread between different tables because: 1) it might not make sense to keep the data in the same table, and 2) the analysis depends on information from both tables. Tidy data shared between tables can be linked using a "key" as a common identifier.
 
@@ -96,11 +96,11 @@ knitr::include_graphics('img/joins.png')
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using Excel. 
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using Excel (an irreproducible example). 
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
-Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using R.
+Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using R (a reproducible example).
 
 ```{r}
 #| eval: true
@@ -114,11 +114,11 @@ library(tidyr)
 # import and wrangle
 dat <- read_excel('data/untidy.xlsx', skip = 1) %>% 
   fill(Location) %>% 
-  pivot_longer(cols = `2019`:`2021`, names_to = 'Year', values_to = 'acres/category') %>% 
-  separate(col = `acres/category`, into = c('acres', 'category'), sep = '/') %>% 
+  pivot_longer(cols = `2019`:`2021`, names_to = 'Year', values_to = 'Acres/Category') %>% 
+  separate(col = `Acres/Category`, into = c('Acres', 'Category'), sep = '/') %>% 
   mutate(
     Year = as.numeric(Year), 
-    acres = as.numeric(acres)
+    Acres = as.numeric(Acres)
   )
 dat
 ```
@@ -129,13 +129,13 @@ Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-
 
 ## Data dictionaries
 
-Once you understand the tidy principles, you'll find that analysis is much, much easier.  More importantly, this also facilitates documentation for the explicit purpose of more open sharing.  As responsible data stewards, we need to think of data as a living resource for open collaboration that is not just a means for more conventional scientific products (e.g., a publication).  Data are increasingly being documented and cited as unique entities and we need proper documentation to help support the FAIR principles. 
+Once you understand the tidy principles, you'll find that analysis is much, much easier.  More importantly, this also facilitates documentation for the explicit purpose of open sharing.  As responsible data stewards, we need to think of data as a living resource for open collaboration that is not just a means for more conventional scientific products (e.g., a publication).  Data are increasingly being documented and cited as unique entities and we need proper documentation to help support the FAIR principles. 
 
 A good first step in documentation is to create a data dictionary. This will help us when we start creating [metadata](#importance-of-metadata). Think of this as the specific description of the contents of a tabular data file. Developing a data dictionary not only helps with metadata, but also helps you think more clearly about your data. 
 
 A data dictionary describes column names and the type of data in each column.  Simple things like how you name a data column can have larger implications for downstream analysis pipelines or interpretability of a dataset.
 
-Here's an example of a data dictionary for a made up dataset.  Without seeing the actua data, you get a good sense of what's included and acceptable values for adding new data. 
+Here's an example of a data dictionary for a made up dataset.  Without seeing the actual data, you get a good sense of what's included and acceptable values for adding new data. 
 
 ```{r}
 #| out-width: "80%"
@@ -148,15 +148,15 @@ Here we provide some general guidelines for developing your own data dictionary.
 * Column names
 
      * Be as descriptive as possible while trying to keep the name as short as possible. Really long names with lots of detail can be just as frustrating as very short names with very little detail. The column name should be intuitive to point the analyst in the right direction.  
-     * Try to avoid spaces or commas in column names since some software may interpret that as the start of a new column.  
-     * It may also be useful to identify a "plot name" for each column name that uses proper spelling, punctuation, and units (if applicable).  Using a column name directly in a graphic is generally a bad idea since their meaning outside of the dataset may not be obvious.   
+     * Try to avoid spaces or commas in column names since some software may interpret that as the start of a new column.  Do not start a column name with a number.  
+     * It may also be useful to identify a "plot name" column that uses proper spelling, punctuation, and units (if applicable).  Entries in this column can be used for making graphics that have interpretable names (e.g., using "Temp. (C)" instead of "temp" as the name of a plot axis).
 
 * Data types
 
      * Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations.  Never, ever mix data types in the same column.  
      * If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range? Also make note of the units that were used.  
      * For categorical descriptors, identify all possible categories that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.  
-     * For dates, make note of the format, e.g., YYYY-MM-DD.  For time, identify the timezone. 
+     * For dates, make note of the format, e.g., YYYY-MM-DD.  For time, identify the timezone and if it includes daylight savings or not. 
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
@@ -166,9 +166,9 @@ Create a data dictionary for the [tidy](https://github.com/tbep-tech/tbep-os-wor
 
 How many times have you been sent a dataset without any idea what it contains or why it was created?  How are you sure the information is valid and that your analysis takes into account the limitations of the data?  How many times have you willfully sent someone a dataset without fully providing this information?  
 
-Without metadata it's impossible to know critical details about a dataset that can inform its analysis, and more importantly, its use to inform decision-making.  Curating data should be synonymous with metadata generation and is an important part of open science.  We cannot provide open data in good faith without also providing metadata. 
+Without metadata, it's impossible to know critical details about a dataset that can inform its analysis, and more importantly, its use to inform decision-making.  Curating data should be synonymous with metadata generation and is an important part of open science.  We cannot provide open data in good faith without also providing metadata. 
 
-Metadata is literally defined as "data about data". It varies from simple text descriptions of a dataset, such as "who", "what", "when", "where", "why", and "how", to more formalized standards with the intent of preparing your data for archival in a long-term repository. A useful definition is provided by @Gilliland16:  
+Metadata is literally defined as "data about data". It varies from simple text descriptions of a dataset, such as "who", "what", "when", "where", "why", and "how", to more formalized standards with that prepare your data for archival in a long-term repository. A useful definition is provided by @Gilliland16:  
 
 > A suite of industry or disciplinary standards as well as additional internal and external documentation and other data necessary for the identification, representation, interoperability, technical management, performance, and use of data contained in an information system.
 
@@ -198,7 +198,7 @@ It's also important to explicitly note instances when the data could be question
 
 > How can someone get a copy of the dataset?
 
-Good metadata has information on who contact for getting the data.  This contact may not be the same as who created the dataset (e.g., IT staff).  For archived or publicly available data, this information is more important for who to contact should someone have questions.  Information on obtaining a copy of the data should also describe any special software or licensing issues related to accessing the data.
+Good metadata has information on who to contact for getting the data.  This contact may not be the same as who created the dataset (e.g., IT staff).  For archived or publicly available data, this information is more important for who to contact should someone have questions.  Information on obtaining a copy of the data should also describe any special software or licensing issues related to accessing the data.
 
 Once you've gathered this information, how do you turn it into literal metadata?  It depends on how deep you want to go.  At it's simplest, your metadata could be a simple text file with answers to the questions.  Or it could be a specific file format used by modern data archive repositories (e.g., [EML](https://docs.ropensci.org/EML/){target="_blank"} format).  
 
@@ -210,7 +210,7 @@ knitr::include_graphics('img/desotometa.PNG')
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. 
+Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset.  Get creative with your descriptions since this is a made up dataset. Enter this information into a new spreadsheet.
 
 ## Data repositories
 

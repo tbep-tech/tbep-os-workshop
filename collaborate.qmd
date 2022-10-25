@@ -101,7 +101,7 @@ These are the building blocks of version control as demonstrated with Google Doc
 1. History of changes assigned to each editor
 1. Ability to restore a previous version
 
-Perhaps more importantly, these tools are in the cloud and openly accessible (unlike other cloud-based services). They are a great way to improve collaboration within your institution as well as out.
+Perhaps more importantly, these tools are in the cloud and openly accessible (unlike other cloud-based services). They are a great way to improve collaboration within your institution, as well as out.
 
 ### Git and GitHub
 
@@ -115,7 +115,14 @@ Many people often confuse Git with [GitHub](https://www.github.com){target="_bla
 #| out.width: "25%"
 #| fig-align: "center"
 #| fig-cap: "Octocat, the strange and loveable mascot of GitHub."
+#| fig
 knitr::include_graphics('img/Octocat.png')
+```
+
+```{r}
+#| out.width: "60%"
+#| fig-align: "center"
+knitr::include_graphics('img/whatisocto.jfif')
 ```
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
@@ -249,7 +256,7 @@ Learning curve is steep if you want to fully leverage version control. Not a for
 
 In small groups, setup a shared workspace using GitHub and create a project management board.
 
-1. Have one person create a new repository and add each member to the repository (hint: Settings -> Collaborators)
+1. Have one person create a new repository (the big, green "New" button) and add each member to the repository (hint: Settings -> Collaborators)
 1. Have that same person create a project board for the repository (Hint: Projects -> Projects (classic))
 1. Each person create a new file in the repository, name it something unique, save and commit the changes
 1. Assign issues to different members of the repository to do something to the new files (Hint: Issues -> Assignees).  Don't forget to add each issue to the project board.

@@ -52,6 +52,6 @@ Each module uses a set of common icons to orient you to specific tasks or experi
 
 ------------------------------------------------------------------------
 
-<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a>  This book is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
+<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a>  This website is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
 
-<a href="https://github.com/tbep-tech/tbep-os-workshop/actions"><img src="https://github.com/tbep-tech/tbep-os-workshop/workflows/build/badge.svg" alt="build"/></a> This version of the book was built automatically with [GitHub Actions](https://github.com/tbep-tech/tbep-os-workshop/actions) on `r Sys.Date()`.
+<a href="https://github.com/tbep-tech/tbep-os-workshop/actions"><img src="https://github.com/tbep-tech/tbep-os-workshop/workflows/build/badge.svg" alt="build"/></a> This version of the website was built automatically with [GitHub Actions](https://github.com/tbep-tech/tbep-os-workshop/actions) on `r Sys.Date()`.
