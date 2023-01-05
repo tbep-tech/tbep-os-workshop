@@ -88,6 +88,39 @@ knitr::include_graphics('img/tidy-1.png')
 
 Using these principles for data storage may seem unnatural at first because of a difference between what's easy for entering data versus what makes sense for downstream analyses.  For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.
 
+The following examples show five tables represented in different arrangements.  Only one of the tables is tidy - which one?  
+
+```{r}
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-cap: "Table 1"
+knitr::include_graphics('img/tidyex1.png')
+```
+
+```{r}
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-cap: "Table 2"
+knitr::include_graphics('img/tidyex2.png')
+```
+
+```{r}
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-cap: "Table 3"
+knitr::include_graphics('img/tidyex3.png')
+```
+
+::: {layout-ncol=2}
+![Table 4a](img/tidyex4a.png)
+
+![Table 4b](img/tidyex4b.png){fig-lo}
+:::
+
+Only the first table is tidy - each variable has its own column, each observation has its own row, and each value has its own cell. Table 2 violates the second rule, Table 3 violates the third rule, and tables 4a and 4b violate the first rule.
+
+Table 2 is a special case where the data are mostly tidy, but represented as a *long* format of the same *wide* data in Table 1.  Storing data in a long format is not necessarily wrong and, in fact, is a common format for databases.  There are pros and cons to both, depending on the intended analysis. Here are two examples of some water quality data you might encounter in the wild, one [wide](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqwide.xlsx) and one [long](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqlong.xlsx). 
+
 Using a tidy format also allows you to more easily join data between tables.  This is a common task when you have information spread between different tables because: 1) it might not make sense to keep the data in the same table, and 2) the analysis depends on information from both tables. Tidy data shared between tables can be linked using a "key" as a common identifier.
 
 ```{r}
