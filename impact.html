@@ -383,12 +383,17 @@ div.csl-indent {
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="img/tidyex4b.png" class="img-fluid" alt="Table 4b">{fig-lo}</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tidyex4b.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Table 4b</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
-<p>Only the first table is tidy - each variable has its own column, each observation has its own row, and each value has its own cell. Table 2 violates the second rule, Table 3 violates the third rule, and tables 4a and 4b violate the first rule.</p>
-<p>Table 2 is a special case where the data are mostly tidy, but represented as a <em>long</em> format of the same <em>wide</em> data in Table 1. Storing data in a long format is not necessarily wrong and, in fact, is a common format for databases. There are pros and cons to both, depending on the intended analysis. Here are two examples of some water quality data you might encounter in the wild, one <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqwide.xlsx">wide</a> and one <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqlong.xlsx">long</a>.</p>
+</div>
+<p>Only the first table is tidy - each variable has its own column, each observation has its own row, and each value has its own cell. Table 2 violates the first rule, Table 3 violates the third rule, and tables 4a and 4b violate the first and second rules.</p>
+<p>Table 2 is a special case where the data are mostly tidy, but represented as a <strong><em>long</em></strong> format of the same <strong><em>wide</em></strong> data in Table 1. Storing data in a long format is not necessarily wrong and, in fact, is a common format for databases. There are pros and cons to both, depending on the intended analysis. Here are two examples of some water quality data you might encounter in the wild, one <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqwide.xlsx">wide</a> and one <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/wqlong.xlsx">long</a>.</p>
 <p>Using a tidy format also allows you to more easily join data between tables. This is a common task when you have information spread between different tables because: 1) it might not make sense to keep the data in the same table, and 2) the analysis depends on information from both tables. Tidy data shared between tables can be linked using a “key” as a common identifier.</p>
 <div class="cell">
 <div class="cell-output-display">
