@@ -120,7 +120,7 @@ knitr::include_graphics('img/Octocat.png')
 knitr::include_graphics('img/whatisocto.png')
 ```
 
-<h3>`r fa('chalkboard-user')` Watch and learn</h3> {#sec-realworld}
+<h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
 Workflow management in the real world - using GitHub to collaborate.  Here we present some examples from the Tampa Bay [State of the Bay](https://tbep.org/estuary/state-of-the-bay/) report and [water quality report card](https://tbep.org/water-quality-report-card/). 
 
