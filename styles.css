@@ -77,6 +77,18 @@ h2,h3,h4,h5 {
 
 /* sub sections */
 
+.level1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  color: #958984;
+}
+
+.level2 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  color: #958984;
+}
+
 .level3 {
   font-family: 'Roboto';
   font-weight: 300;

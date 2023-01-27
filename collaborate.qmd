@@ -19,7 +19,7 @@ This is the second module in our workshop on open science. This module will expl
 
 ## Essential elements of collaboration
 
-We start our deep dive into open science by focusing on collaboration as the single most important activity that can be enhanced through transparent, efficient, and reproducible tools. Having effective tools to work together is a critical theme of many open science practices. There are many tools in the toolbox and we need to introduce some core concepts before we demonstrate how to implement them in practice.
+We start our deep dive into open science by focusing on collaboration as a fundamental activity that can be enhanced through transparent, efficient, and reproducible tools. Having effective tools to work together is a critical theme of many open science practices. There are many tools in the toolbox and we need to introduce some core concepts before we demonstrate how to implement them in practice.
 
 ### Workflow management
 
@@ -106,6 +106,8 @@ Although Google products can get you a long way towards better collaboration, th
 By far, the most widely use software for version control is [Git](https://git-scm.com/){target="_blank"}. Although we do not cover the specifics of this software, it's useful to understand the purpose and what it can do in making your work more open and impactful. Git is integrated with many popular open source development platforms, such as [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target="_blank"}.
 
 Many people often confuse Git with [GitHub](https://www.github.com){target="_blank"}. GitHub is an online platform for working collaboratively through Git AND it allows you to be open with your work. We'll provide some examples below of how this can be done. Importantly, you do not need to be an expert in Git to be able to use GitHub. This speaks volumes for how team efficiency can be improved through better collaboration.
+
+This recent blog provides a helpful introduction to [Git/GitHub for the casual user](https://masalmon.eu/2023/01/12/git-github-casual/){target="_blank"}. 
 
 ```{r}
 #| out.width: "25%"

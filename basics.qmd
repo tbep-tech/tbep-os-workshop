@@ -76,7 +76,11 @@ Now let's settle on a definition for open science (from Open Knowledge Internati
 
 Key words from this definition are highlighted in bold.  There are very specific tools in the open science toolbox that speak to each of these key words.  We'll cover some of these later. 
 
-From these key words, we can breakdown this definition into key principles.
+Similarly, the current administration has declared 2023 the [Year of Open Science](https://open.science.gov/){target="_blank"}.  Their definition is: 
+
+> "The principle and practice of making research products and processes available to all, while respecting diverse cultures, maintaining security and privacy, and fostering collaborations, reproducibility, and equity."
+
+We can can breakdown these definitions into key principles.
 
 1. `r fa('table')` __Open data__
      
@@ -96,7 +100,7 @@ From these key words, we can breakdown this definition into key principles.
      * Dynamic documents with source code 
      * Integration with external networks for discoverability
 
-You'll notice that web-based tools and open science are often discussed at the same time.  Science existed before the internet. Open science often focuses on how the two can leverage and support one another despite the latter being a relatively new addition to society.  People often describe web-based tools as synonymous with open science.
+You'll notice that web-based tools and open science are often discussed at the same time.  Science existed before the internet. Open science often focuses on how the two can leverage and support one another despite the latter being a relatively new addition to society.  We often describe web-based tools as synonymous with open science.
 
 ## The FAIR principles {#fair}
 
@@ -109,7 +113,7 @@ Advocates of open science also describe the use of the FAIR principles [@Wilkins
 
 Simply, what this means is: 1) each dataset has a name that doesn't change and can be found with minimal effort using that name, 2) once it's found, you can actually get your hands on it (e.g., not behind a paywall), 3) once you have it, you can use readily available tools to work with the data (e.g., not using proprietary software), and 4) you can actually apply the data for your own needs because it has sufficient context, including its reproduction, given that the first three principles are met.  
 
-For our purposes, think of these ideas as general guidelines you can ask yourself when doing science.  If you find that your work does not achieve FAIR status, then you're probably not being as open as you could be.  We'll of course provide some tools to help you be FAIR and open. 
+For our purposes, think of these ideas as general guidelines you can ask yourself when doing science.  If you find that your work is not FAIR, then you're probably not being as open as you could be.  We'll of course provide some tools to help you be FAIR and open. 
 
 ## Schools of thought {#schools}
 
