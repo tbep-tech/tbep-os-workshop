@@ -61,4 +61,5 @@ The following is a non-exhaustive list of additional resources you can use for c
 ## Git/Github
 
 * [Jenny Bryan's Happy Git and Github for the useR](http://happygitwithr.com/){target="_blank"}
+* [Git and GitHub for the Casual User](https://masalmon.eu/2023/01/12/git-github-casual/){target="_blank"}
 * [Coding Club Intro to Github](https://ourcodingclub.github.io/2017/02/27/git.html){target="_blank"}
