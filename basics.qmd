@@ -72,9 +72,9 @@ Throughout this workshop, we'll learn about some open science tools that can be 
 
 Now let's settle on a definition for open science (from Open Knowledge International, [http://opendefinition.org/](http://opendefinition.org/){target="_blank"}, [https://creativecommons.org/](https://creativecommons.org/){target="_blank"}):
 
-> "The practice of science in such a way that others can __collaborate__ and __contribute__, where research data, lab notes and other research processes are __freely available__, under terms that enable __reuse__, __redistribution__ and __reproduction__ of the research and its underlying data and methods."
+> "The practice of science in such a way that others can *collaborate* and *contribute*, where research data, lab notes and other research processes are *freely available*, under terms that enable *reuse*, *redistribution* and *reproduction* of the research and its underlying data and methods."
 
-Key words from this definition are highlighted in bold.  There are very specific tools in the open science toolbox that speak to each of these key words.  We'll cover some of these later. 
+Key words from this definition are italicized.  There are very specific tools in the open science toolbox that speak to each of these key words.  We'll cover some of these later. 
 
 Similarly, the current administration has declared 2023 the [Year of Open Science](https://open.science.gov/){target="_blank"}.  Their definition is: 
 
@@ -104,7 +104,7 @@ You'll notice that web-based tools and open science are often discussed at the s
 
 ## The FAIR principles {#fair}
 
-Advocates of open science also describe the use of the FAIR principles [@Wilkinson16] as a vehicle for achieving the former.  It's important to understand what they mean so that you can be fluent in both. The FAIR acronym is described as follows:
+Advocates of open science also use the FAIR principles [@Wilkinson16] as a vehicle for achieving the former.  It's important to understand what they mean so that you can be fluent in both. The FAIR acronym is described as follows:
 
 * **F**indable: The data have a globally unique and persistent identifier, including use of "rich" metadata.
 * **A**ccessible: Once found, the data can be retrieved using standardized communications protocols that are open, free, and universally implementable.
@@ -123,7 +123,7 @@ A useful paradigm is provided by @Fecher14 to describe open science as five dist
 
 ![](img/fiveschools.PNG)
 
-These are of course only conceptual boxes and there's considerable overlap across all schools when open science is used in practice.  For our purposes, we'll be talking about ideas and tools from the pragmatic, infrastructure, and democratic schools of the thought.  The end goal is to provide you with the means to create more efficient and impactful science that can more readily be used by others in a collaborative setting.  
+These are of course only conceptual boxes and there's considerable overlap across all schools when open science is used in practice.  For our purposes, we'll mostly be talking about ideas and tools from the pragmatic, infrastructure, and democratic schools of the thought.  The end goal is to provide you with the means to create more efficient and impactful science that can more readily be used by others in a collaborative setting.  
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 

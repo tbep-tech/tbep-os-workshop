@@ -23,9 +23,9 @@ We start our deep dive into open science by focusing on collaboration as a funda
 
 ### Workflow management
 
-How do you organize your work each day? How do you make sure pressing deadlines are met on schedule? How do you plan for short-term and long-term goals? Do you have a five-year, ten-year, or longer career plan?
+How do you organize your work each day? How do you make sure projects are on schedule and pressing deadlines are met? How do you plan for short-term and long-term goals? Do you have a five-year, ten-year, or longer career plan?
 
-Work to achieve goals cannot be accomplished without a systematic approach to organizing tasks. Chances are, we each have our own system that works for us that was developed through trial and error. Although everyone has familiar workflows, they are often idiosyncratic and deeply entrenched by habit. That can be in direct conflict with collaboration when we try to mesh internal workflows with those of others.
+Work to achieve goals cannot be accomplished without a systematic approach to organizing tasks. Chances are, we each have our own system that works for us and was probably developed through trial and error. Although everyone has familiar workflows, they are often idiosyncratic and deeply entrenched by habit. That can be in direct conflict with collaboration when we try to mesh internal workflows with those of others.
 
 Does this look familiar?
 
@@ -57,7 +57,7 @@ Many of the open science tools we describe below use this system. It is a genera
 
 ### Version control
 
-A specific problem for workflow management that can be solved by open science tools is file management. Workflows can greatly be enhanced by tools that use strict guidelines for tracking changes and allowing a complete view of the evolution of a project. This is where version control comes in.
+A specific problem for workflow management that can be solved by open science tools is file management. Workflows can be immensely enhanced by tools that use strict guidelines for tracking changes and allowing a complete view of the evolution of a project. This is where version control comes in.
 
 I'm sure many of you have fallen into this trap:
 
@@ -71,7 +71,7 @@ Version control is a way to track the development history of a project. It serve
 
 1.  Formally documenting the changes that have been made to code or software
 2.  Making sure that the development history is permanent
-3.  Providing a system for collaborating across platforms (with friends!)
+3.  Providing a system for collaborating across platforms ([with friends!](https://docs.google.com/presentation/d/1M6EfHmZZ6nQvkvZzPHOkSOwj3PpNcd0u291LMMFFOiE/edit#slide=id.gf166433ec7_0_68))
 
 It's more than saving files. Documenting changes with a set of commands that follow strict rules provides a transparent record for yourself and others, and establishing permanency ensures that any of the changes that are made can be vetted and accessed as needed. Think of it as an insurance plan for your project.
 
@@ -83,7 +83,7 @@ If you've ever used Google Docs, you might have noticed a feature that looks a l
 knitr::include_graphics('img/docsversion.png')
 ```
 
-Clicking on the link will open the Version history pane which shows all of the edits that were made to the document.  You can view any of the edits, who made the edits, view the changes (before/after) in the document, or even restore the document to a previous version.
+For any Google Doc, clicking on the link shown by the arrow will open the Version history pane which shows all of the edits that were made to the document.  You can view any of the edits, who made the edits, view the changes (before/after) in the document, or even restore the document to a previous version.
 
 ```{r}
 #| out.width: "100%"
@@ -97,13 +97,13 @@ These are the building blocks of version control as demonstrated with Google Doc
 1. History of changes assigned to each editor
 1. Ability to restore a previous version
 
-Perhaps more importantly, these tools are in the cloud and usually openly accessible (unlike other cloud-based services). File links (via a URL) also do not change if a file is moved to a different location in the drive.  Overall, the Google platform is an accessible means of improving collaboration (but not without it's [cons](https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#cons-2).
+Perhaps more importantly, these tools are in the cloud and openly accessible (unlike other cloud-based services). File links (via a URL) also do not change if a file is moved to a different location in the drive.  Overall, the Google platform is an accessible means of improving collaboration (but not without it's [cons](https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#cons-2)).
 
 ### Git and GitHub
 
 Although Google products can get you a long way towards better collaboration, they do not use dedicated version control software.  These tools become more important as your projects become more complex - those beyond simple documents or spreadsheets. 
 
-The most widely used software for version control is [Git](https://git-scm.com/){target="_blank"}. Although we do not cover the specifics of this software, it's useful to understand the purpose and what it can do in making your work more open and impactful. Git is integrated with many popular open source development platforms, such as [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target="_blank"}.
+The most widely used software for version control is [Git](https://git-scm.com/){target="_blank"}. Although we do not cover the specifics of this software, it's useful to understand the purpose and what it can do in making your work more open and impactful. Git is integrated with many popular open source development platforms, such as [RStudio](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target="_blank"}.
 
 Many people often confuse Git with [GitHub](https://www.github.com){target="_blank"}. GitHub is an online platform for working collaboratively through Git AND it allows you to be open with your work. We'll provide some examples below of how this can be done. Importantly, you do not need to be an expert in Git to be able to use GitHub. This speaks volumes for how team efficiency can be improved with GitHub through better collaboration.
 
@@ -128,7 +128,7 @@ Many institutions block access to Google products or GitHub. See [some ideas](ht
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
-Workflow management in the real world - using GitHub to collaborate.  Here we present some examples from the Tampa Bay Estuary Program [State of the Bay](https://tbep.org/estuary/state-of-the-bay/) report and [water quality report card](https://tbep.org/water-quality-report-card/). 
+Workflow management in the real world - using GitHub to collaborate.  Here we present some examples from the Tampa Bay Estuary Program [State of the Bay](https://tbep.org/estuary/state-of-the-bay/){target="_blank"} report and [water quality report card](https://tbep.org/water-quality-report-card/){target="_blank"}. 
 
 <h3>`r fa('chalkboard-user')` Watch and learn</h3>
 
@@ -234,7 +234,7 @@ Easy to use and fully supports Microsoft products. Low barrier of inclusion to o
 
 <h4>`r fa('thumbs-down')` Cons</h4>
 
-Requires a Microsoft account and access can be tricky depending on institution. Maintains dependency on expensive Microsoft products that don't facilitate reproducibility. Very often used in closed workflows.
+Requires a Microsoft account and access can be tricky depending on institution. Maintains dependency on expensive Microsoft products that aren't reproducible or interoperable. Very often used in closed workflows.
 
 ### GitHub
 
@@ -261,8 +261,8 @@ Learning curve is steep if you want to fully leverage version control. Not a for
 
 In small groups, setup a shared workspace using GitHub and create a project management board.  Some real world examples of why you might do this were presented in the earlier [watch and learn](https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#watch-and-learn).
 
-1. Open [GitHub](https://www.github.com) in a web browser and have one person create a new repository (the big, green "New" button in Repositories). Add each member to the repository after it's created (hint: Settings -> Collaborators)
+1. Open [GitHub](https://www.github.com){target="_blank"} in a web browser and have one person create a new repository (the big, green "New" button in Repositories). Add each member to the repository after it's created (hint: Settings -> Collaborators)
 1. Have that same person create a project board for the repository (Hint: Projects -> New project -> board format)
 1. After each person accepts the invitation to the repository (check your email!), each new member create a new file in the repository (Hint: Click "Add file" near the top). Name it something unique, save and commit the changes
-1. Assign issues to different members of the repository to do something to the new files (Hint: on the right menu, select "Assignees").  Add the issue to the project board before (Hint: on the right menu, select "Projects" and click the new project).
+1. Assign issues to different members of the repository to do something to the new files (Hint: on the right menu, select "Assignees").  Add the issue to the project board (Hint: on the right menu, select "Projects" and click the new project).
 1. Work on the issues until the time is up.  Close each issue as they're completed.

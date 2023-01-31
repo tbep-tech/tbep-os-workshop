@@ -32,7 +32,7 @@ You can probably recall past instances when poor data management has been a chal
 2.  You receive a deliverable from a project partner that was stipulated in a scope of work. This deliverable comes in multiple formats with no reproducible workflow to recreate the datasets. You are unable to verify the information, eroding your faith in the final product and making it impossible to update the results in the future.
 3.  An annual reporting product requires using new data each year. The staff member in charge of this report spends several days gathering the new data and combining it with the historical data. Other projects are on hold until this report is updated. Stakeholders that use this report to make decisions do not trust or misunderstand the product because the steps for its creation are opaque.
 
-Anybody who has ever worked with data knows that it comes in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but here's a few of the common reasons:
+Anybody who has ever worked with data knows that it comes in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:
 
 -   What's easy for recording data doesn't usually translate to easy analysis
 -   Egregious use of Excel as data management software
@@ -44,9 +44,9 @@ The [FAIR](#fair) principles outlined in the first module are especially useful 
 
 ## Principles of tidy data {#tidy}
 
-Tabular data allow you to store information as observations in rows and variables in columns, yet it's very common to try to make a data table more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
+Tabular data allow you to store information, where observations are in rows and variables are in columns.  It's very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
 
-Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](http://www.eusprig.org/horror-stories.htm){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science [@Ziemann16].
+Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](https://eusprig.org/research-info/horror-stories/){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science [@Ziemann16].
 
 ```{r}
 #| out-width: "70%"
@@ -106,7 +106,7 @@ knitr::include_graphics('img/tidyex2.png')
 
 ```{r}
 #| fig-align: "center"
-#| out-width: "50%"
+#| out-width: "65%"
 #| fig-cap: "Table 3"
 knitr::include_graphics('img/tidyex3.png')
 ```
