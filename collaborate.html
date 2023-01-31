@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -201,8 +201,8 @@ ul.task-list li input[type="checkbox"] {
 <p>We start our deep dive into open science by focusing on collaboration as a fundamental activity that can be enhanced through transparent, efficient, and reproducible tools. Having effective tools to work together is a critical theme of many open science practices. There are many tools in the toolbox and we need to introduce some core concepts before we demonstrate how to implement them in practice.</p>
 <section id="workflow-management" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="workflow-management"><span class="header-section-number">2.2.1</span> Workflow management</h3>
-<p>How do you organize your work each day? How do you make sure pressing deadlines are met on schedule? How do you plan for short-term and long-term goals? Do you have a five-year, ten-year, or longer career plan?</p>
-<p>Work to achieve goals cannot be accomplished without a systematic approach to organizing tasks. Chances are, we each have our own system that works for us that was developed through trial and error. Although everyone has familiar workflows, they are often idiosyncratic and deeply entrenched by habit. That can be in direct conflict with collaboration when we try to mesh internal workflows with those of others.</p>
+<p>How do you organize your work each day? How do you make sure projects are on schedule and pressing deadlines are met? How do you plan for short-term and long-term goals? Do you have a five-year, ten-year, or longer career plan?</p>
+<p>Work to achieve goals cannot be accomplished without a systematic approach to organizing tasks. Chances are, we each have our own system that works for us and was probably developed through trial and error. Although everyone has familiar workflows, they are often idiosyncratic and deeply entrenched by habit. That can be in direct conflict with collaboration when we try to mesh internal workflows with those of others.</p>
 <p>Does this look familiar?</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -235,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="version-control" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="version-control"><span class="header-section-number">2.2.2</span> Version control</h3>
-<p>A specific problem for workflow management that can be solved by open science tools is file management. Workflows can greatly be enhanced by tools that use strict guidelines for tracking changes and allowing a complete view of the evolution of a project. This is where version control comes in.</p>
+<p>A specific problem for workflow management that can be solved by open science tools is file management. Workflows can be immensely enhanced by tools that use strict guidelines for tracking changes and allowing a complete view of the evolution of a project. This is where version control comes in.</p>
 <p>I’m sure many of you have fallen into this trap:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Formally documenting the changes that have been made to code or software</li>
 <li>Making sure that the development history is permanent</li>
-<li>Providing a system for collaborating across platforms (with friends!)</li>
+<li>Providing a system for collaborating across platforms (<a href="https://docs.google.com/presentation/d/1M6EfHmZZ6nQvkvZzPHOkSOwj3PpNcd0u291LMMFFOiE/edit#slide=id.gf166433ec7_0_68">with friends!</a>)</li>
 </ol>
 <p>It’s more than saving files. Documenting changes with a set of commands that follow strict rules provides a transparent record for yourself and others, and establishing permanency ensures that any of the changes that are made can be vetted and accessed as needed. Think of it as an insurance plan for your project.</p>
 <p>If you’ve ever used Google Docs, you might have noticed a feature that looks a lot like version control. The Google Drive platform is a great way to start working together and a great way to familiarize yourself with the basics of version control.</p>
@@ -263,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Clicking on the link will open the Version history pane which shows all of the edits that were made to the document. You can view any of the edits, who made the edits, view the changes (before/after) in the document, or even restore the document to a previous version.</p>
+<p>For any Google Doc, clicking on the link shown by the arrow will open the Version history pane which shows all of the edits that were made to the document. You can view any of the edits, who made the edits, view the changes (before/after) in the document, or even restore the document to a previous version.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -279,12 +279,12 @@ ul.task-list li input[type="checkbox"] {
 <li>History of changes assigned to each editor</li>
 <li>Ability to restore a previous version</li>
 </ol>
-<p>Perhaps more importantly, these tools are in the cloud and usually openly accessible (unlike other cloud-based services). File links (via a URL) also do not change if a file is moved to a different location in the drive. Overall, the Google platform is an accessible means of improving collaboration (but not without it’s <a href="https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#cons-2">cons</a>.</p>
+<p>Perhaps more importantly, these tools are in the cloud and openly accessible (unlike other cloud-based services). File links (via a URL) also do not change if a file is moved to a different location in the drive. Overall, the Google platform is an accessible means of improving collaboration (but not without it’s <a href="https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#cons-2">cons</a>).</p>
 </section>
 <section id="git-and-github" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="git-and-github"><span class="header-section-number">2.2.3</span> Git and GitHub</h3>
 <p>Although Google products can get you a long way towards better collaboration, they do not use dedicated version control software. These tools become more important as your projects become more complex - those beyond simple documents or spreadsheets.</p>
-<p>The most widely used software for version control is <a href="https://git-scm.com/" target="_blank">Git</a>. Although we do not cover the specifics of this software, it’s useful to understand the purpose and what it can do in making your work more open and impactful. Git is integrated with many popular open source development platforms, such as <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN" target="_blank">RStudio</a>.</p>
+<p>The most widely used software for version control is <a href="https://git-scm.com/" target="_blank">Git</a>. Although we do not cover the specifics of this software, it’s useful to understand the purpose and what it can do in making your work more open and impactful. Git is integrated with many popular open source development platforms, such as <a href="https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN" target="_blank">RStudio</a>.</p>
 <p>Many people often confuse Git with <a href="https://www.github.com" target="_blank">GitHub</a>. GitHub is an online platform for working collaboratively through Git AND it allows you to be open with your work. We’ll provide some examples below of how this can be done. Importantly, you do not need to be an expert in Git to be able to use GitHub. This speaks volumes for how team efficiency can be improved with GitHub through better collaboration.</p>
 <p>This recent blog provides a helpful introduction to <a href="https://masalmon.eu/2023/01/12/git-github-casual/" target="_blank">Git/GitHub for the casual user</a>.</p>
 <div class="cell" data-layout-align="center">
@@ -313,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 256c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96zm-26.7 32h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"></path></svg> Watch and learn
 </h3>
-<p>Workflow management in the real world - using GitHub to collaborate. Here we present some examples from the Tampa Bay Estuary Program <a href="https://tbep.org/estuary/state-of-the-bay/">State of the Bay</a> report and <a href="https://tbep.org/water-quality-report-card/">water quality report card</a>.</p>
+<p>Workflow management in the real world - using GitHub to collaborate. Here we present some examples from the Tampa Bay Estuary Program <a href="https://tbep.org/estuary/state-of-the-bay/" target="_blank">State of the Bay</a> report and <a href="https://tbep.org/water-quality-report-card/" target="_blank">water quality report card</a>.</p>
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 256c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96zm-26.7 32h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"></path></svg> Watch and learn
 </h3>
@@ -418,7 +418,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 288V64.03c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 320 128 305.7 128 288zM481.5 229.1c1.234-5.092 1.875-10.32 1.875-15.64c0-22.7-11.44-43.13-29.28-55.28c.4219-3.015 .6406-6.076 .6406-9.122c0-22.32-11.06-42.6-28.83-54.83c-2.438-34.71-31.47-62.2-66.8-62.2h-52.53c-35.94 0-71.55 11.87-100.3 33.41L169.6 92.93c-6.285 4.71-9.596 11.85-9.596 19.13c0 12.76 10.29 24.04 24.03 24.04c5.013 0 10.07-1.565 14.38-4.811l36.66-27.51c20.48-15.34 45.88-23.81 71.5-23.81h52.53c10.45 0 18.97 8.497 18.97 18.95c0 3.5-1.11 4.94-1.11 9.456c0 26.97 29.77 17.91 29.77 40.64c0 9.254-6.392 10.96-6.392 22.25c0 13.97 10.85 21.95 19.58 23.59c8.953 1.671 15.45 9.481 15.45 18.56c0 13.04-11.39 13.37-11.39 28.91c0 12.54 9.702 23.08 22.36 23.94C456.2 266.1 464 275.2 464 284.1c0 10.43-8.516 18.93-18.97 18.93H307.4c-12.44 0-24 10.02-24 23.1c0 4.038 1.02 8.078 3.066 11.72C304.4 371.7 312 403.8 312 411.2c0 8.044-5.984 20.79-22.06 20.79c-12.53 0-14.27-.9059-24.94-28.07c-24.75-62.91-61.74-99.9-80.98-99.9c-13.8 0-24.02 11.27-24.02 23.99c0 7.041 3.083 14.02 9.016 18.76C238.1 402 211.4 480 289.9 480C333.8 480 360 445 360 411.2c0-12.7-5.328-35.21-14.83-59.33h99.86C481.1 351.9 512 321.9 512 284.1C512 261.8 499.9 241 481.5 229.1z"></path></svg> Cons
 </h4>
-<p>Requires a Microsoft account and access can be tricky depending on institution. Maintains dependency on expensive Microsoft products that don’t facilitate reproducibility. Very often used in closed workflows.</p>
+<p>Requires a Microsoft account and access can be tricky depending on institution. Maintains dependency on expensive Microsoft products that aren’t reproducible or interoperable. Very often used in closed workflows.</p>
 </section>
 <section id="github" class="level3" data-number="2.3.5">
 <h3 data-number="2.3.5" class="anchored" data-anchor-id="github"><span class="header-section-number">2.3.5</span> GitHub</h3>
@@ -445,10 +445,10 @@ ul.task-list li input[type="checkbox"] {
 </h3>
 <p>In small groups, setup a shared workspace using GitHub and create a project management board. Some real world examples of why you might do this were presented in the earlier <a href="https://tbep-tech.github.io/tbep-os-workshop/collaborate.html#watch-and-learn">watch and learn</a>.</p>
 <ol type="1">
-<li>Open <a href="https://www.github.com">GitHub</a> in a web browser and have one person create a new repository (the big, green “New” button in Repositories). Add each member to the repository after it’s created (hint: Settings -&gt; Collaborators)</li>
+<li>Open <a href="https://www.github.com" target="_blank">GitHub</a> in a web browser and have one person create a new repository (the big, green “New” button in Repositories). Add each member to the repository after it’s created (hint: Settings -&gt; Collaborators)</li>
 <li>Have that same person create a project board for the repository (Hint: Projects -&gt; New project -&gt; board format)</li>
 <li>After each person accepts the invitation to the repository (check your email!), each new member create a new file in the repository (Hint: Click “Add file” near the top). Name it something unique, save and commit the changes</li>
-<li>Assign issues to different members of the repository to do something to the new files (Hint: on the right menu, select “Assignees”). Add the issue to the project board before (Hint: on the right menu, select “Projects” and click the new project).</li>
+<li>Assign issues to different members of the repository to do something to the new files (Hint: on the right menu, select “Assignees”). Add the issue to the project board (Hint: on the right menu, select “Projects” and click the new project).</li>
 <li>Work on the issues until the time is up. Close each issue as they’re completed.</li>
 </ol>
 
