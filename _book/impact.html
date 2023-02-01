@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.258">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -169,6 +169,11 @@ div.csl-indent {
       <a href="./">Tampa Bay Open Science Workshop</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/tbep-tech/tbep-os-workshop" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -286,19 +291,19 @@ div.csl-indent {
 <li>You receive a deliverable from a project partner that was stipulated in a scope of work. This deliverable comes in multiple formats with no reproducible workflow to recreate the datasets. You are unable to verify the information, eroding your faith in the final product and making it impossible to update the results in the future.</li>
 <li>An annual reporting product requires using new data each year. The staff member in charge of this report spends several days gathering the new data and combining it with the historical data. Other projects are on hold until this report is updated. Stakeholders that use this report to make decisions do not trust or misunderstand the product because the steps for its creation are opaque.</li>
 </ol>
-<p>Anybody who has ever worked with data knows that it comes in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but here’s a few of the common reasons:</p>
+<p>Data come in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:</p>
 <ul>
 <li>What’s easy for recording data doesn’t usually translate to easy analysis</li>
 <li>Egregious use of Excel as data management software</li>
 <li>Metadata is a chore that is often an afterthought</li>
 </ul>
-<p>It’s often said that 90% of working with data is cleaning (or “wrangling”), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it’s also a service for your colleagues and future collaborators. Therefore, better data management leads to more open science.</p>
-<p>The <a href="basics.html#fair">FAIR</a> principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can help you work towards putting FAIR data into practice. In this module, we’ll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.</p>
+<p>It’s often said that 90% of working with data is cleaning (or “wrangling”), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it’s also a service for your colleagues, potential collaborators, and your future self. Therefore, better data management leads to more open science.</p>
+<p>The <a href="basics.html#fair">FAIR</a> principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can facilitate application of FAIR data. In this module, we’ll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.</p>
 </section>
 <section id="tidy" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="tidy"><span class="header-section-number">3.3</span> Principles of tidy data</h2>
-<p>Tabular data allow you to store information as observations in rows and variables in columns, yet it’s very common to try to make a data table more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to <em>table abuse</em>.</p>
-<p>Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are <a href="http://www.eusprig.org/horror-stories.htm" target="_blank">many examples</a> that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science <span class="citation" data-cites="Ziemann16">(<a href="references.html#ref-Ziemann16" role="doc-biblioref">Ziemann, Eren, and El-Osta 2016</a>)</span>.</p>
+<p>Tabular data allow you to store information, where observations are in rows and variables are in columns. It’s very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to <strong><em>table abuse</em></strong>.</p>
+<p>Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are <a href="https://eusprig.org/research-info/horror-stories/" target="_blank">many examples</a> that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science <span class="citation" data-cites="Ziemann16">(<a href="references.html#ref-Ziemann16" role="doc-biblioref">Ziemann, Eren, and El-Osta 2016</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -366,7 +371,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/tidyex3.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="img/tidyex3.png" class="img-fluid figure-img" style="width:65.0%"></p>
 <p></p><figcaption class="figure-caption">Table 3</figcaption><p></p>
 </figure>
 </div>
@@ -401,11 +406,11 @@ div.csl-indent {
 </div>
 </div>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 256c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96zm-26.7 32h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"></path></svg> Watch and learn
+<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M592 0h-384C181.5 0 160 22.25 160 49.63V96c23.42 0 45.1 6.781 63.1 17.81V64h352v288h-64V304c0-8.838-7.164-16-16-16h-96c-8.836 0-16 7.162-16 16V352H287.3c22.07 16.48 39.54 38.5 50.76 64h253.9C618.5 416 640 393.8 640 366.4V49.63C640 22.25 618.5 0 592 0zM160 320c53.02 0 96-42.98 96-96c0-53.02-42.98-96-96-96C106.1 128 64 170.1 64 224C64 277 106.1 320 160 320zM192 352H128c-70.69 0-128 57.31-128 128c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32C320 409.3 262.7 352 192 352z"></path></svg> Watch and learn
 </h3>
 <p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> using Excel (an irreproducible example).</p>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 256c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96zm-26.7 32h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"></path></svg> Watch and learn
+<svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M592 0h-384C181.5 0 160 22.25 160 49.63V96c23.42 0 45.1 6.781 63.1 17.81V64h352v288h-64V304c0-8.838-7.164-16-16-16h-96c-8.836 0-16 7.162-16 16V352H287.3c22.07 16.48 39.54 38.5 50.76 64h253.9C618.5 416 640 393.8 640 366.4V49.63C640 22.25 618.5 0 592 0zM160 320c53.02 0 96-42.98 96-96c0-53.02-42.98-96-96-96C106.1 128 64 170.1 64 224C64 277 106.1 320 160 320zM192 352H128c-70.69 0-128 57.31-128 128c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32C320 409.3 262.7 352 192 352z"></path></svg> Watch and learn
 </h3>
 <p>Making an <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> using R (a reproducible example).</p>
 <div class="cell">
@@ -444,7 +449,7 @@ div.csl-indent {
 </div>
 </div>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
 <p>Now try it on your own. Download the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset and make it tidy using your preferred software. Compare your tidied dataset with <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">this one</a> to see if you’ve done it right.</p>
 </section>
@@ -485,7 +490,7 @@ div.csl-indent {
 </ul></li>
 </ul>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
 <p>Create a data dictionary for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Use a spreadsheet to create a table to describe the column names, data type, acceptable values, and a description.</p>
 </section>
@@ -531,7 +536,7 @@ div.csl-indent {
 </div>
 </div>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
 <p>Create a metadata file for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Just start by using your data dictionary and develop narrative answers for “who”, “what”, “when”, “where”, “why”, and “how” to describe your dataset. Get creative with your descriptions since this is a made up dataset. Enter this information into a new spreadsheet.</p>
 </section>
@@ -552,7 +557,7 @@ div.csl-indent {
 <li><a href="https://opc.dataone.org/data" target="_blank">OPC</a>: California Ocean Protection Council, marine and coastal datasets</li>
 </ul>
 <h3 class="anchored">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M200 376l-49.23-16.41c-7.289-2.434-7.289-12.75 0-15.18L200 328l16.41-49.23c2.434-7.289 12.75-7.289 15.18 0L248 328l49.23 16.41c7.289 2.434 7.289 12.75 0 15.18L248 376L240 416H448l-86.38-201.6C355.4 200 354.8 183.8 359.8 168.9L416 0L228.4 107.3C204.8 120.8 185.1 141.4 175 166.4L64 416h144L200 376zM231.2 172.4L256 160l12.42-24.84c1.477-2.949 5.68-2.949 7.156 0L288 160l24.84 12.42c2.949 1.477 2.949 5.68 0 7.156L288 192l-12.42 24.84c-1.477 2.949-5.68 2.949-7.156 0L256 192L231.2 179.6C228.2 178.1 228.2 173.9 231.2 172.4zM496 448h-480C7.164 448 0 455.2 0 464C0 490.5 21.49 512 48 512h416c26.51 0 48-21.49 48-48C512 455.2 504.8 448 496 448z"></path></svg> Exercise and discussion
 </h3>
 <p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset and your metadata description from the previous exercise, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.</p>
 <ol type="1">
@@ -783,6 +788,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website created by Marcus Beck and Chris Anastasiou, with attribution to external content</div>   
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
 
 
 
