@@ -291,14 +291,14 @@ div.csl-indent {
 <li>You receive a deliverable from a project partner that was stipulated in a scope of work. This deliverable comes in multiple formats with no reproducible workflow to recreate the datasets. You are unable to verify the information, eroding your faith in the final product and making it impossible to update the results in the future.</li>
 <li>An annual reporting product requires using new data each year. The staff member in charge of this report spends several days gathering the new data and combining it with the historical data. Other projects are on hold until this report is updated. Stakeholders that use this report to make decisions do not trust or misunderstand the product because the steps for its creation are opaque.</li>
 </ol>
-<p>Anybody who has ever worked with data knows that it comes in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:</p>
+<p>Data come in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:</p>
 <ul>
 <li>What’s easy for recording data doesn’t usually translate to easy analysis</li>
 <li>Egregious use of Excel as data management software</li>
 <li>Metadata is a chore that is often an afterthought</li>
 </ul>
-<p>It’s often said that 90% of working with data is cleaning (or “wrangling”), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it’s also a service for your colleagues and future collaborators. Therefore, better data management leads to more open science.</p>
-<p>The <a href="basics.html#fair">FAIR</a> principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can help you work towards putting FAIR data into practice. In this module, we’ll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.</p>
+<p>It’s often said that 90% of working with data is cleaning (or “wrangling”), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it’s also a service for your colleagues, potential collaborators, and your future self. Therefore, better data management leads to more open science.</p>
+<p>The <a href="basics.html#fair">FAIR</a> principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can facilitate application of FAIR data. In this module, we’ll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.</p>
 </section>
 <section id="tidy" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="tidy"><span class="header-section-number">3.3</span> Principles of tidy data</h2>
@@ -323,7 +323,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. What do we mean by this?</p>
+<p>If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a .csv. What do we mean by this?</p>
 <p>A <strong>rectangular</strong> file:</p>
 <blockquote class="blockquote">
 <p>Store data only in rows and columns in matrix format (e.g., 10 rows x 5 columns), with no “dangling” cells that have values outside of the grid or more than one table in a spreadsheet.</p>
@@ -371,7 +371,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/tidyex3.png" class="img-fluid figure-img" style="width:65.0%"></p>
+<p><img src="img/tidyex3.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <p></p><figcaption class="figure-caption">Table 3</figcaption><p></p>
 </figure>
 </div>
@@ -423,18 +423,14 @@ div.csl-indent {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># import and wrangle</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">'data/untidy.xlsx'</span>, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(Location) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">2019</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">'Year'</span>, <span class="at">values_to =</span> <span class="st">'Acres/Category'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">Acres/Category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'Acres'</span>, <span class="st">'Category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">as.numeric</span>(Year), </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Acres =</span> <span class="fu">as.numeric</span>(Acres)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">2019</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">'Year'</span>, <span class="at">values_to =</span> <span class="st">'Acres/Category'</span>, <span class="at">names_transform =</span> as.integer) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">Acres/Category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'Acres'</span>, <span class="st">'Category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>, <span class="at">convert =</span> T)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 27 × 5
    Location  Habitat   Year Acres Category
-   &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   
+   &lt;chr&gt;     &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt;   
  1 Clear Bay Seagrass  2019   519 B       
  2 Clear Bay Seagrass  2020   438 C       
  3 Clear Bay Seagrass  2021   375 A       
@@ -476,15 +472,15 @@ div.csl-indent {
 </li>
 <li>Try to avoid spaces or commas in column names since some software may interpret that as the start of a new column. Do not start a column name with a number.<br>
 </li>
-<li>It may also be useful to identify a “plot name” column that uses proper spelling, punctuation, and units (if applicable). Entries in this column can be used for making graphics that have interpretable names (e.g., using “Temp. (C)” instead of “temp” as the name of a plot axis).</li>
+<li>It may also be useful to identify a “plot name” column that uses proper spelling, punctuation, and units. Entries in this column can be used for making graphics that have interpretable names (e.g., using “Temp. (F)” instead of “temp” as the name of a plot axis).</li>
 </ul></li>
 <li><p>Data types</p>
 <ul>
-<li>Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations. Never, ever mix data types in the same column.<br>
+<li>Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations (integer). Never, ever mix data types in the same column.<br>
 </li>
-<li>If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range? Also make note of the units that were used.<br>
+<li>If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range?<br>
 </li>
-<li>For categorical descriptors, identify all possible categories that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.<br>
+<li>For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.<br>
 </li>
 <li>For dates, make note of the format, e.g., YYYY-MM-DD. For time, identify the timezone and if it includes daylight savings or not.</li>
 </ul></li>
@@ -498,12 +494,13 @@ div.csl-indent {
 <h2 data-number="3.5" class="anchored" data-anchor-id="importance-of-metadata"><span class="header-section-number">3.5</span> Importance of metadata</h2>
 <p>How many times have you been sent a dataset without any idea what it contains or why it was created? How are you sure the information is valid and that your analysis takes into account the limitations of the data? How many times have you willfully sent someone a dataset without fully providing this information?</p>
 <p>Without metadata, it’s impossible to know critical details about a dataset that can inform its analysis, and more importantly, its use to inform decision-making. Curating data should be synonymous with metadata generation and is an important part of open science. We cannot provide open data in good faith without also providing metadata.</p>
-<p>Metadata is literally defined as “data about data”. It varies from simple text descriptions of a dataset, such as “who”, “what”, “when”, “where”, “why”, and “how”, to more formalized standards with that prepare your data for archival in a long-term repository. A useful definition is provided by <span class="citation" data-cites="Gilliland16">Gilliland (<a href="references.html#ref-Gilliland16" role="doc-biblioref">2016</a>)</span>:</p>
+<p>Metadata is literally defined as “data about data”. It varies from simple text descriptions of a dataset, such as “who”, “what”, “when”, “where”, “why”, and “how”, to more formalized standards with that prepare your data for archiving in a long-term repository. The data dictionary is only part of a complete metadata description.</p>
+<p>A useful definition is provided by <span class="citation" data-cites="Gilliland16">Gilliland (<a href="references.html#ref-Gilliland16" role="doc-biblioref">2016</a>)</span>:</p>
 <blockquote class="blockquote">
 <p>A suite of industry or disciplinary standards as well as additional internal and external documentation and other data necessary for the identification, representation, interoperability, technical management, performance, and use of data contained in an information system.</p>
 </blockquote>
 <p>Why don’t we see more metadata in the wild? Short answer is that it’s often an afterthought, if considered at all. Creating metadata is usually tedious and the return on investment is not apparent at onset of a project. However, the collective growth of sciences and its application to real world problems is dependent on metadata.</p>
-<p>The US Geological Survey provides a useful document on creating <a href="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/Metadata%20in%20Plain%20Language_508compliant.pdf" target="_blank">Metadata in “plain language”</a> to distill the basic information contained in a metadata file. It provides a workflow for answering the “who”, “what”, “when”, “where”, “why”, and “how” questions for metadata. Below is a brief synopsis:</p>
+<p>The US Geological Survey provides a useful document on creating <a href="https://geology.usgs.gov/tools/metadata/tools/doc/ctc/" target="_blank">Metadata in “plain language”</a> to distill the basic information contained in a metadata file. It provides a workflow for answering the “who”, “what”, “when”, “where”, “why”, and “how” questions for metadata. Below is a brief synopsis:</p>
 <blockquote class="blockquote">
 <p>What does the dataset describe?</p>
 </blockquote>
@@ -542,29 +539,30 @@ div.csl-indent {
 </section>
 <section id="data-repositories" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="data-repositories"><span class="header-section-number">3.6</span> Data repositories</h2>
-<p>How data are treated as living, dynamic pieces of information is critical to the whole ethos of open science. This is especially true when the <a href="basics.html#fair">FAIR</a> principles are invoked. Data should not live on your hard drive as something only known to yourself.</p>
+<p>How data are treated as living, dynamic pieces of information is critical to the ethos of open science. This is especially true when the <a href="basics.html#fair">FAIR</a> principles are invoked. Data should not live on your hard drive as something only known to yourself.</p>
 <p>Although we will not cover data repositories in depth, it’s important to recognize the critical role that data archiving and metadata have in open science. How many times have you thought “wow, it would be great if I could have the data from this paper!” Making data open is a great way to propel science through better collaboration.</p>
-<p>The ease of getting a dataset online depends on where you want to put the data. In all cases, your dataset should be tidy and accompanied by metadata. For simple solutions, such as FTP hosting or putting a dataset on Google Drive, all you need to do is upload the data by hand. However, this doesn’t necessarily make it findable and the permanency is uncertain.</p>
-<p>The absolute best standard for hosting data online is through a <strong>Federated Data Repository</strong>:</p>
+<p>The ease of getting a dataset online depends on where you want to put the data. In most cases, your dataset should be tidy and accompanied by metadata. For simple solutions, such as FTP hosting or putting a dataset on Google Drive, all you need to do is upload the data and metadata by hand. However, this doesn’t necessarily make it findable and the permanency is uncertain.</p>
+<p>The absolute best standard for hosting data online is through a <em>Federated Data Repository</em>:</p>
 <blockquote class="blockquote">
 <p>An online network of connected repositories that use similar standards to collectively store data for discovery and access. Uploading a dataset to one node of a repository will make it available through all other nodes.</p>
 </blockquote>
-<p>Such repositories follow strict but necessary guidelines to ensure your data live forever so long as the internet exists. The data are definitely findable (e.g., through a web search), accessible (free to download), and interoperable (accepted standards are ensured). The “reproducible” aspect can be debatable, but that can be solved through other means (e.g., code sharing).</p>
+<p>Such repositories follow strict but necessary guidelines to ensure your data have permanence and adhere to the FAIR principles. The data are definitely findable (e.g., through a web search), accessible (free to download), and interoperable (accepted standards are ensured). The “reproducible” aspect can be debatable, but that can be solved through other means (e.g., code sharing on GitHub).</p>
 <p>Some examples of data repositories, most are domain-specific:</p>
 <ul>
 <li><a href="https://knb.ecoinformatics.org/" target="_blank">KNB</a>: Knowledge Network for Biocomplexity, a general purpose repository for ecological data</li>
 <li><a href="https://www.hydroshare.org/" target="_blank">HydroShare</a>: Data and models used in hydrology</li>
 <li><a href="https://opc.dataone.org/data" target="_blank">OPC</a>: California Ocean Protection Council, marine and coastal datasets</li>
+<li><a href="https://osf.io/" target="_blank">OSF</a>: The Open Science Foundation, a general location for sharing data and other research tools</li>
 </ul>
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
 </h3>
-<p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset and your metadata description from the previous exercise, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.</p>
+<p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset, your data dictionary, and your metadata description from the previous exercises, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.</p>
 <ol type="1">
 <li>Log in to the test archive using your ORCID information: <a href="https://dev.nceas.ucsb.edu/" target="_blank">https://dev.nceas.ucsb.edu/</a></li>
-<li>Click the submit button at the top to start the process of entering your data</li>
-<li>Add the relevant metadata information in the forms (because this is a test archive, not all will be entered)</li>
-<li>Save the dataset when you’re done and marvel at your work</li>
+<li>Click the submit button at the top to start the process of entering your data.</li>
+<li>Add the relevant metadata information in the forms (because this is a test archive, not all will be entered). The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.</li>
+<li>Save the dataset when you’re done and marvel at your work.</li>
 </ol>
 
 
