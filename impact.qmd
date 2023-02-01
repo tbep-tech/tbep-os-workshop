@@ -32,19 +32,19 @@ You can probably recall past instances when poor data management has been a chal
 2.  You receive a deliverable from a project partner that was stipulated in a scope of work. This deliverable comes in multiple formats with no reproducible workflow to recreate the datasets. You are unable to verify the information, eroding your faith in the final product and making it impossible to update the results in the future.
 3.  An annual reporting product requires using new data each year. The staff member in charge of this report spends several days gathering the new data and combining it with the historical data. Other projects are on hold until this report is updated. Stakeholders that use this report to make decisions do not trust or misunderstand the product because the steps for its creation are opaque.
 
-Anybody who has ever worked with data knows that it comes in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:
+Data come in many shapes and sizes, most more like the right side of the above picture. Poor data management occurs for many reasons, but these are a few of the common causes:
 
 -   What's easy for recording data doesn't usually translate to easy analysis
 -   Egregious use of Excel as data management software
 -   Metadata is a chore that is often an afterthought
 
-It's often said that 90% of working with data is cleaning (or "wrangling"), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it's also a service for your colleagues and future collaborators. Therefore, better data management leads to more open science.
+It's often said that 90% of working with data is cleaning (or "wrangling"), whereas actual analysis and interpretation is a small fraction of your total effort. Using better data management practices will not only help you save time, it's also a service for your colleagues, potential collaborators, and your future self. Therefore, better data management leads to more open science.
 
-The [FAIR](#fair) principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can help you work towards putting FAIR data into practice. In this module, we'll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.
+The [FAIR](#fair) principles outlined in the first module are especially useful when working with data for open science applications. Many of the collaborative tools in the second module can facilitate application of FAIR data. In this module, we'll go a step further to discuss how data structure, including metadata, can produce a FAIR dataset.
 
 ## Principles of tidy data {#tidy}
 
-Tabular data allow you to store information, where observations are in rows and variables are in columns.  It's very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
+Tabular data allow you to store information, where observations are in rows and variables are in columns. It's very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
 
 Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](https://eusprig.org/research-info/horror-stories/){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science [@Ziemann16].
 
@@ -62,7 +62,7 @@ Excel allows you to abuse your data in many ways, such as adding color to cells,
 knitr::include_graphics('img/excel_bad.png')
 ```
 
-If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. What do we mean by this?
+If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a .csv.  What do we mean by this?
 
 A **rectangular** file:
 
@@ -106,7 +106,7 @@ knitr::include_graphics('img/tidyex2.png')
 
 ```{r}
 #| fig-align: "center"
-#| out-width: "65%"
+#| out-width: "60%"
 #| fig-cap: "Table 3"
 knitr::include_graphics('img/tidyex3.png')
 ```
@@ -147,12 +147,8 @@ library(tidyr)
 # import and wrangle
 dat <- read_excel('data/untidy.xlsx', skip = 1) %>% 
   fill(Location) %>% 
-  pivot_longer(cols = `2019`:`2021`, names_to = 'Year', values_to = 'Acres/Category') %>% 
-  separate(col = `Acres/Category`, into = c('Acres', 'Category'), sep = '/') %>% 
-  mutate(
-    Year = as.numeric(Year), 
-    Acres = as.numeric(Acres)
-  )
+  pivot_longer(cols = `2019`:`2021`, names_to = 'Year', values_to = 'Acres/Category', names_transform = as.integer) %>% 
+  separate(col = `Acres/Category`, into = c('Acres', 'Category'), sep = '/', convert = T)
 dat
 ```
 
@@ -182,13 +178,13 @@ Here we provide some general guidelines for developing your own data dictionary.
 
     -   Be as descriptive as possible while trying to keep the name as short as possible. Really long names with lots of detail can be just as frustrating as very short names with very little detail. The column name should be intuitive to point the analyst in the right direction.\
     -   Try to avoid spaces or commas in column names since some software may interpret that as the start of a new column. Do not start a column name with a number.\
-    -   It may also be useful to identify a "plot name" column that uses proper spelling, punctuation, and units (if applicable). Entries in this column can be used for making graphics that have interpretable names (e.g., using "Temp. (C)" instead of "temp" as the name of a plot axis).
+    -   It may also be useful to identify a "plot name" column that uses proper spelling, punctuation, and units. Entries in this column can be used for making graphics that have interpretable names (e.g., using "Temp. (F)" instead of "temp" as the name of a plot axis).
 
 -   Data types
 
-    -   Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations. Never, ever mix data types in the same column.\
-    -   If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range? Also make note of the units that were used.\
-    -   For categorical descriptors, identify all possible categories that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.\
+    -   Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations (integer). Never, ever mix data types in the same column.\
+    -   If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range?\
+    -   For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.\
     -   For dates, make note of the format, e.g., YYYY-MM-DD. For time, identify the timezone and if it includes daylight savings or not.
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
@@ -201,13 +197,15 @@ How many times have you been sent a dataset without any idea what it contains or
 
 Without metadata, it's impossible to know critical details about a dataset that can inform its analysis, and more importantly, its use to inform decision-making. Curating data should be synonymous with metadata generation and is an important part of open science. We cannot provide open data in good faith without also providing metadata.
 
-Metadata is literally defined as "data about data". It varies from simple text descriptions of a dataset, such as "who", "what", "when", "where", "why", and "how", to more formalized standards with that prepare your data for archival in a long-term repository. A useful definition is provided by @Gilliland16:
+Metadata is literally defined as "data about data". It varies from simple text descriptions of a dataset, such as "who", "what", "when", "where", "why", and "how", to more formalized standards with that prepare your data for archiving in a long-term repository.  The data dictionary is only part of a complete metadata description. 
+
+A useful definition is provided by @Gilliland16:
 
 > A suite of industry or disciplinary standards as well as additional internal and external documentation and other data necessary for the identification, representation, interoperability, technical management, performance, and use of data contained in an information system.
 
 Why don't we see more metadata in the wild? Short answer is that it's often an afterthought, if considered at all. Creating metadata is usually tedious and the return on investment is not apparent at onset of a project. However, the collective growth of sciences and its application to real world problems is dependent on metadata.
 
-The US Geological Survey provides a useful document on creating [Metadata in "plain language"](https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/Metadata%20in%20Plain%20Language_508compliant.pdf){target="_blank"} to distill the basic information contained in a metadata file. It provides a workflow for answering the "who", "what", "when", "where", "why", and "how" questions for metadata. Below is a brief synopsis:
+The US Geological Survey provides a useful document on creating [Metadata in "plain language"](https://geology.usgs.gov/tools/metadata/tools/doc/ctc/){target="_blank"} to distill the basic information contained in a metadata file. It provides a workflow for answering the "who", "what", "when", "where", "why", and "how" questions for metadata. Below is a brief synopsis:
 
 > What does the dataset describe?
 
@@ -247,29 +245,30 @@ Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-works
 
 ## Data repositories
 
-How data are treated as living, dynamic pieces of information is critical to the whole ethos of open science. This is especially true when the [FAIR](#fair) principles are invoked. Data should not live on your hard drive as something only known to yourself.
+How data are treated as living, dynamic pieces of information is critical to the ethos of open science. This is especially true when the [FAIR](#fair) principles are invoked. Data should not live on your hard drive as something only known to yourself.
 
 Although we will not cover data repositories in depth, it's important to recognize the critical role that data archiving and metadata have in open science. How many times have you thought "wow, it would be great if I could have the data from this paper!" Making data open is a great way to propel science through better collaboration.
 
-The ease of getting a dataset online depends on where you want to put the data. In all cases, your dataset should be tidy and accompanied by metadata. For simple solutions, such as FTP hosting or putting a dataset on Google Drive, all you need to do is upload the data by hand. However, this doesn't necessarily make it findable and the permanency is uncertain.
+The ease of getting a dataset online depends on where you want to put the data. In most cases, your dataset should be tidy and accompanied by metadata. For simple solutions, such as FTP hosting or putting a dataset on Google Drive, all you need to do is upload the data and metadata by hand. However, this doesn't necessarily make it findable and the permanency is uncertain.
 
-The absolute best standard for hosting data online is through a **Federated Data Repository**:
+The absolute best standard for hosting data online is through a *Federated Data Repository*:
 
 > An online network of connected repositories that use similar standards to collectively store data for discovery and access. Uploading a dataset to one node of a repository will make it available through all other nodes.
 
-Such repositories follow strict but necessary guidelines to ensure your data live forever so long as the internet exists. The data are definitely findable (e.g., through a web search), accessible (free to download), and interoperable (accepted standards are ensured). The "reproducible" aspect can be debatable, but that can be solved through other means (e.g., code sharing).
+Such repositories follow strict but necessary guidelines to ensure your data have permanence and adhere to the FAIR principles. The data are definitely findable (e.g., through a web search), accessible (free to download), and interoperable (accepted standards are ensured). The "reproducible" aspect can be debatable, but that can be solved through other means (e.g., code sharing on GitHub).
 
 Some examples of data repositories, most are domain-specific:
 
 -   [KNB](https://knb.ecoinformatics.org/){target="_blank"}: Knowledge Network for Biocomplexity, a general purpose repository for ecological data
 -   [HydroShare](https://www.hydroshare.org/){target="_blank"}: Data and models used in hydrology
 -   [OPC](https://opc.dataone.org/data){target="_blank"}: California Ocean Protection Council, marine and coastal datasets
+-   [OSF](https://osf.io/){target="_blank"}: The Open Science Foundation, a general location for sharing data and other research tools
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Using the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset and your metadata description from the previous exercise, we'll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.
+Using the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset, your data dictionary, and your metadata description from the previous exercises, we'll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.
 
 1.  Log in to the test archive using your ORCID information: [https://dev.nceas.ucsb.edu/](https://dev.nceas.ucsb.edu/){target="_blank"}
-2.  Click the submit button at the top to start the process of entering your data
-3.  Add the relevant metadata information in the forms (because this is a test archive, not all will be entered)
-4.  Save the dataset when you're done and marvel at your work
+2.  Click the submit button at the top to start the process of entering your data.
+3.  Add the relevant metadata information in the forms (because this is a test archive, not all will be entered).  The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.
+4.  Save the dataset when you're done and marvel at your work.
