@@ -267,7 +267,7 @@ div.csl-indent {
 </div>
 <section id="goals-and-motivation" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="goals-and-motivation"><span class="header-section-number">3.1</span> Goals and motivation</h2>
-<p>This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata tools and data repositories to make sure your data have a life beyond the project.</p>
+<p>This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata tools and data repositories that allow your data to live beyond the project.</p>
 <ul>
 <li><strong>Goal</strong>: understand best practices for data management as a key concept for open science</li>
 <li><strong>Motivation</strong>: cultivate data as a living, shared resource</li>
@@ -303,7 +303,7 @@ div.csl-indent {
 <section id="tidy" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="tidy"><span class="header-section-number">3.3</span> Principles of tidy data</h2>
 <p>Tabular data allow you to store information, where observations are in rows and variables are in columns. It’s very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to <em>table abuse</em>.</p>
-<p>Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are <a href="https://eusprig.org/research-info/horror-stories/" target="_blank">many examples</a> that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science <span class="citation" data-cites="Ziemann16">(<a href="references.html#ref-Ziemann16" role="doc-biblioref">Ziemann, Eren, and El-Osta 2016</a>)</span>.</p>
+<p>Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are <a href="https://eusprig.org/research-info/horror-stories/" target="_blank">many examples</a> that demonstrate how Excel has contributed to costly mistakes through table abuse or outright negligence, often to the detriment of science <span class="citation" data-cites="Ziemann16">(<a href="references.html#ref-Ziemann16" role="doc-biblioref">Ziemann, Eren, and El-Osta 2016</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -323,7 +323,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a .csv. What do we mean by this?</p>
+<p>If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a <em>.csv</em> file. What do we mean by this?</p>
 <p>A <strong>rectangular</strong> file:</p>
 <blockquote class="blockquote">
 <p>Store data only in rows and columns in matrix format (e.g., 10 rows x 5 columns), with no “dangling” cells that have values outside of the grid or more than one table in a spreadsheet.</p>
@@ -345,7 +345,7 @@ div.csl-indent {
 <p><img src="img/tidy-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>Using these principles for data storage may seem unnatural at first because of a difference between what’s easy for entering data versus what makes sense for downstream analyses. For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.</p>
+<p>Using these principles may seem unnatural at first because of a difference between what’s easy for entering data versus what makes sense for downstream analyses. For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.</p>
 <p>The following examples show five tables represented in different arrangements. Only one of the tables is tidy - which one?</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -427,27 +427,11 @@ div.csl-indent {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">Acres/Category</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'Acres'</span>, <span class="st">'Category'</span>), <span class="at">sep =</span> <span class="st">'/'</span>, <span class="at">convert =</span> T)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 27 × 5
-   Location  Habitat   Year Acres Category
-   &lt;chr&gt;     &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt;   
- 1 Clear Bay Seagrass  2019   519 B       
- 2 Clear Bay Seagrass  2020   438 C       
- 3 Clear Bay Seagrass  2021   375 A       
- 4 Clear Bay Oysters   2019   390 B       
- 5 Clear Bay Oysters   2020   875 B       
- 6 Clear Bay Oysters   2021   724 A       
- 7 Clear Bay Sand      2019   742 C       
- 8 Clear Bay Sand      2020   702 A       
- 9 Clear Bay Sand      2021   505 C       
-10 Fish Bay  Seagrass  2019   930 B       
-# … with 17 more rows</code></pre>
-</div>
 </div>
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
 </h3>
-<p>Now try it on your own. Download the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset and make it tidy using your preferred software. Compare your tidied dataset with <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">this one</a> to see if you’ve done it right.</p>
+<p>Now try it on your own. Download the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx">untidy</a> dataset and make it tidy using your preferred software.</p>
 </section>
 <section id="data-dictionaries" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="data-dictionaries"><span class="header-section-number">3.4</span> Data dictionaries</h2>
@@ -480,7 +464,7 @@ div.csl-indent {
 </li>
 <li>If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range?<br>
 </li>
-<li>For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.<br>
+<li>For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size. These may be ordered or unordered.<br>
 </li>
 <li>For dates, make note of the format, e.g., YYYY-MM-DD. For time, identify the timezone and if it includes daylight savings or not.</li>
 </ul></li>
@@ -524,7 +508,7 @@ div.csl-indent {
 <blockquote class="blockquote">
 <p>How can someone get a copy of the dataset?</p>
 </blockquote>
-<p>Good metadata has information on who to contact for getting the data. This contact may not be the same as who created the dataset (e.g., IT staff). For archived or publicly available data, this information is more important for who to contact should someone have questions. Information on obtaining a copy of the data should also describe any special software or licensing issues related to accessing the data.</p>
+<p>Good metadata has information on who to contact for getting the data. This contact may not be the same as who created the dataset (e.g., IT staff). For archived or publicly available data, this information is more important for who to contact should someone have questions. Information on obtaining a copy of the data should also describe any special software or <a href="https://r-pkgs.org/license.html" target="_blank">licensing</a> issues related to accessing the data.</p>
 <p>Once you’ve gathered this information, how do you turn it into literal metadata? It depends on how deep you want to go. At it’s simplest, your metadata could be a simple text file with answers to the questions. Or it could be a specific file format used by modern data archive repositories (e.g., <a href="https://docs.ropensci.org/EML/" target="_blank">EML</a> format).</p>
 <p>Here’s an example of a bare bones metadata file. One could easily type this up in a text file or spreadsheet.</p>
 <div class="cell">
@@ -535,7 +519,7 @@ div.csl-indent {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
 </h3>
-<p>Create a metadata file for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Just start by using your data dictionary and develop narrative answers for “who”, “what”, “when”, “where”, “why”, and “how” to describe your dataset. Get creative with your descriptions since this is a made up dataset. Enter this information into a new spreadsheet.</p>
+<p>Create a metadata file for the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset from the previous example. Just start by using your data dictionary and develop narrative answers for “who”, “what”, “when”, “where”, “why”, and “how” to describe your dataset. Get creative with your descriptions since this is a made up dataset. Enter this information in a text file or spreadsheet.</p>
 </section>
 <section id="data-repositories" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="data-repositories"><span class="header-section-number">3.6</span> Data repositories</h2>
@@ -557,11 +541,11 @@ div.csl-indent {
 <h3 class="anchored">
 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> Exercise and discussion
 </h3>
-<p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset, your data dictionary, and your metadata description from the previous exercises, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.</p>
+<p>Using the <a href="https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx">tidy</a> dataset, your data dictionary, and your metadata description from the previous exercises, we’ll archive the data on the test node of KNB. This workflow is exactly the same for the real KNB repository and is designed to get you comfortable adding data to an archive.</p>
 <ol type="1">
 <li>Log in to the test archive using your ORCID information: <a href="https://dev.nceas.ucsb.edu/" target="_blank">https://dev.nceas.ucsb.edu/</a></li>
 <li>Click the submit button at the top to start the process of entering your data.</li>
-<li>Add the relevant metadata information in the forms (because this is a test archive, not all will be entered). The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.</li>
+<li>Add the relevant data dictionary and metadata information in the forms (because this is a simple exercise, not all forms need to be filled). The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.</li>
 <li>Save the dataset when you’re done and marvel at your work.</li>
 </ol>
 
@@ -789,7 +773,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Website created by Marcus Beck and Chris Anastasiou, with attribution to external content</div>   
-    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/" target="_blank">Quarto</a></div>
   </div>
 </footer>
 
