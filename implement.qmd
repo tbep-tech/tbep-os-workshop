@@ -123,7 +123,9 @@ Openness in science exists on a spectrum.  Your goal should be incremental movem
 
 Channeling this concept, @Wilson17 discuss “good enough practices” in scientific computing, acknowledging that very few of us are professionally trained in these disciplines and sometimes “good enough” is all we can ask for. @Lowenberg21 also advocate for simple adoption, rather than perfection, when it comes to data citation practices. 
 
-So, be kind to yourself when learning new skills and realize that the first step will likely be frustration, but through frustration comes experience. The more comfortable you become with a new task, the more likely you’ll be able to attempt additional tasks in the future.
+Also, be mindful of complacency (and apathy, at its very worst). Just because you think you've mastered a task doesn't mean you can't continue to learn.  Always strive to improve yourself and the tools you use to be open.  The fact that the toolbox is constantly evolving makes this a necessity. 
+
+So, be kind to yourself when learning new skills and realize that the first step will likely be frustration, but through frustration comes experience. The more comfortable you become with a task, the more likely you’ll attempt new tasks in the future.  I promise you will see a return on your investment. 
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
