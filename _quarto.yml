@@ -11,7 +11,7 @@ book:
     left: |
       Website created by Marcus Beck and Chris Anastasiou, with attribution to external content
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>
+      This book was built with <a href="https://quarto.org/" target="_blank">Quarto</a>
   chapters:
     - index.qmd
     - basics.qmd

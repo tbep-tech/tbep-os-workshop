@@ -12,7 +12,7 @@ library(fontawesome)
 
 ## Goals and motivation
 
-This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata tools and data repositories to make sure your data have a life beyond the project.
+This is the third module in our workshop on open science. Now we focus on core principles for data management as the foundation for open science. We discuss the role of data management to support decisions using open science. Then, we introduce the concepts of tidy data as a unified format for storing information. We close with a discussion of metadata tools and data repositories that allow your data to live beyond the project.
 
 -   **Goal**: understand best practices for data management as a key concept for open science
 -   **Motivation**: cultivate data as a living, shared resource
@@ -46,7 +46,7 @@ The [FAIR](#fair) principles outlined in the first module are especially useful 
 
 Tabular data allow you to store information, where observations are in rows and variables are in columns. It's very common to try to make tabular data more than it should be. Unless you spend a lot of time working with data, it can be difficult to recognize common mistakes that lead to *table abuse*.
 
-Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](https://eusprig.org/research-info/horror-stories/){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through the abuse of tables, often to the detriment of science [@Ziemann16].
+Before we get into tidy data, we need to discuss some of the downfalls of Excel as a data management system. There are [many examples](https://eusprig.org/research-info/horror-stories/){target="_blank"} that demonstrate how Excel has contributed to costly mistakes through table abuse or outright negligence, often to the detriment of science [@Ziemann16].
 
 ```{r}
 #| out-width: "70%"
@@ -62,7 +62,7 @@ Excel allows you to abuse your data in many ways, such as adding color to cells,
 knitr::include_graphics('img/excel_bad.png')
 ```
 
-If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a .csv.  What do we mean by this?
+If you absolutely must use Excel to store data, the only acceptable format is a rectangular, flat file. This is typically saved as a *.csv* file.  What do we mean by this?
 
 A **rectangular** file:
 
@@ -86,7 +86,7 @@ Graphically, these rules are shown below [from @Wickham17]:
 knitr::include_graphics('img/tidy-1.png')
 ```
 
-Using these principles for data storage may seem unnatural at first because of a difference between what's easy for entering data versus what makes sense for downstream analyses. For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.
+Using these principles may seem unnatural at first because of a difference between what's easy for entering data versus what makes sense for downstream analyses. For example, dates are often spread across multiple columns, such as having one column for each year of data where the header indicates the year that applies to data in the column.
 
 The following examples show five tables represented in different arrangements. Only one of the tables is tidy - which one?
 
@@ -136,7 +136,7 @@ Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/u
 Making an [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) using R (a reproducible example).
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -154,7 +154,7 @@ dat
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset and make it tidy using your preferred software. Compare your tidied dataset with [this one](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) to see if you've done it right.
+Now try it on your own. Download the [untidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/untidy.xlsx) dataset and make it tidy using your preferred software.
 
 ## Data dictionaries
 
@@ -184,7 +184,7 @@ Here we provide some general guidelines for developing your own data dictionary.
 
     -   Describe the type of data in each column, e.g., numerical measurements, categorical descriptors, or counts of observations (integer). Never, ever mix data types in the same column.\
     -   If your data are continuous numeric values, try to identify an acceptable range for the values, e.g., are there minimum or maximum values that would indicate the data are out of range?\
-    -   For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.\
+    -   For categorical descriptors, identify all possible categories (if feasible) that are acceptable values for the column, e.g., small, medium, or large for a qualitative descriptor of size.  These may be ordered or unordered.\
     -   For dates, make note of the format, e.g., YYYY-MM-DD. For time, identify the timezone and if it includes daylight savings or not.
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
@@ -229,7 +229,7 @@ It's also important to explicitly note instances when the data could be question
 
 > How can someone get a copy of the dataset?
 
-Good metadata has information on who to contact for getting the data. This contact may not be the same as who created the dataset (e.g., IT staff). For archived or publicly available data, this information is more important for who to contact should someone have questions. Information on obtaining a copy of the data should also describe any special software or licensing issues related to accessing the data.
+Good metadata has information on who to contact for getting the data. This contact may not be the same as who created the dataset (e.g., IT staff). For archived or publicly available data, this information is more important for who to contact should someone have questions. Information on obtaining a copy of the data should also describe any special software or [licensing](https://r-pkgs.org/license.html){target="_blank"} issues related to accessing the data.
 
 Once you've gathered this information, how do you turn it into literal metadata? It depends on how deep you want to go. At it's simplest, your metadata could be a simple text file with answers to the questions. Or it could be a specific file format used by modern data archive repositories (e.g., [EML](https://docs.ropensci.org/EML/){target="_blank"} format).
 
@@ -241,7 +241,7 @@ knitr::include_graphics('img/desotometa.PNG')
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset. Get creative with your descriptions since this is a made up dataset. Enter this information into a new spreadsheet.
+Create a metadata file for the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset from the previous example. Just start by using your data dictionary and develop narrative answers for "who", "what", "when", "where", "why", and "how" to describe your dataset. Get creative with your descriptions since this is a made up dataset. Enter this information in a text file or spreadsheet.
 
 ## Data repositories
 
@@ -266,9 +266,9 @@ Some examples of data repositories, most are domain-specific:
 
 <h3>`r fa('hat-wizard')` Exercise and discussion</h3>
 
-Using the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset, your data dictionary, and your metadata description from the previous exercises, we'll archive the data on the test node of KNB. This workflow is exactly the same for the actual repository and is designed to get you comfortable adding data to an archive.
+Using the [tidy](https://github.com/tbep-tech/tbep-os-workshop/raw/main/data/tidy.xlsx) dataset, your data dictionary, and your metadata description from the previous exercises, we'll archive the data on the test node of KNB. This workflow is exactly the same for the real KNB repository and is designed to get you comfortable adding data to an archive.
 
 1.  Log in to the test archive using your ORCID information: [https://dev.nceas.ucsb.edu/](https://dev.nceas.ucsb.edu/){target="_blank"}
 2.  Click the submit button at the top to start the process of entering your data.
-3.  Add the relevant metadata information in the forms (because this is a test archive, not all will be entered).  The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.
+3.  Add the relevant data dictionary and metadata information in the forms (because this is a simple exercise, not all forms need to be filled).  The forms will be slightly different from your metadata, but enter the relevant information for the appropriate form.
 4.  Save the dataset when you're done and marvel at your work.
