@@ -23,10 +23,18 @@ jobs:
           # version: 0.9.600
       
       # add software dependencies here
-      
-      - name: Install R dependencies
-        run: Rscript -e 'install.packages(c("jsonlite", "fontawesome", "rmarkdown", "rsvg", "readxl", "dplyr", "tidyr"))'
-      
+      - name: Setup R depdencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with: 
+          packages: |
+            any::jsonlite
+            any::fontawesome
+            any::rmarkdown
+            any::rsvg
+            any::readxl
+            any::dplyr
+            any::tidyr
+
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
